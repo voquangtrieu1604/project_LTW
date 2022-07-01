@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="sidebar">
+    <div class="logo-details">
+
+        <a class="logo" href="https://owen.vn/" title="Owen - Thời trang nam | 1000+ mẫu quần áo nam đẹp, cao cấp mới nhất" aria-label="store logo"><img src="https://owen.vn/static/version1638932364/frontend/Owen/owen2021/vi_VN/images/logo.svg" title="Owen - Thời trang nam | 1000+ mẫu quần áo nam đẹp, cao cấp mới nhất" alt="Owen - Thời trang nam | 1000+ mẫu quần áo nam đẹp, cao cấp mới nhất" width="170" height="30" style="display: block;"></a>
+    </div>
+    <ul class="nav-links">
+        <li>
+            <a href="Dashboard.html" >
+                <i class="bx bx-grid-alt"></i>
+                <span class="links_name"> Bảng điều khiển</span>
+            </a>
+        </li>
+        <li>
+            <a href="SanPham.html" >
+                <i class="bx bx-box"></i>
+                <span class="links_name">Sản phẩm</span>
+            </a>
+        </li>
+        <li>
+            <a href="DonHang.html" >
+                <i class="bx bx-list-ul"></i>
+                <span class="links_name">Đơn hàng</span>
+            </a>
+        </li>
+        <li>
+            <a href="BangThongKe.html">
+                <i class="bx bx-pie-chart-alt-2"></i>
+                <span class="links_name">Bảng thống kê</span>
+            </a>
+        </li>
+        <li>
+            <a href="KhoHang.html">
+                <i class="bx bx-coin-stack"></i>
+                <span class="links_name">Kho hàng</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#" class="active">
+                <i class="bx bx-user"></i>
+                <span class="links_name">Nhân viên</span>
+            </a>
+
+        </li>
+
+        <li>
+            <a href="UuDai.html">
+                <i class="bx bx-heart"></i>
+                <span class="links_name">Ưu đãi</span>
+            </a>
+        </li>
+
+        <li class="log_out">
+            <a href="login.html">
+                <i class="bx bx-log-out"></i>
+                <span class="links_name">Đăng xuất</span>
+
+            </a>
+
+        </li>
+    </ul>
+</div>
+<section class="home-section">
+    <nav>
+        <div class="sidebar-button">
+            <i class="bx bx-menu sidebarBtn"></i>
+            <span class="dashboard">Dashboard</span>
+        </div>
+        <div class="search-box">
+            <input type="text" placeholder="Search...">
+            <i class="bx bx-search"></i>
+        </div>
+        <div class="profile-details">
+            <img src="img/download.jfif" alt="">
+            <span class="admin_name">Jedi</span>
+            <i class="bx bx-chevron-down"></i>
+        </div>
+
+    </nav>
+
+    <div class="home-content">
+        <div class="overview-boxes">
+
+            <div class="az-content-body pd-lg-l-40 d-flex flex-column">
+
+                <div class="az-content-breadcrumb">
+                    <h2 class="az-content-title"> Danh Sách Nhân Viên</h2>
+
+
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table mg-b-0">
+                        <thead>
+                        <tr>
+                            <th>Mã Nhân Viên</th>
+                            <th>Họ Và Tên</th>
+                            <th>Chức Vụ</th>
+                            <th>Địa Chỉ</th>
+                            <th>Số Điện Thoại</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Thanh Xuân</td>
+                            <td>Trưởng Phòng</td>
+                            <td>Linh Trung, TP.Thủ Đức</td>
+                            <td>0908208822</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Hoàng Mai</td>
+                            <td>Thư Ký</td>
+                            <td>Linh Trung, TP.Thủ Đức, TpHCM</td>
+                            <td>0923982389</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Nhật Hạ</td>
+                            <td>Quản Lí</td>
+                            <td> Nam Từ Liêm, Hà Nội</td>
+                            <td>0928928729</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Minh Thu</td>
+                            <td>Nhân Viên Bán Hàng</td>
+                            <td>Hiệp Bình Phước Thủ Đức</td>
+                            <td>0987278627</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Văn Đông</td>
+                            <td>Nhân Viên Thu Ngân</td>
+                            <td>Linh Chiểu Thủ Đức</td>
+                            <td>0892738222</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>Omicron</td>
+                            <td>Chúa Tể Lây Nhiễm</td>
+                            <td>Linh Đông Thủ Đức</td>
+                            <td>0992887222</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">7</th>
+                            <td>Delta</td>
+                            <td>Nhân Viên Bảo Vệ</td>
+                            <td>Linh Tây Thủ Đức</td>
+                            <td>0827628628</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">8</th>
+                            <td>Cô Vy </td>
+                            <td>Nhân Viên Tư Vấn</td>
+                            <td>Linh Xuân Thủ Đức</td>
+                            <td>0897262626</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div><!-- table-responsive -->
+
+
+
+
+
+
+                <div class="table-responsive">
+                    <table class="table table-striped mg-b-0">
+                        <thead>
+                        <tr>
+
+
+
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+
+
+
+
+                        </tr>
+                        <tr>
+
+
+
+
+                        </tr>
+                        <tr>
+
+
+
+
+                        </tr>
+                        <tr>
+
+
+
+
+                        </tr>
+                        <tr>
+
+
+
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div><!-- bd -->
+
+                <hr class="mg-y-30">
+
+
+
+
+                <div class="table-responsive">
+                    <table class="table table-bordered mg-b-0">
+                        <thead>
+                        <tr>
+
+
+
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+
+
+
+
+                        </tr>
+                        <tr>
+
+
+
+
+                        </tr>
+                        <tr>
+
+
+
+
+                        </tr>
+                        <tr>
+
+
+
+
+                        </tr>
+                        <tr>
+
+
+
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div><!-- table-responsive -->
+
+
+
+
+
+
+                <div class="table-responsive">
+                    <table class="table table-hover mg-b-0">
+                        <thead>
+                        <tr>
+
+
+
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+
+
+
+
+                        </tr>
+                        <tr>
+
+
+
+
+                        </tr>
+                        <tr>
+
+
+
+
+                        </tr>
+                        <tr>
+
+
+
+
+                        </tr>
+                        <tr>
+
+
+
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div><!-- table-responsive -->
+
+                <div class="ht-40"></div>
+
+                <div class="az-footer mg-t-auto">
+                    <div class="container">
+
+
+                    </div><!-- container -->
+                </div><!-- az-footer -->
+            </div>
+
+
+
+        </div>
+
+        <div class="sales-boxes">
+
+
+        </div>
+    </div>
+</section>
+
+
+</body>
+</html>

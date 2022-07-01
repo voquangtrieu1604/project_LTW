@@ -10,22 +10,27 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>Owen Fashion - Lịch lãm thời trang</title>
+    <title>Tài khoản của tôi</title>
 
     <!-- Favicon  -->
     <!--    <link rel="icon" href="assets/img/core-img/favicon.ico">-->
 
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="assets/css/core-style.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/custom-theme-min.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet"> <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
 
 </head>
 <style>
 
-
 </style>
 
-<body>
+<body class="account customer-address-form page-layout-2columns-left">
 <!-- ##### Header Area Start ##### -->
 <header class="header_area">
     <div class="classy-nav-container breakpoint-off d-flex align-items-center justify-content-between">
@@ -127,7 +132,12 @@
                     <li><a href="register.jsp">Tạo tài khoản</a></li>
                 </ul>
             </div>
-
+            <!-- User Login Info -->
+            <!--            <div class="user-login-info">-->
+            <!--                <a href="login.jsp"><img src="assets/img/core-img/user.svg" alt=""></a>-->
+            <!--            </div>-->
+            <!-- Cart Area -->
+            <!-- Cart Area -->
             <div class="cart-area">
                 <a href="#" id="essenceCartBtn"><img src="assets/img/core-img/bag.svg" alt=""><span>3</span></a>
             </div>
@@ -219,304 +229,179 @@
 </div>
 <!-- ##### Right Side Cart End ##### -->
 
-<!-- ##### Welcome Area Start ##### -->
-
-<section class="welcome_area bg-img background-overlay" style="background-image: url(assets/img/index/bg-1.jpg);">
-    <a href="shop.jsp">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="hero-content">
-                        <!--                        <h6>asoss</h6>-->
-                        <!--                        <h2>New Collection</h2>-->
-                        <!--                        <a href="#" class="btn essence-btn">view collection</a>-->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>
-</section>
-
-<!-- ##### Welcome Area End ##### -->
-
-<!-- ##### Top Catagory Area Start ##### -->
-<div class="top_catagory_area section-padding-80 clearfix">
-    <div class="container">
-        <div class="row justify-content-center">
-            <!-- Single Catagory -->
-            <div class="col-12 col-sm-6 col-md-4">
-                <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
-                     style="background-image: url(assets/img/index/bg-2.jpg);">
-                    <div class="catagory-content">
-                        <a href="#">Áo</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Catagory -->
-            <div class="col-12 col-sm-6 col-md-4">
-                <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
-                     style="background-image: url(assets/img/index/bg-3.jpg);">
-                    <div class="catagory-content">
-                        <a href="#">Quần</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Catagory -->
-            <div class="col-12 col-sm-6 col-md-4">
-                <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
-                     style="background-image: url(assets/img/bg-img/bg-4.jpg);">
-                    <div class="catagory-content">
-                        <a href="#">Phụ kiện</a>
-                    </div>
+<!-- ##### Breadcumb Area Start ##### -->
+<div class="breadcumb_area bg-img" style="background-image: url(assets/img/bg-img/breadcumb.jpg);">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="page-title text-center">
+                    <h2>tài khoản</h2>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- ##### Top Catagory Area End ##### -->
+<!-- ##### Breadcumb Area End ##### -->
+<div class="container">
+    <div class="container">
 
-<!-- ##### CTA Area Start ##### -->
-<div class="cta-area">
-    <a href="shop.jsp">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="cta-content bg-img background-overlay"
-                         style="background-image: url(assets/img/index/bg-5.jpg);">
-                        <div class="h-100 d-flex align-items-center justify-content-end">
-                            <div class="cta--text">
-                                <!--                                <h6>-60%</h6>-->
-                                <!--                                <h2>Global Sale</h2>-->
-                                <!--                                <a href="#" class="btn essence-btn">Buy Now</a>-->
-                            </div>
-                        </div>
+        <div class="row profile">
+            <div class="col-md-3">
+                <div class="profile-sidebar">
+                    <!-- <div class="profile-userpic"> <img
+                            src="https://hocwebgiare.com/thiet_ke_web_chuan_demo/bootstrap_user_profile/images/profile_user.jpg"
+                            class="img-responsive" alt="Thông tin cá nhân">
+                    </div> -->
+                    <div class="profile-usertitle">
+                        <div class="profile-usertitle-hello"> TÀI KHOẢN</div>
+                        <div class="profile-usertitle-name"> Xin chào, <span class="name">Hậu Nguyễn</span></div>
+                    </div>
+
+                    <div class="profile-usermenu">
+                        <ul class=" items">
+                            <!-- <div class="logo_menuchinh"
+                                style="float:left; padding-top:5px; padding-left:10px; color:#fff; margin-left:auto; margin-right:auto; text-align: center; line-height:40px; font-size:16px;font-weight:bold;font-family:Arial">
+                                HOCWEBGIARE.COM
+                            </div> -->
+                            <!-- <div class="menu-icon"><span>Menu</span></div> -->
+                            <li class=" item active"><a href=""> <i class="glyphicon fas fa-question-circle"></i>
+                                Thông
+                                tin tài khoản </a>
+                            </li>
+                            <li class=" item "><a href="account_Address.jsp"> <i
+                                    class="glyphicon fas fa-map-marker-alt"></i>
+                                Địa chỉ nhận hàng</a>
+                            </li>
+                            <li class=" item "><a href="myorder.jsp" target=""> <i
+                                    class="glyphicon fas fa-shopping-cart"></i> Quản lý đơn hàng </a>
+                            </li>
+                            <li class=" item "><a href="wishlist.jsp"> <i class="glyphicon far fa-heart"></i> Danh sách
+                                yêu
+                                thích </a>
+                            </li>
+
+                        </ul>
                     </div>
                 </div>
             </div>
+            <div class="column main ">
+                <form class="form form-edit-account">
+                    <fieldset class="fieldset info"><input name="form_key" type="hidden" value="fiFIjrL35gCxIa52">
+                        <div class="field field-name-firstname required"><label for="firstname"
+                                                                                class="label"><span>Tên</span></label>
+                            <div class="control"><input type="text" id="firstname" name="firstname" value="Hậu"
+                                                        title="Tên" class="input-text required-entry"
+                                                        data-validate="{required:true}"
+                                                        placeholder="Tên" aria-required="true"></div>
+                        </div>
+                        <!--<div class="field field-name-lastname required"><div class="control"><input type="text" id="" name="" value="" title="" class="input-text "  placeholder=""></div></div>-->
+                        <div class="field choice" style="display: none;"><input type="checkbox" name="change_email"
+                                                                                id="change-email"
+                                                                                data-role="change-email" value="1"
+                                                                                title="Thay đổi Email"
+                                                                                class="checkbox" checked=""><label
+                                class="label" for="change-email"><span>Thay đổi
+                                        Email</span></label></div>
+                        <div class="field choice" style="display: none;"><input type="checkbox"
+                                                                                name="change_mobile_number"
+                                                                                id="change-mobile-number"
+                                                                                data-role="change-mobile-number"
+                                                                                value="1" title="Thay đổi số điện thoại"
+                                                                                class="checkbox" checked=""><label
+                                class="label"
+                                for="change-mobile-number"><span>Thay đổi số điện thoại</span></label></div>
+                    </fieldset>
+                    <fieldset class="fieldset password" data-container="change-email-mobile-password"
+                              style="display: block;">
+                        <div class="field email required" data-container="change-email" style="display: block;">
+                            <label class="label" for="email"><span>Email</span></label>
+                            <div class="control">
+                                <input type="email" name="email" id="email" autocomplete="email"
+                                       data-input="change-email" value="" title="Email" class="input-text"
+                                       data-validate="{required:true}" aria-required="true">
+                            </div>
+                        </div>
+                        <div class="field mobile-number required" data-container="change-mobile-number"
+                             style="display: block;">
+                            <label class="label" for="mobile_number"><span>Số điện thoại</span></label>
+                            <div class="control">
+                                <input type="text" name="mobile_number" id="mobile_number"
+                                       data-input="change-mobile-number" value="" title="Số điện thoại"
+                                       class="input-text"
+                                       data-validate="{required:true, 'validate-digits':true,'validate-mobile-number':true}"
+                                       aria-required="true" autocomplete="off ">
+                            </div>
+
+                        </div>
+                        <div class="field password current required" style="display: block;">
+                            <div class="field">
+                                <label class="label" for="current-password"><span>Mật khẩu hiện tại</span></label>
+                                <div class="field choice">
+                                    <input type="checkbox" name="change_password" id="change-password"
+                                           data-role="change-password" value="1" title="Đổi mật khẩu"
+                                           class="checkbox"><label class="label" for="change-password"><span>Đổi mật
+                                                khẩu</span></label>
+                                </div>
+                            </div>
+                            <div class="control">
+                                <input type="password" class="input-text" name="current_password"
+                                       id="current-password" data-input="current-password" autocomplete="off"
+                                       aria-required="true" data-validate="{required:true}">
+                            </div>
+                        </div>
+                        <div id="content" style="display: none">
+                            <div class="field new password required" data-container="new-password"
+                                 style="display: block;">
+                                <label class="label" for="password"><span>Mật khẩu mới</span></label>
+                                <div class="control">
+                                    <input type="password" class="input-text" name="password" id="password"
+                                           data-password-min-length="8" data-password-min-character-sets="3"
+                                           data-input="new-password" autocomplete="off" aria-required="true"
+                                           data-validate="{required:true, 'validate-customer-password':true, 'password-not-equal-to-user-name':'nguyenhau31867@gmail.com'}"
+                                           aria-autocomplete="list">
+                                    <div id="password-strength-meter-container" data-role="password-strength-meter"
+                                         aria-live="polite">
+                                        <div id="password-strength-meter" class="password-strength-meter">Độ mạnh
+                                            mật
+                                            khẩu:
+                                            <span id="password-strength-meter-label"
+                                                  data-role="password-strength-meter-label">Không có mật khẩu</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field confirm password required" data-container="confirm-password"
+                                 style="display: block;">
+                                <label class="label" for="password-confirmation"><span>Xác nhận mật khẩu
+                                            mới</span></label>
+                                <div class="control">
+                                    <input type="password" class="input-text" name="password_confirmation"
+                                           id="password-confirmation" data-input="confirm-password" autocomplete="off"
+                                           aria-required="true"
+                                           data-validate="{required:true, equalTo:&quot;[data-input=new-password]&quot;}">
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </fieldset>
+                    <div class="actions-toolbar">
+                        <div class="primary">
+                            <button type="submit" class="action save primary btn"
+                                    title="Lưu lại"><span>Cập nhật</span></button>
+                        </div>
+                        <div class="secondary"><a class="action back"
+                                                  href=""><span>Quay lại</span></a></div>
+                    </div>
+
+
+                </form>
+
+            </div>
         </div>
-    </a>
+    </div>
+
 </div>
-<!-- ##### CTA Area End ##### -->
-
-<!-- ##### New Arrivals Area Start ##### -->
-<section class="new_arrivals_area section-padding-80 clearfix">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="section-heading text-center">
-                    <h2>Sản phẩm bán chạy</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="popular-products-slides owl-carousel">
-
-                    <!-- Single Product -->
-                    <div class="single-product-wrapper">
-                        <!-- Product Image -->
-                        <div class="product-img">
-                            <img src="assets/img/index/product-1-1.jpg" alt="">
-                            <!-- Hover Thumb -->
-                            <img class="hover-img" src="assets/img/index/product-1-2.jpg" alt="">
-                            <!-- Favourite -->
-                            <div class="product-favourite">
-                                <a href="#" class="favme fa fa-heart"></a>
-                            </div>
-                        </div>
-                        <!-- Product Description -->
-                        <div class="product-description">
-                            <span>áo jacket</span>
-                            <a href="single-product-details.jsp">
-                                <h6>ÁO JACKET - JK61020</h6>
-                            </a>
-                            <p class="product-price">900.000 ₫</p>
-
-                            <!-- Hover Content -->
-                            <div class="hover-content">
-                                <!-- Add to Cart -->
-                                <div class="add-to-cart-btn">
-                                    <a href="#" class="btn essence-btn">Thêm vào giỏ hàng</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Product -->
-                    <div class="single-product-wrapper">
-                        <!-- Product Image -->
-                        <div class="product-img">
-                            <img src="assets/img/index/product-2-1.jpg" alt="">
-                            <!-- Hover Thumb -->
-                            <img class="hover-img" src="assets/img/index/product-2-2.jpg" alt="">
-                            <!-- Favourite -->
-                            <div class="product-favourite">
-                                <a href="#" class="favme fa fa-heart"></a>
-                            </div>
-                        </div>
-                        <!-- Product Description -->
-                        <div class="product-description">
-                            <span>áo hoodie</span>
-                            <a href="single-product-details.jsp">
-                                <h6>ÁO HOODIE - HD23293</h6>
-                            </a>
-                            <p class="product-price">510.000 ₫</p>
-
-                            <!-- Hover Content -->
-                            <div class="hover-content">
-                                <!-- Add to Cart -->
-                                <div class="add-to-cart-btn">
-                                    <a href="#" class="btn essence-btn">Thêm vào giỏ hàng</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Product -->
-                    <div class="single-product-wrapper">
-                        <!-- Product Image -->
-                        <div class="product-img">
-                            <img src="assets/img/index/product-3-1.jpg" alt="">
-                            <!-- Hover Thumb -->
-                            <img class="hover-img" src="assets/img/index/product-3-2.jpg" alt="">
-
-                            <!-- Product Badge -->
-                            <div class="product-badge offer-badge">
-                                <span>-17%</span>
-                            </div>
-
-                            <!-- Favourite -->
-                            <div class="product-favourite">
-                                <a href="#" class="favme fa fa-heart"></a>
-                            </div>
-                        </div>
-                        <!-- Product Description -->
-                        <div class="product-description">
-                            <span>QUẦN KHAKI</span>
-                            <a href="single-product-details.jsp">
-                                <h6>QUẦN KHAKI - QKSL22230</h6>
-                            </a>
-                            <p class="product-price"><span class="old-price">999.000 ₫</span>830.000 ₫</p>
-
-                            <!-- Hover Content -->
-                            <div class="hover-content">
-                                <!-- Add to Cart -->
-                                <div class="add-to-cart-btn">
-                                    <a href="#" class="btn essence-btn">Thêm vào giỏ hàng</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- Single Product -->
-                    <div class="single-product-wrapper">
-                        <!-- Product Image -->
-                        <div class="product-img">
-                            <img src="assets/img/index/product-4-1.jpg" alt="">
-                            <!-- Hover Thumb -->
-                            <img class="hover-img" src="assets/img/index/product-4-2.jpg" alt="">
-
-                            <!-- Product Badge -->
-                            <div class="product-badge new-badge">
-                                <span>New</span>
-                            </div>
-
-                            <!-- Favourite -->
-                            <div class="product-favourite">
-                                <a href="#" class="favme fa fa-heart"></a>
-                            </div>
-                        </div>
-                        <!-- Product Description -->
-                        <div class="product-description">
-                            <span>ÁO SƠ MI</span>
-                            <a href="single-product-details.jsp">
-                                <h6>ÁO SƠ MI DÀI TAY - AR91008D2</h6>
-                            </a>
-                            <p class="product-price">498.000 ₫</p>
-
-                            <!-- Hover Content -->
-                            <div class="hover-content">
-                                <!-- Add to Cart -->
-                                <div class="add-to-cart-btn">
-                                    <a href="#" class="btn essence-btn">Thêm vào giỏ hàng</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-product-wrapper">
-                        <!-- Product Image -->
-                        <div class="product-img">
-                            <img src="assets/img/index/product-5-1.jpg" alt="">
-                            <!-- Hover Thumb -->
-                            <img class="hover-img" src="assets/img/index/product-5-2.jpg" alt="">
-
-                            <!-- Product Badge -->
-                            <div class="product-badge new-badge">
-                                <span>New</span>
-                            </div>
-
-                            <!-- Favourite -->
-                            <div class="product-favourite">
-                                <a href="#" class="favme fa fa-heart"></a>
-                            </div>
-                        </div>
-                        <!-- Product Description -->
-                        <div class="product-description">
-                            <span>ÁO JACKET</span>
-                            <a href="single-product-details.jsp">
-                                <h6>ÁO JACKET - JK61030</h6>
-                            </a>
-                            <p class="product-price">900.000 ₫</p>
-
-                            <!-- Hover Content -->
-                            <div class="hover-content">
-                                <!-- Add to Cart -->
-                                <div class="add-to-cart-btn">
-                                    <a href="#" class="btn essence-btn">Thêm vào giỏ hàng</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- ##### New Arrivals Area End ##### -->
-
-<!-- ##### Brands Area Start ##### -->
-<!--<div class="brands-area d-flex align-items-center justify-content-between">-->
-<!--    &lt;!&ndash; Brand Logo &ndash;&gt;-->
-<!--    <div class="single-brands-logo">-->
-<!--        <img src="assets/img/core-img/brand1.png" alt="">-->
-<!--    </div>-->
-<!--    &lt;!&ndash; Brand Logo &ndash;&gt;-->
-<!--    <div class="single-brands-logo">-->
-<!--        <img src="assets/img/core-img/brand2.png" alt="">-->
-<!--    </div>-->
-<!--    &lt;!&ndash; Brand Logo &ndash;&gt;-->
-<!--    <div class="single-brands-logo">-->
-<!--        <img src="assets/img/core-img/brand3.png" alt="">-->
-<!--    </div>-->
-<!--    &lt;!&ndash; Brand Logo &ndash;&gt;-->
-<!--    <div class="single-brands-logo">-->
-<!--        <img src="assets/img/core-img/brand4.png" alt="">-->
-<!--    </div>-->
-<!--    &lt;!&ndash; Brand Logo &ndash;&gt;-->
-<!--    <div class="single-brands-logo">-->
-<!--        <img src="assets/img/core-img/brand5.png" alt="">-->
-<!--    </div>-->
-<!--    &lt;!&ndash; Brand Logo &ndash;&gt;-->
-<!--    <div class="single-brands-logo">-->
-<!--        <img src="assets/img/core-img/brand6.png" alt="">-->
-<!--    </div>-->
-<!--</div>-->
-<!-- ##### Brands Area End ##### -->
 
 <!-- ##### Footer Area Start ##### -->
 <footer class="footer_area clearfix">
@@ -603,6 +488,22 @@
 
     </div>
 </footer>
+<script language="javascript">
+
+
+    document.getElementById("change-password").onclick = function () {
+        if (document.getElementById("content").style.display == 'none') {
+            document.getElementById("content").style.display = 'block';
+        } else {
+            document.getElementById("content").style.display = 'none';
+
+        }
+
+    };
+
+
+</script>
+
 <!-- ##### Footer Area End ##### -->
 
 <!-- jQuery (Necessary for All JavaScript Plugins) -->
@@ -612,7 +513,7 @@
 <!-- Bootstrap js -->
 <script src="assets/js/bootstrap.min.js"></script>
 <!-- Plugins js -->
-<script src="assets/js/plugins.js"></script>
+<!-- <script src="js/plugins.js"></script> -->
 <!-- Classy Nav js -->
 <script src="assets/js/classy-nav.min.js"></script>
 <!-- Active js -->

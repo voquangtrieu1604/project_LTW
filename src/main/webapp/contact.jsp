@@ -10,7 +10,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>Owen Fashion - Lịch lãm thời trang</title>
+    <title>Hệ thống cửa hàng</title>
 
     <!-- Favicon  -->
     <!--    <link rel="icon" href="assets/img/core-img/favicon.ico">-->
@@ -20,10 +20,6 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
-<style>
-
-
-</style>
 
 <body>
 <!-- ##### Header Area Start ##### -->
@@ -127,7 +123,12 @@
                     <li><a href="register.jsp">Tạo tài khoản</a></li>
                 </ul>
             </div>
-
+            <!-- User Login Info -->
+            <!--            <div class="user-login-info">-->
+            <!--                <a href="login.jsp"><img src="assets/img/core-img/user.svg" alt=""></a>-->
+            <!--            </div>-->
+            <!-- Cart Area -->
+            <!-- Cart Area -->
             <div class="cart-area">
                 <a href="#" id="essenceCartBtn"><img src="assets/img/core-img/bag.svg" alt=""><span>3</span></a>
             </div>
@@ -219,304 +220,40 @@
 </div>
 <!-- ##### Right Side Cart End ##### -->
 
-<!-- ##### Welcome Area Start ##### -->
 
-<section class="welcome_area bg-img background-overlay" style="background-image: url(assets/img/index/bg-1.jpg);">
-    <a href="shop.jsp">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="hero-content">
-                        <!--                        <h6>asoss</h6>-->
-                        <!--                        <h2>New Collection</h2>-->
-                        <!--                        <a href="#" class="btn essence-btn">view collection</a>-->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>
-</section>
+<div class="contact-area d-flex align-items-center">
 
-<!-- ##### Welcome Area End ##### -->
-
-<!-- ##### Top Catagory Area Start ##### -->
-<div class="top_catagory_area section-padding-80 clearfix">
-    <div class="container">
-        <div class="row justify-content-center">
-            <!-- Single Catagory -->
-            <div class="col-12 col-sm-6 col-md-4">
-                <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
-                     style="background-image: url(assets/img/index/bg-2.jpg);">
-                    <div class="catagory-content">
-                        <a href="#">Áo</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Catagory -->
-            <div class="col-12 col-sm-6 col-md-4">
-                <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
-                     style="background-image: url(assets/img/index/bg-3.jpg);">
-                    <div class="catagory-content">
-                        <a href="#">Quần</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Catagory -->
-            <div class="col-12 col-sm-6 col-md-4">
-                <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
-                     style="background-image: url(assets/img/bg-img/bg-4.jpg);">
-                    <div class="catagory-content">
-                        <a href="#">Phụ kiện</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="google-map">
+        <div id="googleMap"></div>
     </div>
+
+    <div class="contact-info">
+        <h2>HỆ THỐNG CỬA HÀNG</h2>
+        <!--            <p>Mauris viverra cursus ante laoreet eleifend. Donec vel fringilla ante. Aenean finibus velit id urna vehicula, nec maximus est sollicitudin.</p>-->
+
+        <div class="contact-address mt-50">
+            <p><span>Công ty: </span> CÔNG TY CỔ PHẦN THỜI TRANG KOWIL VIỆT NAM</p>
+            <p><span>hotline: </span> 1900 8079</p>
+            <p><span>gmail: </span><a style="color: #787878" href="mailto:@.com"> laptrinhweb@gmail.com</a></p>
+            <p><span>Thời gian: </span> 8:00 - 19h Thứ 2 - Thứ 7</p>
+            <p><span>VP Phía Bắc: </span> Tầng 17 tòa nhà Viwaseen, 48 Phố Tố Hữu, Trung Văn, Nam Từ Liêm, Hà Nội.</p>
+            <p><span>VP Phía Nam: </span> Lô III.25, Đường 19/5A, Nhóm CN III, Khu Công Nghiệp Tân Bình, P. Tây Thạnh,
+                Q. Tân Phú, HCM.</p>
+
+        </div>
+        <h2 class="title">VIẾT CHO CHÚNG TÔI</h2>
+        <span class="note">Gửi một lưu ý cho chúng tôi và chúng tôi sẽ trả lời bạn nhanh nhất có thể.</span><br>
+        <form action="" method="post">
+
+            <input type="text" id="name" name="name" placeholder="Tên">
+            <input type="text" id="email" name="name" placeholder="Gmail">
+            <input type="text" id="phone" name="name" placeholder="Số điện thoại"><br>
+            <textarea placeholder="Nhập nội dung"></textarea>
+            <button type="submit"> Gửi phản hồi</button>
+        </form>
+    </div>
+
 </div>
-<!-- ##### Top Catagory Area End ##### -->
-
-<!-- ##### CTA Area Start ##### -->
-<div class="cta-area">
-    <a href="shop.jsp">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="cta-content bg-img background-overlay"
-                         style="background-image: url(assets/img/index/bg-5.jpg);">
-                        <div class="h-100 d-flex align-items-center justify-content-end">
-                            <div class="cta--text">
-                                <!--                                <h6>-60%</h6>-->
-                                <!--                                <h2>Global Sale</h2>-->
-                                <!--                                <a href="#" class="btn essence-btn">Buy Now</a>-->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>
-</div>
-<!-- ##### CTA Area End ##### -->
-
-<!-- ##### New Arrivals Area Start ##### -->
-<section class="new_arrivals_area section-padding-80 clearfix">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="section-heading text-center">
-                    <h2>Sản phẩm bán chạy</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="popular-products-slides owl-carousel">
-
-                    <!-- Single Product -->
-                    <div class="single-product-wrapper">
-                        <!-- Product Image -->
-                        <div class="product-img">
-                            <img src="assets/img/index/product-1-1.jpg" alt="">
-                            <!-- Hover Thumb -->
-                            <img class="hover-img" src="assets/img/index/product-1-2.jpg" alt="">
-                            <!-- Favourite -->
-                            <div class="product-favourite">
-                                <a href="#" class="favme fa fa-heart"></a>
-                            </div>
-                        </div>
-                        <!-- Product Description -->
-                        <div class="product-description">
-                            <span>áo jacket</span>
-                            <a href="single-product-details.jsp">
-                                <h6>ÁO JACKET - JK61020</h6>
-                            </a>
-                            <p class="product-price">900.000 ₫</p>
-
-                            <!-- Hover Content -->
-                            <div class="hover-content">
-                                <!-- Add to Cart -->
-                                <div class="add-to-cart-btn">
-                                    <a href="#" class="btn essence-btn">Thêm vào giỏ hàng</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Product -->
-                    <div class="single-product-wrapper">
-                        <!-- Product Image -->
-                        <div class="product-img">
-                            <img src="assets/img/index/product-2-1.jpg" alt="">
-                            <!-- Hover Thumb -->
-                            <img class="hover-img" src="assets/img/index/product-2-2.jpg" alt="">
-                            <!-- Favourite -->
-                            <div class="product-favourite">
-                                <a href="#" class="favme fa fa-heart"></a>
-                            </div>
-                        </div>
-                        <!-- Product Description -->
-                        <div class="product-description">
-                            <span>áo hoodie</span>
-                            <a href="single-product-details.jsp">
-                                <h6>ÁO HOODIE - HD23293</h6>
-                            </a>
-                            <p class="product-price">510.000 ₫</p>
-
-                            <!-- Hover Content -->
-                            <div class="hover-content">
-                                <!-- Add to Cart -->
-                                <div class="add-to-cart-btn">
-                                    <a href="#" class="btn essence-btn">Thêm vào giỏ hàng</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Product -->
-                    <div class="single-product-wrapper">
-                        <!-- Product Image -->
-                        <div class="product-img">
-                            <img src="assets/img/index/product-3-1.jpg" alt="">
-                            <!-- Hover Thumb -->
-                            <img class="hover-img" src="assets/img/index/product-3-2.jpg" alt="">
-
-                            <!-- Product Badge -->
-                            <div class="product-badge offer-badge">
-                                <span>-17%</span>
-                            </div>
-
-                            <!-- Favourite -->
-                            <div class="product-favourite">
-                                <a href="#" class="favme fa fa-heart"></a>
-                            </div>
-                        </div>
-                        <!-- Product Description -->
-                        <div class="product-description">
-                            <span>QUẦN KHAKI</span>
-                            <a href="single-product-details.jsp">
-                                <h6>QUẦN KHAKI - QKSL22230</h6>
-                            </a>
-                            <p class="product-price"><span class="old-price">999.000 ₫</span>830.000 ₫</p>
-
-                            <!-- Hover Content -->
-                            <div class="hover-content">
-                                <!-- Add to Cart -->
-                                <div class="add-to-cart-btn">
-                                    <a href="#" class="btn essence-btn">Thêm vào giỏ hàng</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- Single Product -->
-                    <div class="single-product-wrapper">
-                        <!-- Product Image -->
-                        <div class="product-img">
-                            <img src="assets/img/index/product-4-1.jpg" alt="">
-                            <!-- Hover Thumb -->
-                            <img class="hover-img" src="assets/img/index/product-4-2.jpg" alt="">
-
-                            <!-- Product Badge -->
-                            <div class="product-badge new-badge">
-                                <span>New</span>
-                            </div>
-
-                            <!-- Favourite -->
-                            <div class="product-favourite">
-                                <a href="#" class="favme fa fa-heart"></a>
-                            </div>
-                        </div>
-                        <!-- Product Description -->
-                        <div class="product-description">
-                            <span>ÁO SƠ MI</span>
-                            <a href="single-product-details.jsp">
-                                <h6>ÁO SƠ MI DÀI TAY - AR91008D2</h6>
-                            </a>
-                            <p class="product-price">498.000 ₫</p>
-
-                            <!-- Hover Content -->
-                            <div class="hover-content">
-                                <!-- Add to Cart -->
-                                <div class="add-to-cart-btn">
-                                    <a href="#" class="btn essence-btn">Thêm vào giỏ hàng</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-product-wrapper">
-                        <!-- Product Image -->
-                        <div class="product-img">
-                            <img src="assets/img/index/product-5-1.jpg" alt="">
-                            <!-- Hover Thumb -->
-                            <img class="hover-img" src="assets/img/index/product-5-2.jpg" alt="">
-
-                            <!-- Product Badge -->
-                            <div class="product-badge new-badge">
-                                <span>New</span>
-                            </div>
-
-                            <!-- Favourite -->
-                            <div class="product-favourite">
-                                <a href="#" class="favme fa fa-heart"></a>
-                            </div>
-                        </div>
-                        <!-- Product Description -->
-                        <div class="product-description">
-                            <span>ÁO JACKET</span>
-                            <a href="single-product-details.jsp">
-                                <h6>ÁO JACKET - JK61030</h6>
-                            </a>
-                            <p class="product-price">900.000 ₫</p>
-
-                            <!-- Hover Content -->
-                            <div class="hover-content">
-                                <!-- Add to Cart -->
-                                <div class="add-to-cart-btn">
-                                    <a href="#" class="btn essence-btn">Thêm vào giỏ hàng</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- ##### New Arrivals Area End ##### -->
-
-<!-- ##### Brands Area Start ##### -->
-<!--<div class="brands-area d-flex align-items-center justify-content-between">-->
-<!--    &lt;!&ndash; Brand Logo &ndash;&gt;-->
-<!--    <div class="single-brands-logo">-->
-<!--        <img src="assets/img/core-img/brand1.png" alt="">-->
-<!--    </div>-->
-<!--    &lt;!&ndash; Brand Logo &ndash;&gt;-->
-<!--    <div class="single-brands-logo">-->
-<!--        <img src="assets/img/core-img/brand2.png" alt="">-->
-<!--    </div>-->
-<!--    &lt;!&ndash; Brand Logo &ndash;&gt;-->
-<!--    <div class="single-brands-logo">-->
-<!--        <img src="assets/img/core-img/brand3.png" alt="">-->
-<!--    </div>-->
-<!--    &lt;!&ndash; Brand Logo &ndash;&gt;-->
-<!--    <div class="single-brands-logo">-->
-<!--        <img src="assets/img/core-img/brand4.png" alt="">-->
-<!--    </div>-->
-<!--    &lt;!&ndash; Brand Logo &ndash;&gt;-->
-<!--    <div class="single-brands-logo">-->
-<!--        <img src="assets/img/core-img/brand5.png" alt="">-->
-<!--    </div>-->
-<!--    &lt;!&ndash; Brand Logo &ndash;&gt;-->
-<!--    <div class="single-brands-logo">-->
-<!--        <img src="assets/img/core-img/brand6.png" alt="">-->
-<!--    </div>-->
-<!--</div>-->
-<!-- ##### Brands Area End ##### -->
 
 <!-- ##### Footer Area Start ##### -->
 <footer class="footer_area clearfix">
@@ -617,6 +354,9 @@
 <script src="assets/js/classy-nav.min.js"></script>
 <!-- Active js -->
 <script src="assets/js/active.js"></script>
+<!-- Google Maps -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwuyLRa1uKNtbgx6xAJVmWy-zADgegA2s"></script>
+<script src="assets/js/map-active.js"></script>
 
 </body>
 
