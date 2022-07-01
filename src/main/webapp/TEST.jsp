@@ -10,20 +10,16 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>Owen Fashion - Lịch lãm thời trang</title>
+    <title>OWEN</title>
 
     <!-- Favicon  -->
-    <!--    <link rel="icon" href="assets/img/core-img/favicon.ico">-->
 
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="assets/css/core-style.css">
     <link rel="stylesheet" href="style.css">
 
+    <!-- ##### Header Area Start ##### -->
 </head>
-<style>
-
-
-</style>
 
 <body>
 <!-- ##### Header Area Start ##### -->
@@ -127,7 +123,12 @@
                     <li><a href="register.jsp">Tạo tài khoản</a></li>
                 </ul>
             </div>
-
+            <!-- User Login Info -->
+            <!--            <div class="user-login-info">-->
+            <!--                <a href="login.jsp"><img src="assets/img/core-img/user.svg" alt=""></a>-->
+            <!--            </div>-->
+            <!-- Cart Area -->
+            <!-- Cart Area -->
             <div class="cart-area">
                 <a href="#" id="essenceCartBtn"><img src="assets/img/core-img/bag.svg" alt=""><span>3</span></a>
             </div>
@@ -219,304 +220,9 @@
 </div>
 <!-- ##### Right Side Cart End ##### -->
 
-<!-- ##### Welcome Area Start ##### -->
+<!-- ##### Blog Wrapper Area Start ##### -->
 
-<section class="welcome_area bg-img background-overlay" style="background-image: url(assets/img/index/bg-1.jpg);">
-    <a href="shop.jsp">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="hero-content">
-                        <!--                        <h6>asoss</h6>-->
-                        <!--                        <h2>New Collection</h2>-->
-                        <!--                        <a href="#" class="btn essence-btn">view collection</a>-->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>
-</section>
-
-<!-- ##### Welcome Area End ##### -->
-
-<!-- ##### Top Catagory Area Start ##### -->
-<div class="top_catagory_area section-padding-80 clearfix">
-    <div class="container">
-        <div class="row justify-content-center">
-            <!-- Single Catagory -->
-            <div class="col-12 col-sm-6 col-md-4">
-                <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
-                     style="background-image: url(assets/img/index/bg-2.jpg);">
-                    <div class="catagory-content">
-                        <a href="#">Áo</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Catagory -->
-            <div class="col-12 col-sm-6 col-md-4">
-                <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
-                     style="background-image: url(assets/img/index/bg-3.jpg);">
-                    <div class="catagory-content">
-                        <a href="#">Quần</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Catagory -->
-            <div class="col-12 col-sm-6 col-md-4">
-                <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
-                     style="background-image: url(assets/img/bg-img/bg-4.jpg);">
-                    <div class="catagory-content">
-                        <a href="#">Phụ kiện</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- ##### Top Catagory Area End ##### -->
-
-<!-- ##### CTA Area Start ##### -->
-<div class="cta-area">
-    <a href="shop.jsp">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="cta-content bg-img background-overlay"
-                         style="background-image: url(assets/img/index/bg-5.jpg);">
-                        <div class="h-100 d-flex align-items-center justify-content-end">
-                            <div class="cta--text">
-                                <!--                                <h6>-60%</h6>-->
-                                <!--                                <h2>Global Sale</h2>-->
-                                <!--                                <a href="#" class="btn essence-btn">Buy Now</a>-->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>
-</div>
-<!-- ##### CTA Area End ##### -->
-
-<!-- ##### New Arrivals Area Start ##### -->
-<section class="new_arrivals_area section-padding-80 clearfix">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="section-heading text-center">
-                    <h2>Sản phẩm bán chạy</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="popular-products-slides owl-carousel">
-
-                    <!-- Single Product -->
-                    <div class="single-product-wrapper">
-                        <!-- Product Image -->
-                        <div class="product-img">
-                            <img src="assets/img/index/product-1-1.jpg" alt="">
-                            <!-- Hover Thumb -->
-                            <img class="hover-img" src="assets/img/index/product-1-2.jpg" alt="">
-                            <!-- Favourite -->
-                            <div class="product-favourite">
-                                <a href="#" class="favme fa fa-heart"></a>
-                            </div>
-                        </div>
-                        <!-- Product Description -->
-                        <div class="product-description">
-                            <span>áo jacket</span>
-                            <a href="single-product-details.jsp">
-                                <h6>ÁO JACKET - JK61020</h6>
-                            </a>
-                            <p class="product-price">900.000 ₫</p>
-
-                            <!-- Hover Content -->
-                            <div class="hover-content">
-                                <!-- Add to Cart -->
-                                <div class="add-to-cart-btn">
-                                    <a href="#" class="btn essence-btn">Thêm vào giỏ hàng</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Product -->
-                    <div class="single-product-wrapper">
-                        <!-- Product Image -->
-                        <div class="product-img">
-                            <img src="assets/img/index/product-2-1.jpg" alt="">
-                            <!-- Hover Thumb -->
-                            <img class="hover-img" src="assets/img/index/product-2-2.jpg" alt="">
-                            <!-- Favourite -->
-                            <div class="product-favourite">
-                                <a href="#" class="favme fa fa-heart"></a>
-                            </div>
-                        </div>
-                        <!-- Product Description -->
-                        <div class="product-description">
-                            <span>áo hoodie</span>
-                            <a href="single-product-details.jsp">
-                                <h6>ÁO HOODIE - HD23293</h6>
-                            </a>
-                            <p class="product-price">510.000 ₫</p>
-
-                            <!-- Hover Content -->
-                            <div class="hover-content">
-                                <!-- Add to Cart -->
-                                <div class="add-to-cart-btn">
-                                    <a href="#" class="btn essence-btn">Thêm vào giỏ hàng</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Product -->
-                    <div class="single-product-wrapper">
-                        <!-- Product Image -->
-                        <div class="product-img">
-                            <img src="assets/img/index/product-3-1.jpg" alt="">
-                            <!-- Hover Thumb -->
-                            <img class="hover-img" src="assets/img/index/product-3-2.jpg" alt="">
-
-                            <!-- Product Badge -->
-                            <div class="product-badge offer-badge">
-                                <span>-17%</span>
-                            </div>
-
-                            <!-- Favourite -->
-                            <div class="product-favourite">
-                                <a href="#" class="favme fa fa-heart"></a>
-                            </div>
-                        </div>
-                        <!-- Product Description -->
-                        <div class="product-description">
-                            <span>QUẦN KHAKI</span>
-                            <a href="single-product-details.jsp">
-                                <h6>QUẦN KHAKI - QKSL22230</h6>
-                            </a>
-                            <p class="product-price"><span class="old-price">999.000 ₫</span>830.000 ₫</p>
-
-                            <!-- Hover Content -->
-                            <div class="hover-content">
-                                <!-- Add to Cart -->
-                                <div class="add-to-cart-btn">
-                                    <a href="#" class="btn essence-btn">Thêm vào giỏ hàng</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- Single Product -->
-                    <div class="single-product-wrapper">
-                        <!-- Product Image -->
-                        <div class="product-img">
-                            <img src="assets/img/index/product-4-1.jpg" alt="">
-                            <!-- Hover Thumb -->
-                            <img class="hover-img" src="assets/img/index/product-4-2.jpg" alt="">
-
-                            <!-- Product Badge -->
-                            <div class="product-badge new-badge">
-                                <span>New</span>
-                            </div>
-
-                            <!-- Favourite -->
-                            <div class="product-favourite">
-                                <a href="#" class="favme fa fa-heart"></a>
-                            </div>
-                        </div>
-                        <!-- Product Description -->
-                        <div class="product-description">
-                            <span>ÁO SƠ MI</span>
-                            <a href="single-product-details.jsp">
-                                <h6>ÁO SƠ MI DÀI TAY - AR91008D2</h6>
-                            </a>
-                            <p class="product-price">498.000 ₫</p>
-
-                            <!-- Hover Content -->
-                            <div class="hover-content">
-                                <!-- Add to Cart -->
-                                <div class="add-to-cart-btn">
-                                    <a href="#" class="btn essence-btn">Thêm vào giỏ hàng</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-product-wrapper">
-                        <!-- Product Image -->
-                        <div class="product-img">
-                            <img src="assets/img/index/product-5-1.jpg" alt="">
-                            <!-- Hover Thumb -->
-                            <img class="hover-img" src="assets/img/index/product-5-2.jpg" alt="">
-
-                            <!-- Product Badge -->
-                            <div class="product-badge new-badge">
-                                <span>New</span>
-                            </div>
-
-                            <!-- Favourite -->
-                            <div class="product-favourite">
-                                <a href="#" class="favme fa fa-heart"></a>
-                            </div>
-                        </div>
-                        <!-- Product Description -->
-                        <div class="product-description">
-                            <span>ÁO JACKET</span>
-                            <a href="single-product-details.jsp">
-                                <h6>ÁO JACKET - JK61030</h6>
-                            </a>
-                            <p class="product-price">900.000 ₫</p>
-
-                            <!-- Hover Content -->
-                            <div class="hover-content">
-                                <!-- Add to Cart -->
-                                <div class="add-to-cart-btn">
-                                    <a href="#" class="btn essence-btn">Thêm vào giỏ hàng</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- ##### New Arrivals Area End ##### -->
-
-<!-- ##### Brands Area Start ##### -->
-<!--<div class="brands-area d-flex align-items-center justify-content-between">-->
-<!--    &lt;!&ndash; Brand Logo &ndash;&gt;-->
-<!--    <div class="single-brands-logo">-->
-<!--        <img src="assets/img/core-img/brand1.png" alt="">-->
-<!--    </div>-->
-<!--    &lt;!&ndash; Brand Logo &ndash;&gt;-->
-<!--    <div class="single-brands-logo">-->
-<!--        <img src="assets/img/core-img/brand2.png" alt="">-->
-<!--    </div>-->
-<!--    &lt;!&ndash; Brand Logo &ndash;&gt;-->
-<!--    <div class="single-brands-logo">-->
-<!--        <img src="assets/img/core-img/brand3.png" alt="">-->
-<!--    </div>-->
-<!--    &lt;!&ndash; Brand Logo &ndash;&gt;-->
-<!--    <div class="single-brands-logo">-->
-<!--        <img src="assets/img/core-img/brand4.png" alt="">-->
-<!--    </div>-->
-<!--    &lt;!&ndash; Brand Logo &ndash;&gt;-->
-<!--    <div class="single-brands-logo">-->
-<!--        <img src="assets/img/core-img/brand5.png" alt="">-->
-<!--    </div>-->
-<!--    &lt;!&ndash; Brand Logo &ndash;&gt;-->
-<!--    <div class="single-brands-logo">-->
-<!--        <img src="assets/img/core-img/brand6.png" alt="">-->
-<!--    </div>-->
-<!--</div>-->
-<!-- ##### Brands Area End ##### -->
+<!-- ##### Blog Wrapper Area End ##### -->
 
 <!-- ##### Footer Area Start ##### -->
 <footer class="footer_area clearfix">

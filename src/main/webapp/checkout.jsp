@@ -10,20 +10,16 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>Owen Fashion - Lịch lãm thời trang</title>
+    <title>Thanh toán</title>
 
     <!-- Favicon  -->
     <!--    <link rel="icon" href="assets/img/core-img/favicon.ico">-->
 
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="assets/css/core-style.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/style.css">
 
 </head>
-<style>
-
-
-</style>
 
 <body>
 <!-- ##### Header Area Start ##### -->
@@ -127,7 +123,12 @@
                     <li><a href="register.jsp">Tạo tài khoản</a></li>
                 </ul>
             </div>
-
+            <!-- User Login Info -->
+            <!--            <div class="user-login-info">-->
+            <!--                <a href="login.jsp"><img src="assets/img/core-img/user.svg" alt=""></a>-->
+            <!--            </div>-->
+            <!-- Cart Area -->
+            <!-- Cart Area -->
             <div class="cart-area">
                 <a href="#" id="essenceCartBtn"><img src="assets/img/core-img/bag.svg" alt=""><span>3</span></a>
             </div>
@@ -219,304 +220,197 @@
 </div>
 <!-- ##### Right Side Cart End ##### -->
 
-<!-- ##### Welcome Area Start ##### -->
-
-<section class="welcome_area bg-img background-overlay" style="background-image: url(assets/img/index/bg-1.jpg);">
-    <a href="shop.jsp">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="hero-content">
-                        <!--                        <h6>asoss</h6>-->
-                        <!--                        <h2>New Collection</h2>-->
-                        <!--                        <a href="#" class="btn essence-btn">view collection</a>-->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </a>
-</section>
-
-<!-- ##### Welcome Area End ##### -->
-
-<!-- ##### Top Catagory Area Start ##### -->
-<div class="top_catagory_area section-padding-80 clearfix">
-    <div class="container">
-        <div class="row justify-content-center">
-            <!-- Single Catagory -->
-            <div class="col-12 col-sm-6 col-md-4">
-                <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
-                     style="background-image: url(assets/img/index/bg-2.jpg);">
-                    <div class="catagory-content">
-                        <a href="#">Áo</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Catagory -->
-            <div class="col-12 col-sm-6 col-md-4">
-                <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
-                     style="background-image: url(assets/img/index/bg-3.jpg);">
-                    <div class="catagory-content">
-                        <a href="#">Quần</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Catagory -->
-            <div class="col-12 col-sm-6 col-md-4">
-                <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
-                     style="background-image: url(assets/img/bg-img/bg-4.jpg);">
-                    <div class="catagory-content">
-                        <a href="#">Phụ kiện</a>
-                    </div>
+<!-- ##### Breadcumb Area Start ##### -->
+<div class="breadcumb_area bg-img" style="background-image: url(assets/img/bg-img/breadcumb.jpg);">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="page-title text-center">
+                    <h2>thanh toán</h2>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- ##### Top Catagory Area End ##### -->
+<!-- ##### Breadcumb Area End ##### -->
 
-<!-- ##### CTA Area Start ##### -->
-<div class="cta-area">
-    <a href="shop.jsp">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="cta-content bg-img background-overlay"
-                         style="background-image: url(assets/img/index/bg-5.jpg);">
-                        <div class="h-100 d-flex align-items-center justify-content-end">
-                            <div class="cta--text">
-                                <!--                                <h6>-60%</h6>-->
-                                <!--                                <h2>Global Sale</h2>-->
-                                <!--                                <a href="#" class="btn essence-btn">Buy Now</a>-->
+<!-- ##### Checkout Area Start ##### -->
+<div class="checkout_area section-padding-80">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-12 col-md-6">
+                <div class="checkout_details_area mt-50 clearfix">
+
+                    <div class="cart-page-heading mb-30">
+                        <h5>Địa Chỉ Nhận Hàng</h5>
+                    </div>
+
+                    <form action="#" method="post">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="first_name">Tên <span>*</span></label>
+                                <input type="text" class="form-control" id="first_name" value="" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="last_name">Họ <span>*</span></label>
+                                <input type="text" class="form-control" id="last_name" value="" required>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label for="company">Tên Công Ty</label>
+                                <input type="text" class="form-control" id="company" value="">
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label for="country1">Tỉnh/Thành Phố <span>*</span></label>
+                                <select class="w-100" id="country1">
+                                    <option value="#">Vui lòng chọn tỉnh/thành phố</option>
+                                    <option value="hanoi">Hà Nội</option>
+                                    <option value="hcm">Thành Phố Hồ Chí Minh</option>
+                                    <option value="haiphong">Hải Phòng</option>
+                                    <option value="danang">Đà Nẵng</option>
+                                    <option value="hue">Huế</option>
+                                    <option value="thanhhoa">Thanh Hóa</option>
+
+                                </select>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label for="country2">Quận/Huyện <span>*</span></label>
+                                <select class="w-100" id="country2">
+                                    <option value="#">Vui lòng chọn quận/huyện</option>
+                                    <option value="hanoi">Hà Nội</option>
+                                    <option value="hcm">Thành Phố Hồ Chí Minh</option>
+                                    <option value="haiphong">Hải Phòng</option>
+                                    <option value="danang">Đà Nẵng</option>
+                                    <option value="hue">Huế</option>
+                                    <option value="thanhhoa">Thanh Hóa</option>
+
+                                </select>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label for="street_address">Địa Chỉ <span>*</span></label>
+                                <input type="text" class="form-control mb-3" id="street_address" value="">
+                                <!--<input type="text" class="form-control" id="street_address2" value="">-->
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label for="phone_number">Số điện thoại <span>*</span></label>
+                                <input type="number" class="form-control" id="phone_number" min="0" value="">
+                            </div>
+                            <div class="col-12 mb-4">
+                                <label for="email_address">Email <span>*</span></label>
+                                <input type="email" class="form-control" id="email_address" value="">
+                            </div>
+
+                            <div class="col-12">
+                                <div class="custom-control custom-checkbox d-block mb-2">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                    <label class="custom-control-label" for="customCheck1">Các điều khoản và điều kiện</label>
+                                </div>
+                                <div class="custom-control custom-checkbox d-block mb-2">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                    <label class="custom-control-label" for="customCheck2">Tạo một tài khoản</label>
+                                </div>
+                                <div class="custom-control custom-checkbox d-block">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck3">
+                                    <label class="custom-control-label" for="customCheck3">Theo dõi bản tin của chúng tôi
+                                        </label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-5 ml-lg-auto">
+                <div class="order-details-confirmation">
+
+                    <div class="cart-page-heading">
+                        <h5>Đơn đặt hàng</h5>
+                        <p>Thông tin đơn hàng</p>
+                    </div>
+
+                    <ul class="order-details-form mb-4">
+                        <li><span>Sản phẩm</span> <span>Tổng tiền</span></li>
+                     <li><span><!--   Cocktail Yellow dress--></span> <span><!--$59.90--></span></li>
+                        <li><span>Giá tiền</span> <span>0</span></li>
+                        <li><span>Vận chuyển</span> <span>Free</span></li>
+                        <li><span>Tổng tiền</span> <span>0</span></li>
+                    </ul>
+
+                    <div id="accordion" role="tablist" class="mb-4">
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingOne">
+                                <h6 class="mb-0">
+                                    <a data-toggle="collapse" href="#collapseOne" aria-expanded="false"
+                                       aria-controls="collapseOne"><i class="fa fa-circle-o mr-3"></i>Paypal</a>
+                                </h6>
+                            </div>
+
+                            <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne"
+                                 data-parent="#accordion">
+                                <div class="card-body">
+<!--                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra tempor so-->
+<!--                                        dales. Phasellus sagittis auctor gravida. Integ er bibendum sodales arcu id te-->
+<!--                                        mpus. Ut consectetur lacus.</p>-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingTwo">
+                                <h6 class="mb-0">
+                                    <a class="collapsed" data-toggle="collapse" href="#collapseTwo"
+                                       aria-expanded="false" aria-controls="collapseTwo"><i
+                                            class="fa fa-circle-o mr-3"></i>thanh toán khi nhận hàng</a>
+                                </h6>
+                            </div>
+                            <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo"
+                                 data-parent="#accordion">
+                                <div class="card-body">
+<!--                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quis in-->
+<!--                                        veritatis officia inventore, tempore provident dignissimos.</p>-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingThree">
+                                <h6 class="mb-0">
+                                    <a class="collapsed" data-toggle="collapse" href="#collapseThree"
+                                       aria-expanded="false" aria-controls="collapseThree"><i
+                                            class="fa fa-circle-o mr-3"></i>thẻ tín dụng</a>
+                                </h6>
+                            </div>
+                            <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree"
+                                 data-parent="#accordion">
+                                <div class="card-body">
+<!--                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse quo sint-->
+<!--                                        repudiandae suscipit ab soluta delectus voluptate, vero vitae</p>-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingFour">
+                                <h6 class="mb-0">
+                                    <a class="collapsed" data-toggle="collapse" href="#collapseFour"
+                                       aria-expanded="true" aria-controls="collapseFour"><i
+                                            class="fa fa-circle-o mr-3"></i>trực tiếp qua ngân hàng</a>
+                                </h6>
+                            </div>
+                            <div id="collapseFour" class="collapse show" role="tabpanel" aria-labelledby="headingThree"
+                                 data-parent="#accordion">
+                                <div class="card-body">
+<!--                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est cum autem eveniet-->
+<!--                                        saepe fugit, impedit magni.</p>-->
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <a href="#" class="btn essence-btn">Đặt hàng</a>
                 </div>
             </div>
         </div>
-    </a>
+    </div>
 </div>
-<!-- ##### CTA Area End ##### -->
-
-<!-- ##### New Arrivals Area Start ##### -->
-<section class="new_arrivals_area section-padding-80 clearfix">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="section-heading text-center">
-                    <h2>Sản phẩm bán chạy</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="popular-products-slides owl-carousel">
-
-                    <!-- Single Product -->
-                    <div class="single-product-wrapper">
-                        <!-- Product Image -->
-                        <div class="product-img">
-                            <img src="assets/img/index/product-1-1.jpg" alt="">
-                            <!-- Hover Thumb -->
-                            <img class="hover-img" src="assets/img/index/product-1-2.jpg" alt="">
-                            <!-- Favourite -->
-                            <div class="product-favourite">
-                                <a href="#" class="favme fa fa-heart"></a>
-                            </div>
-                        </div>
-                        <!-- Product Description -->
-                        <div class="product-description">
-                            <span>áo jacket</span>
-                            <a href="single-product-details.jsp">
-                                <h6>ÁO JACKET - JK61020</h6>
-                            </a>
-                            <p class="product-price">900.000 ₫</p>
-
-                            <!-- Hover Content -->
-                            <div class="hover-content">
-                                <!-- Add to Cart -->
-                                <div class="add-to-cart-btn">
-                                    <a href="#" class="btn essence-btn">Thêm vào giỏ hàng</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Product -->
-                    <div class="single-product-wrapper">
-                        <!-- Product Image -->
-                        <div class="product-img">
-                            <img src="assets/img/index/product-2-1.jpg" alt="">
-                            <!-- Hover Thumb -->
-                            <img class="hover-img" src="assets/img/index/product-2-2.jpg" alt="">
-                            <!-- Favourite -->
-                            <div class="product-favourite">
-                                <a href="#" class="favme fa fa-heart"></a>
-                            </div>
-                        </div>
-                        <!-- Product Description -->
-                        <div class="product-description">
-                            <span>áo hoodie</span>
-                            <a href="single-product-details.jsp">
-                                <h6>ÁO HOODIE - HD23293</h6>
-                            </a>
-                            <p class="product-price">510.000 ₫</p>
-
-                            <!-- Hover Content -->
-                            <div class="hover-content">
-                                <!-- Add to Cart -->
-                                <div class="add-to-cart-btn">
-                                    <a href="#" class="btn essence-btn">Thêm vào giỏ hàng</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Product -->
-                    <div class="single-product-wrapper">
-                        <!-- Product Image -->
-                        <div class="product-img">
-                            <img src="assets/img/index/product-3-1.jpg" alt="">
-                            <!-- Hover Thumb -->
-                            <img class="hover-img" src="assets/img/index/product-3-2.jpg" alt="">
-
-                            <!-- Product Badge -->
-                            <div class="product-badge offer-badge">
-                                <span>-17%</span>
-                            </div>
-
-                            <!-- Favourite -->
-                            <div class="product-favourite">
-                                <a href="#" class="favme fa fa-heart"></a>
-                            </div>
-                        </div>
-                        <!-- Product Description -->
-                        <div class="product-description">
-                            <span>QUẦN KHAKI</span>
-                            <a href="single-product-details.jsp">
-                                <h6>QUẦN KHAKI - QKSL22230</h6>
-                            </a>
-                            <p class="product-price"><span class="old-price">999.000 ₫</span>830.000 ₫</p>
-
-                            <!-- Hover Content -->
-                            <div class="hover-content">
-                                <!-- Add to Cart -->
-                                <div class="add-to-cart-btn">
-                                    <a href="#" class="btn essence-btn">Thêm vào giỏ hàng</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- Single Product -->
-                    <div class="single-product-wrapper">
-                        <!-- Product Image -->
-                        <div class="product-img">
-                            <img src="assets/img/index/product-4-1.jpg" alt="">
-                            <!-- Hover Thumb -->
-                            <img class="hover-img" src="assets/img/index/product-4-2.jpg" alt="">
-
-                            <!-- Product Badge -->
-                            <div class="product-badge new-badge">
-                                <span>New</span>
-                            </div>
-
-                            <!-- Favourite -->
-                            <div class="product-favourite">
-                                <a href="#" class="favme fa fa-heart"></a>
-                            </div>
-                        </div>
-                        <!-- Product Description -->
-                        <div class="product-description">
-                            <span>ÁO SƠ MI</span>
-                            <a href="single-product-details.jsp">
-                                <h6>ÁO SƠ MI DÀI TAY - AR91008D2</h6>
-                            </a>
-                            <p class="product-price">498.000 ₫</p>
-
-                            <!-- Hover Content -->
-                            <div class="hover-content">
-                                <!-- Add to Cart -->
-                                <div class="add-to-cart-btn">
-                                    <a href="#" class="btn essence-btn">Thêm vào giỏ hàng</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-product-wrapper">
-                        <!-- Product Image -->
-                        <div class="product-img">
-                            <img src="assets/img/index/product-5-1.jpg" alt="">
-                            <!-- Hover Thumb -->
-                            <img class="hover-img" src="assets/img/index/product-5-2.jpg" alt="">
-
-                            <!-- Product Badge -->
-                            <div class="product-badge new-badge">
-                                <span>New</span>
-                            </div>
-
-                            <!-- Favourite -->
-                            <div class="product-favourite">
-                                <a href="#" class="favme fa fa-heart"></a>
-                            </div>
-                        </div>
-                        <!-- Product Description -->
-                        <div class="product-description">
-                            <span>ÁO JACKET</span>
-                            <a href="single-product-details.jsp">
-                                <h6>ÁO JACKET - JK61030</h6>
-                            </a>
-                            <p class="product-price">900.000 ₫</p>
-
-                            <!-- Hover Content -->
-                            <div class="hover-content">
-                                <!-- Add to Cart -->
-                                <div class="add-to-cart-btn">
-                                    <a href="#" class="btn essence-btn">Thêm vào giỏ hàng</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- ##### New Arrivals Area End ##### -->
-
-<!-- ##### Brands Area Start ##### -->
-<!--<div class="brands-area d-flex align-items-center justify-content-between">-->
-<!--    &lt;!&ndash; Brand Logo &ndash;&gt;-->
-<!--    <div class="single-brands-logo">-->
-<!--        <img src="assets/img/core-img/brand1.png" alt="">-->
-<!--    </div>-->
-<!--    &lt;!&ndash; Brand Logo &ndash;&gt;-->
-<!--    <div class="single-brands-logo">-->
-<!--        <img src="assets/img/core-img/brand2.png" alt="">-->
-<!--    </div>-->
-<!--    &lt;!&ndash; Brand Logo &ndash;&gt;-->
-<!--    <div class="single-brands-logo">-->
-<!--        <img src="assets/img/core-img/brand3.png" alt="">-->
-<!--    </div>-->
-<!--    &lt;!&ndash; Brand Logo &ndash;&gt;-->
-<!--    <div class="single-brands-logo">-->
-<!--        <img src="assets/img/core-img/brand4.png" alt="">-->
-<!--    </div>-->
-<!--    &lt;!&ndash; Brand Logo &ndash;&gt;-->
-<!--    <div class="single-brands-logo">-->
-<!--        <img src="assets/img/core-img/brand5.png" alt="">-->
-<!--    </div>-->
-<!--    &lt;!&ndash; Brand Logo &ndash;&gt;-->
-<!--    <div class="single-brands-logo">-->
-<!--        <img src="assets/img/core-img/brand6.png" alt="">-->
-<!--    </div>-->
-<!--</div>-->
-<!-- ##### Brands Area End ##### -->
+<!-- ##### Checkout Area End ##### -->
 
 <!-- ##### Footer Area Start ##### -->
 <footer class="footer_area clearfix">

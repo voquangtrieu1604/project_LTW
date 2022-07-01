@@ -1,0 +1,200 @@
+.login {
+    width: 1000px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.login .login-picture {
+    float: right;
+    width: 500px;
+    height: 100px;
+}
+
+.login-form {
+    width: 400px;
+    min-height: 650px;
+}
+
+.login-form label {
+    font-size: 12px;
+    margin: 20px 0px 0px 0px;
+}
+
+.login-form #username {
+    width: 400px;
+    height: 50px;
+    background-color: rgba(206, 204, 204, 0.11);
+    border: 1px solid black;
+    padding-left: 10px;
+}
+
+.login-form #password {
+    width: 400px;
+    height: 50px;
+    background-color: rgba(206, 204, 204, 0.11);
+    border: 1px solid black;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+.login-form .forgot-password {
+    color: #2951f1;
+}
+
+.login-form button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 150px;
+    height: 50px;
+    color: white;
+    background-color: #000000;
+    font-size: 16px;
+}
+
+
+.login-form p {
+    text-align: center;
+}
+
+.login-form p a {
+    color: #dad55e;
+    font-size: 14px;
+}
+
+/* regiser */
+.register {
+    width: 1000px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.register .register-picture {
+    float: right;
+    width: 500px;
+    height: 100px;
+}
+
+.register-form {
+    width: 400px;
+    min-height: 650px;
+}
+
+.register-form label {
+    font-size: 12px;
+    margin: 20px 0px 0px 0px;
+}
+
+.register-form #name {
+    width: 400px;
+    height: 50px;
+    background-color: rgba(206, 204, 204, 0.11);
+    border: 1px solid black;
+}
+
+.register-form #username {
+    width: 400px;
+    height: 50px;
+    background-color: rgba(206, 204, 204, 0.11);
+    border: 1px solid black;
+}
+
+.register-form #phone {
+    width: 250px;
+    height: 50px;
+    background-color: rgba(206, 204, 204, 0.11);
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+.register-form #password {
+    width: 400px;
+    height: 50px;
+    background-color: rgba(206, 204, 204, 0.11);
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+.register-form #confirm-password {
+    width: 400px;
+    height: 50px;
+    background-color: rgba(206, 204, 204, 0.11);
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+.register-form #checkbox1 {
+    padding: 20px;
+}
+
+.register-form button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 150px;
+    height: 50px;
+    color: white;
+    background-color: #000000;
+    font-size: 16px;
+}
+
+.register-form input {
+    padding-left: 10px;
+}
+
+.register-form p {
+    font-size: 12px;
+}
+
+.register-form p a {
+    color: #dad55e;
+    font-size: 12px;
+}
+
+/* forgot */
+.forgot {
+    padding-top: 20px;
+
+}
+
+.forgot h3 {
+    text-align: center;
+}
+
+.forgot form {
+    width: 350px;
+    margin: 0 auto;
+    height: 350px;
+}
+
+.forgot form label {
+    font-size: 12px;
+    margin: 20px 0px 0px 0px;
+}
+
+.forgot form #email {
+    width: 350px;
+    height: 50px;
+    background-color: rgba(206, 204, 204, 0.11);
+    border: 1px solid black;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+
+.forgot form span {
+    padding-top: 50px;
+}
+
+.forgot form span a {
+    color: black;
+    font-size: 15px;
+}
+.forgot form button{
+    float: right;
+    background-color: black;
+    color: white;
+    height: 40px;
+    width: 150px;
+}
