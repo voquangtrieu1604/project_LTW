@@ -13,11 +13,11 @@
     <title>Tạo mới tài khoản khách hàng</title>
 
     <!-- Favicon  -->
-<!--    <link rel="icon" href="assets/img/core-img/favicon.ico">-->
+    <!--    <link rel="icon" href="assets/img/core-img/favicon.ico">-->
 
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="assets/css/core-style.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/login-register-forgot.css">
 
 </head>
@@ -35,7 +35,7 @@
 
     <!-- Cart Button -->
     <div class="cart-button">
-        <a href="#" id="rightSideCart"><img src="assets/img/core-img/bag.svg" alt=""> <span>3</span></a>
+        <a href="#" id="rightSideCart"><img src="assets/img/core-img/bag.svg" alt=""> <span> </span></a>
     </div>
 
     <div class="cart-content d-flex">
@@ -58,37 +58,6 @@
                 </a>
             </div>
 
-            <!-- Single Cart Item -->
-            <div class="single-cart-item">
-                <a href="#" class="product-image">
-                    <img src="assets/img/product/product-9-1.jpg" class="cart-thumb" alt="">
-                    <!-- Cart Item Desc -->
-                    <div class="cart-item-desc">
-                        <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
-                        <span class="badge">ÁO BLAZER</span>
-                        <h6>ÁO BLAZER - BL91654-BBU</h6>
-                        <p class="size">Size: L</p>
-                        <p class="color">Màu: Xanh</p>
-                        <p class="price">900.000 ₫</p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Single Cart Item -->
-            <div class="single-cart-item">
-                <a href="#" class="product-image">
-                    <img src="assets/img/product/product-7-1.jpg" class="cart-thumb" alt="">
-                    <!-- Cart Item Desc -->
-                    <div class="cart-item-desc">
-                        <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
-                        <span class="badge">ÁO HOODIE</span>
-                        <h6>ÁO HOODIES - TSD81518</h6>
-                        <p class="size">Size: M</p>
-                        <p class="color">Màu: Đen</p>
-                        <p class="price">370.000 ₫</p>
-                    </div>
-                </a>
-            </div>
         </div>
 
         <!-- Cart Summary -->
@@ -116,24 +85,26 @@
              alt="">
     </div>
     <div class="register-form">
-        <form method="post" action="">
+        <form method="post" action="Register" name="form-register" onsubmit="return verifyPassword()">
             <h3 class="title">TẠO TÀI KHOẢN</h3>
             <span class="note">Hãy đăng ký ngay để tích lũy điểm thành viên và nhận được những ưu đãi tốt hơn!</span><br>
-            <label for="name">Tên</label>
+            <label for="username">Username</label>
             <span style="color: red">*</span><br>
-            <input type="text" id="name" name="name" placeholder="Tên"><br>
-            <label for="username">Email</label>
+            <input type="text" id="username" name="username" placeholder="Username" required><br>
+            <label for="email">Email</label>
             <span style="color: red">*</span><br>
-            <input type="email" id="username" name="username" placeholder="Email"><br>
-            <label for="phone">Số điện thoại</label>
-            <span style="color: red">*</span><br>
-            <input type="text" id="phone" name="phone" placeholder="Số điện thoại"><br>
+            <input type="email" id="email" name="email" placeholder="Email" style="width: 400px;
+    height: 50px;
+    background-color: rgba(206, 204, 204, 0.11);
+    border: 1px solid black;" required><br>
+
             <label for="password">Mật khẩu</label>
             <span style="color: red">*</span><br>
-            <input type="password" id="password" name="password" placeholder="Mật khẩu"><br>
+            <input type="password" id="password" name="password" placeholder="Mật khẩu" required><br>
             <label for="confirm-password">Xác nhận mật khẩu</label>
             <span style="color: red">*</span><br>
-            <input type="password" id="confirm-password" name="confirm-password" placeholder="Xác nhận mật khẩu"><br>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Xác nhận mật khẩu"
+                   required><br>
 
             <input type="checkbox" id="checkbox1" name="checkbox1"
                    value="true">
@@ -142,11 +113,29 @@
                    value="true">
             <label for="checkbox2"> Tôi đồng ý với các điều khoản của
                 OWEN</label><br><br>
+            <p class="form-row wrap-btn" style="text-align: center; color: red">
+            <p id="message"></p>
             <button type="submit">TẠO TÀI KHOẢN</button>
+            </p>
             <br>
             <p>Bằng việc chọn tiếp tục, bạn đã đồng ý với <a href="#">Điều khoản & Điều kiện</a> cùng <a href="#">Chính
                 sách bảo mật và chia sẻ thông tin</a> của OWEN</p>
             <p style="text-align: center">Đã có tài khoản ? <a href="login.jsp"> Đăng nhập</a></p>
+            <script>
+                function verifyPassword() {
+                    let pw = document.getElementById("password").value;
+                    if (pw.length < 8) {
+                        document.getElementById("message").innerHTML = "**Mật khẩu phải trên 8 kí tự";
+                        return false;
+                    }
+                    let rpw = document.getElementById("confirm-password").value;
+                    if (!(pw === rpw)) {
+                        document.getElementById("message").innerHTML = "Nhập lại mật khẩu không giống với mật khẩu";
+                        return false;
+                    }
+                    return true;
+                }
+            </script>
         </form>
 
     </div>

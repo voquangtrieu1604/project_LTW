@@ -131,12 +131,12 @@
         </div>
         <h2 class="title">VIẾT CHO CHÚNG TÔI</h2>
         <span class="note">Gửi một lưu ý cho chúng tôi và chúng tôi sẽ trả lời bạn nhanh nhất có thể.</span><br>
-        <form action="" method="post">
+        <form action="LienHe" method="post">
 
+            <input type="text" id="email" name="email" placeholder="Email">
             <input type="text" id="name" name="name" placeholder="Tên">
-            <input type="text" id="email" name="name" placeholder="Gmail">
-            <input type="text" id="phone" name="name" placeholder="Số điện thoại"><br>
-            <textarea placeholder="Nhập nội dung"></textarea>
+            <input type="text" id="phone" name="phone" placeholder="Số điện thoại"><br>
+            <textarea name="content" placeholder="Nhập nội dung"></textarea>
             <button type="submit"> Gửi phản hồi</button>
         </form>
     </div>
