@@ -184,9 +184,6 @@ public class Product {
 
     //    public void loadComment(){
 
-    public double getPriceDiscount(){
-        return this.price*((100-percent_discount)/100.0);
-    }
 //    public void loadComment(){
 
 //        try {
@@ -221,17 +218,13 @@ public class Product {
 //    }
 //
 
-    public boolean isIdProduct(String id) {
-        if (this.id_product.equals(id)) {
-            return true;
-        } else {
+
 
     public boolean isIdProduct(String id){
         if (this.id_product.equals(id)){
             return true;
         }
         else {
-
             return false;
         }
     }
