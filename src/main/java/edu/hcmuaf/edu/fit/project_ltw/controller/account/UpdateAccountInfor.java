@@ -34,13 +34,9 @@ public class UpdateAccountInfor extends HttpServlet {
         System.out.println(pass);
         PrintWriter out = response.getWriter();
 
-        if (pass.equals(ua.getPassword())){
-            out.println("failure");
-            System.out.println("failure ");
         }
         else {
             UserService.getInstance().updateUserInfor(ua.getId_user(),username,email,phone);
-            System.out.println("do");
         }
 
     }
