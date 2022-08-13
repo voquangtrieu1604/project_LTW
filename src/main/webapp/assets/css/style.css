@@ -413,3 +413,22 @@ body .password-strength-meter {
     justify-content: center;
 
 }
+
+/*
+
+ */
+
+.updatebutton{
+    background: #070707;
+    border-radius: 1px;
+    display: block;
+    width: 100% !important;
+    height: 44px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 5px;
+    margin: 0;
+}
+

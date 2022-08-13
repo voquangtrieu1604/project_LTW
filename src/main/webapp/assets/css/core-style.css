@@ -1105,13 +1105,13 @@ img {
     visibility: visible;
 }
 
-.single-product-wrapper .product-description {
+.single-product-wrapper .product-discription {
     position: relative;
     z-index: 1;
     padding-top: 25px;
 }
 
-.single-product-wrapper .product-description span {
+.single-product-wrapper .product-discription span {
     font-size: 10px;
     text-transform: uppercase;
     color: #787878;
@@ -1120,12 +1120,12 @@ img {
     font-weight: 600;
 }
 
-.single-product-wrapper .product-description h6 {
+.single-product-wrapper .product-discription h6 {
     color: #222222;
     margin-bottom: 5px;
 }
 
-.single-product-wrapper .product-description p {
+.single-product-wrapper .product-discription p {
     margin-bottom: 0;
     font-size: 14px;
     font-family: "Ubuntu", sans-serif;
@@ -1133,7 +1133,7 @@ img {
     color: #000000;
 }
 
-.single-product-wrapper .product-description p span {
+.single-product-wrapper .product-discription p span {
     font-size: 14px;
     font-family: "Ubuntu", sans-serif;
     font-weight: 700;
@@ -1142,7 +1142,7 @@ img {
     text-decoration: line-through;
 }
 
-.single-product-wrapper .product-description .hover-content {
+.single-product-wrapper .product-discription .hover-content {
     position: absolute;
     width: calc(100% - 40px);
     top: -70px;
@@ -1154,7 +1154,7 @@ img {
     transition-duration: 500ms;
 }
 
-.single-product-wrapper .product-description .hover-content .essence-btn {
+.single-product-wrapper .product-discription .hover-content .essence-btn {
     width: 100%;
 }
 

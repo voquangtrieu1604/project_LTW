@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="">
+    <meta name="discription" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -13,130 +13,18 @@
     <title>Tạo mới tài khoản khách hàng</title>
 
     <!-- Favicon  -->
-<!--    <link rel="icon" href="assets/img/core-img/favicon.ico">-->
+    <!--    <link rel="icon" href="assets/img/core-img/favicon.ico">-->
 
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="assets/css/core-style.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/login-register-forgot.css">
 
 </head>
 
 <body>
 <!-- ##### Header Area Start ##### -->
-<header class="header_area">
-    <div class="classy-nav-container breakpoint-off d-flex align-items-center justify-content-between">
-        <!-- Classy Menu -->
-        <nav class="classy-navbar" id="essenceNav">
-            <!-- Logo -->
-            <a class="nav-brand" href="index.jsp"><img
-                    src="https://owen.vn/static/version1638932364/frontend/Owen/owen2021/vi_VN/images/logo.svg" alt=""></a>
-            <!-- Navbar Toggler -->
-            <div class="classy-navbar-toggler">
-                <span class="navbarToggler"><span></span><span></span><span></span></span>
-            </div>
-            <!-- Menu -->
-            <div class="classy-menu">
-                <!-- close btn -->
-                <div class="classycloseIcon">
-                    <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                </div>
-                <!-- Nav Start -->
-                <div class="classynav">
-                    <ul>
-                        <li><a href="#">Thu Đông</a></li>
-                        <li><a href="shop.jsp">Shop</a>
-                            <div class="megamenu">
-                                <ul class="single-mega cn-col-4">
-                                    <li class="title">Á0</li>
-                                    <li><a href="shop.jsp">Áo Jacket</a></li>
-                                    <li><a href="shop.jsp">Áo Sơ Mi</a></li>
-                                    <li><a href="shop.jsp">Áo Hoodie</a></li>
-                                    <li><a href="shop.jsp">Áo Veston</a></li>
-                                    <li><a href="shop.jsp">Áo Blazer</a></li>
-                                    <li><a href="shop.jsp">Áo Thun</a></li>
-                                    <li><a href="shop.jsp">Áo Polo</a></li>
-                                </ul>
-                                <ul class="single-mega cn-col-4">
-                                    <li class="title">Quần</li>
-                                    <li><a href="shop.jsp">Quần Tây</a></li>
-                                    <li><a href="shop.jsp">Quần Joger</a></li>
-                                    <li><a href="shop.jsp">Quần Khaki</a></li>
-                                    <li><a href="shop.jsp">Quần Jeans</a></li>
-                                    <li><a href="shop.jsp">Quần Short</a></li>
-                                </ul>
-                                <ul class="single-mega cn-col-4">
-                                    <li class="title">Phụ Kiện</li>
-                                    <li><a href="shop.jsp">Đồ Lót</a></li>
-                                    <li><a href="shop.jsp">Tất</a></li>
-                                    <li><a href="shop.jsp">Dây Lưng</a></li>
-                                    <li><a href="shop.jsp">Ví Da</a></li>
-                                    <li><a href="shop.jsp">Cà Vạt</a></li>
-                                </ul>
-                                <div class="single-mega cn-col-4">
-                                    <img src="assets/img/bg-img/bg-6.jpg" alt="">
-                                </div>
-                            </div>
-                        </li>
-                        <!--                        <li><a href="#">Pages</a>-->
-                        <!--                            <ul class="dropdown">-->
-                        <!--                                <li><a href="index.jsp">Trang Chủ</a></li>-->
-                        <!--                                <li><a href="shop.jsp">Shop</a></li>-->
-                        <!--                                <li><a href="checkout.jsp">Thanh Toán</a></li>-->
-                        <!--                                <li><a href="blog.jsp">Blog</a></li>-->
-                        <!--                                <li><a href="regular-page.jsp">Giới Thiệu</a></li>-->
-                        <!--                                <li><a href="contact.jsp">Liên Hệ - Cửa Hàng</a></li>-->
-                        <!--                            </ul>-->
-                        <!--                        </li>-->
-                        <li><a href="shop.jsp">Giá Tốt</a></li>
-                        <li><a href="blog.jsp">Blog</a></li>
-                        <!--                        <li><a href="regular-page.jsp">Giới Thiệu</a></li>-->
-                        <li><a href="contact.jsp">Liên Hệ</a></li>
-                    </ul>
-                </div>
-                <!-- Nav End -->
-            </div>
-        </nav>
-
-        <!-- Header Meta Data -->
-        <div class="header-meta d-flex clearfix justify-content-end">
-            <!-- Search Area -->
-            <div class="search-area">
-                <form action="#" method="post">
-                    <input type="search" name="search" id="headerSearch" placeholder="Tìm kiếm...">
-                    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                </form>
-            </div>
-            <!-- Favourite Area -->
-            <div class="favourite-area">
-                <a href="wishlist.jsp"><img src="assets/img/core-img/heart.svg" alt=""></a>
-            </div>
-            <!-- User Login Info -->
-            <div class="my-account">
-                <a href="#"><img src="assets/img/core-img/user.svg" alt=""></a>
-                <ul class="header links">
-                    <li><a href="myacc.jsp">Tài khoản của tôi</a></li>
-                    <li class="link wishlist" data-bind="scope: 'wishlist'" data-role="wishlist-products-link"><a
-                            href="wishlist.jsp">Danh sách yêu thích </a></li>
-                    <li class="authorization-link" data-label="hoặc"><a
-                            href="login.jsp">Đăng
-                        nhập</a></li>
-                    <li><a href="register.jsp">Tạo tài khoản</a></li>
-                </ul>
-            </div>
-            <!-- User Login Info -->
-            <!--            <div class="user-login-info">-->
-            <!--                <a href="login.jsp"><img src="assets/img/core-img/user.svg" alt=""></a>-->
-            <!--            </div>-->
-            <!-- Cart Area -->
-            <!-- Cart Area -->
-            <div class="cart-area">
-                <a href="#" id="essenceCartBtn"><img src="assets/img/core-img/bag.svg" alt=""><span>3</span></a>
-            </div>
-        </div>
-
-    </div>
-</header>
+<%@include file="header.jsp" %>
 <!-- ##### Header Area End ##### -->
 
 <!-- ##### Right Side Cart Area ##### -->
@@ -147,7 +35,7 @@
 
     <!-- Cart Button -->
     <div class="cart-button">
-        <a href="#" id="rightSideCart"><img src="assets/img/core-img/bag.svg" alt=""> <span>3</span></a>
+        <a href="#" id="rightSideCart"><img src="assets/img/core-img/bag.svg" alt=""> <span> </span></a>
     </div>
 
     <div class="cart-content d-flex">
@@ -170,37 +58,6 @@
                 </a>
             </div>
 
-            <!-- Single Cart Item -->
-            <div class="single-cart-item">
-                <a href="#" class="product-image">
-                    <img src="assets/img/product/product-9-1.jpg" class="cart-thumb" alt="">
-                    <!-- Cart Item Desc -->
-                    <div class="cart-item-desc">
-                        <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
-                        <span class="badge">ÁO BLAZER</span>
-                        <h6>ÁO BLAZER - BL91654-BBU</h6>
-                        <p class="size">Size: L</p>
-                        <p class="color">Màu: Xanh</p>
-                        <p class="price">900.000 ₫</p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Single Cart Item -->
-            <div class="single-cart-item">
-                <a href="#" class="product-image">
-                    <img src="assets/img/product/product-7-1.jpg" class="cart-thumb" alt="">
-                    <!-- Cart Item Desc -->
-                    <div class="cart-item-desc">
-                        <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
-                        <span class="badge">ÁO HOODIE</span>
-                        <h6>ÁO HOODIES - TSD81518</h6>
-                        <p class="size">Size: M</p>
-                        <p class="color">Màu: Đen</p>
-                        <p class="price">370.000 ₫</p>
-                    </div>
-                </a>
-            </div>
         </div>
 
         <!-- Cart Summary -->
@@ -228,24 +85,26 @@
              alt="">
     </div>
     <div class="register-form">
-        <form method="post" action="">
+        <form method="post" action="Register" name="form-register" onsubmit="return verifyPassword()">
             <h3 class="title">TẠO TÀI KHOẢN</h3>
             <span class="note">Hãy đăng ký ngay để tích lũy điểm thành viên và nhận được những ưu đãi tốt hơn!</span><br>
-            <label for="name">Tên</label>
+            <label for="username">Username</label>
             <span style="color: red">*</span><br>
-            <input type="text" id="name" name="name" placeholder="Tên"><br>
-            <label for="username">Email</label>
+            <input type="text" id="username" name="username" placeholder="Username" required><br>
+            <label for="email">Email</label>
             <span style="color: red">*</span><br>
-            <input type="email" id="username" name="username" placeholder="Email"><br>
-            <label for="phone">Số điện thoại</label>
-            <span style="color: red">*</span><br>
-            <input type="text" id="phone" name="phone" placeholder="Số điện thoại"><br>
+            <input type="email" id="email" name="email" placeholder="Email" style="width: 400px;
+    height: 50px;
+    background-color: rgba(206, 204, 204, 0.11);
+    border: 1px solid black;" required><br>
+
             <label for="password">Mật khẩu</label>
             <span style="color: red">*</span><br>
-            <input type="password" id="password" name="password" placeholder="Mật khẩu"><br>
+            <input type="password" id="password" name="password" placeholder="Mật khẩu" required><br>
             <label for="confirm-password">Xác nhận mật khẩu</label>
             <span style="color: red">*</span><br>
-            <input type="password" id="confirm-password" name="confirm-password" placeholder="Xác nhận mật khẩu"><br>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Xác nhận mật khẩu"
+                   required><br>
 
             <input type="checkbox" id="checkbox1" name="checkbox1"
                    value="true">
@@ -254,11 +113,29 @@
                    value="true">
             <label for="checkbox2"> Tôi đồng ý với các điều khoản của
                 OWEN</label><br><br>
+            <p class="form-row wrap-btn" style="text-align: center; color: red">
+            <p id="message"></p>
             <button type="submit">TẠO TÀI KHOẢN</button>
+            </p>
             <br>
             <p>Bằng việc chọn tiếp tục, bạn đã đồng ý với <a href="#">Điều khoản & Điều kiện</a> cùng <a href="#">Chính
                 sách bảo mật và chia sẻ thông tin</a> của OWEN</p>
             <p style="text-align: center">Đã có tài khoản ? <a href="login.jsp"> Đăng nhập</a></p>
+            <script>
+                function verifyPassword() {
+                    let pw = document.getElementById("password").value;
+                    if (pw.length < 8) {
+                        document.getElementById("message").innerHTML = "**Mật khẩu phải trên 8 kí tự";
+                        return false;
+                    }
+                    let rpw = document.getElementById("confirm-password").value;
+                    if (!(pw === rpw)) {
+                        document.getElementById("message").innerHTML = "Nhập lại mật khẩu không giống với mật khẩu";
+                        return false;
+                    }
+                    return true;
+                }
+            </script>
         </form>
 
     </div>

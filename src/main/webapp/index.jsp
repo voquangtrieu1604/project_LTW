@@ -1,10 +1,17 @@
+<%@ page import="edu.hcmuaf.edu.fit.project_ltw.beans.User" %>
+<%@ page import="java.util.List" %>
+<%@ page import="edu.hcmuaf.edu.fit.project_ltw.beans.Product" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="edu.hcmuaf.edu.fit.project_ltw.services.WishListService" %>
+<%@ page import="edu.hcmuaf.edu.fit.project_ltw.dao.WishListDao" %>
 <%@ page contentType="text/html; charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="">
+    <meta name="discription" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -17,7 +24,7 @@
 
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="assets/css/core-style.css">
-    <link rel="stylesheet" href="style.css">
+<%--    <link rel="stylesheet" href="style.css">--%>
 
 </head>
 <style>
@@ -27,114 +34,7 @@
 
 <body>
 <!-- ##### Header Area Start ##### -->
-<header class="header_area">
-    <div class="classy-nav-container breakpoint-off d-flex align-items-center justify-content-between">
-        <!-- Classy Menu -->
-        <nav class="classy-navbar" id="essenceNav">
-            <!-- Logo -->
-            <a class="nav-brand" href="index.jsp"><img
-                    src="https://owen.vn/static/version1638932364/frontend/Owen/owen2021/vi_VN/images/logo.svg" alt=""></a>
-            <!-- Navbar Toggler -->
-            <div class="classy-navbar-toggler">
-                <span class="navbarToggler"><span></span><span></span><span></span></span>
-            </div>
-            <!-- Menu -->
-            <div class="classy-menu">
-                <!-- close btn -->
-                <div class="classycloseIcon">
-                    <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                </div>
-                <!-- Nav Start -->
-                <div class="classynav">
-                    <ul>
-                        <li><a href="#">Thu Đông</a></li>
-                        <li><a href="shop.jsp">Shop</a>
-                            <div class="megamenu">
-                                <ul class="single-mega cn-col-4">
-                                    <li class="title">Á0</li>
-                                    <li><a href="shop.jsp">Áo Jacket</a></li>
-                                    <li><a href="shop.jsp">Áo Sơ Mi</a></li>
-                                    <li><a href="shop.jsp">Áo Hoodie</a></li>
-                                    <li><a href="shop.jsp">Áo Veston</a></li>
-                                    <li><a href="shop.jsp">Áo Blazer</a></li>
-                                    <li><a href="shop.jsp">Áo Thun</a></li>
-                                    <li><a href="shop.jsp">Áo Polo</a></li>
-                                </ul>
-                                <ul class="single-mega cn-col-4">
-                                    <li class="title">Quần</li>
-                                    <li><a href="shop.jsp">Quần Tây</a></li>
-                                    <li><a href="shop.jsp">Quần Joger</a></li>
-                                    <li><a href="shop.jsp">Quần Khaki</a></li>
-                                    <li><a href="shop.jsp">Quần Jeans</a></li>
-                                    <li><a href="shop.jsp">Quần Short</a></li>
-                                </ul>
-                                <ul class="single-mega cn-col-4">
-                                    <li class="title">Phụ Kiện</li>
-                                    <li><a href="shop.jsp">Đồ Lót</a></li>
-                                    <li><a href="shop.jsp">Tất</a></li>
-                                    <li><a href="shop.jsp">Dây Lưng</a></li>
-                                    <li><a href="shop.jsp">Ví Da</a></li>
-                                    <li><a href="shop.jsp">Cà Vạt</a></li>
-                                </ul>
-                                <div class="single-mega cn-col-4">
-                                    <img src="assets/img/bg-img/bg-6.jpg" alt="">
-                                </div>
-                            </div>
-                        </li>
-                        <!--                        <li><a href="#">Pages</a>-->
-                        <!--                            <ul class="dropdown">-->
-                        <!--                                <li><a href="index.jsp">Trang Chủ</a></li>-->
-                        <!--                                <li><a href="shop.jsp">Shop</a></li>-->
-                        <!--                                <li><a href="checkout.jsp">Thanh Toán</a></li>-->
-                        <!--                                <li><a href="blog.jsp">Blog</a></li>-->
-                        <!--                                <li><a href="regular-page.jsp">Giới Thiệu</a></li>-->
-                        <!--                                <li><a href="contact.jsp">Liên Hệ - Cửa Hàng</a></li>-->
-                        <!--                            </ul>-->
-                        <!--                        </li>-->
-                        <li><a href="shop.jsp">Giá Tốt</a></li>
-                        <li><a href="blog.jsp">Blog</a></li>
-                        <!--                        <li><a href="regular-page.jsp">Giới Thiệu</a></li>-->
-                        <li><a href="contact.jsp">Liên Hệ</a></li>
-                    </ul>
-                </div>
-                <!-- Nav End -->
-            </div>
-        </nav>
-
-        <!-- Header Meta Data -->
-        <div class="header-meta d-flex clearfix justify-content-end">
-            <!-- Search Area -->
-            <div class="search-area">
-                <form action="#" method="post">
-                    <input type="search" name="search" id="headerSearch" placeholder="Tìm kiếm...">
-                    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                </form>
-            </div>
-            <!-- Favourite Area -->
-            <div class="favourite-area">
-                <a href="wishlist.jsp"><img src="assets/img/core-img/heart.svg" alt=""></a>
-            </div>
-            <!-- User Login Info -->
-            <div class="my-account">
-                <a href="#"><img src="assets/img/core-img/user.svg" alt=""></a>
-                <ul class="header links">
-                    <li><a href="myacc.jsp">Tài khoản của tôi</a></li>
-                    <li class="link wishlist" data-bind="scope: 'wishlist'" data-role="wishlist-products-link"><a
-                            href="wishlist.jsp">Danh sách yêu thích </a></li>
-                    <li class="authorization-link" data-label="hoặc"><a
-                            href="login.jsp">Đăng
-                        nhập</a></li>
-                    <li><a href="register.jsp">Tạo tài khoản</a></li>
-                </ul>
-            </div>
-
-            <div class="cart-area">
-                <a href="#" id="essenceCartBtn"><img src="assets/img/core-img/bag.svg" alt=""><span>3</span></a>
-            </div>
-        </div>
-
-    </div>
-</header>
+<%@include file="header.jsp" %>
 <!-- ##### Header Area End ##### -->
 
 <!-- ##### Right Side Cart Area ##### -->
@@ -314,26 +214,41 @@
         <div class="row">
             <div class="col-12">
                 <div class="popular-products-slides owl-carousel">
-
+                    <jsp:useBean id="products" scope="request"
+                                 type="java.util.List"
+                    />
+                    <jsp:useBean id="wishlistid" scope="request"
+                                 type="java.util.List"
+                    />
+                    <%System.out.println(products.size() + "___________"); %>
+                    <c:forEach var="p" items="${products}">
                     <!-- Single Product -->
                     <div class="single-product-wrapper">
                         <!-- Product Image -->
                         <div class="product-img">
-                            <img src="assets/img/index/product-1-1.jpg" alt="">
+                            <img src="${p.img_url}" alt="">
                             <!-- Hover Thumb -->
                             <img class="hover-img" src="assets/img/index/product-1-2.jpg" alt="">
                             <!-- Favourite -->
-                            <div class="product-favourite">
-                                <a href="#" class="favme fa fa-heart"></a>
+                            <div class="product-favourite" id="heart">
+                                <c:choose>
+                                    <c:when test="${wishlistid.contains(p.id_product)}">
+                                        <a class="favme fa fa-heart active" pid=${p.id_product}></a>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <a class="favme fa fa-heart " pid=${p.id_product}></a>
+                                    </c:otherwise>
+                                </c:choose>
+<%--                                <a class="favme fa fa-heart " pid=${p.id_product}></a>--%>
                             </div>
                         </div>
-                        <!-- Product Description -->
-                        <div class="product-description">
+                        <!-- Product discription -->
+                        <div class="product-discription">
                             <span>áo jacket</span>
                             <a href="single-product-details.jsp">
-                                <h6>ÁO JACKET - JK61020</h6>
+                                <h6>${p.product_name}</h6>
                             </a>
-                            <p class="product-price">900.000 ₫</p>
+                            <p class="product-price">${p.price}</p>
 
                             <!-- Hover Content -->
                             <div class="hover-content">
@@ -344,144 +259,7 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Single Product -->
-                    <div class="single-product-wrapper">
-                        <!-- Product Image -->
-                        <div class="product-img">
-                            <img src="assets/img/index/product-2-1.jpg" alt="">
-                            <!-- Hover Thumb -->
-                            <img class="hover-img" src="assets/img/index/product-2-2.jpg" alt="">
-                            <!-- Favourite -->
-                            <div class="product-favourite">
-                                <a href="#" class="favme fa fa-heart"></a>
-                            </div>
-                        </div>
-                        <!-- Product Description -->
-                        <div class="product-description">
-                            <span>áo hoodie</span>
-                            <a href="single-product-details.jsp">
-                                <h6>ÁO HOODIE - HD23293</h6>
-                            </a>
-                            <p class="product-price">510.000 ₫</p>
-
-                            <!-- Hover Content -->
-                            <div class="hover-content">
-                                <!-- Add to Cart -->
-                                <div class="add-to-cart-btn">
-                                    <a href="#" class="btn essence-btn">Thêm vào giỏ hàng</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Product -->
-                    <div class="single-product-wrapper">
-                        <!-- Product Image -->
-                        <div class="product-img">
-                            <img src="assets/img/index/product-3-1.jpg" alt="">
-                            <!-- Hover Thumb -->
-                            <img class="hover-img" src="assets/img/index/product-3-2.jpg" alt="">
-
-                            <!-- Product Badge -->
-                            <div class="product-badge offer-badge">
-                                <span>-17%</span>
-                            </div>
-
-                            <!-- Favourite -->
-                            <div class="product-favourite">
-                                <a href="#" class="favme fa fa-heart"></a>
-                            </div>
-                        </div>
-                        <!-- Product Description -->
-                        <div class="product-description">
-                            <span>QUẦN KHAKI</span>
-                            <a href="single-product-details.jsp">
-                                <h6>QUẦN KHAKI - QKSL22230</h6>
-                            </a>
-                            <p class="product-price"><span class="old-price">999.000 ₫</span>830.000 ₫</p>
-
-                            <!-- Hover Content -->
-                            <div class="hover-content">
-                                <!-- Add to Cart -->
-                                <div class="add-to-cart-btn">
-                                    <a href="#" class="btn essence-btn">Thêm vào giỏ hàng</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- Single Product -->
-                    <div class="single-product-wrapper">
-                        <!-- Product Image -->
-                        <div class="product-img">
-                            <img src="assets/img/index/product-4-1.jpg" alt="">
-                            <!-- Hover Thumb -->
-                            <img class="hover-img" src="assets/img/index/product-4-2.jpg" alt="">
-
-                            <!-- Product Badge -->
-                            <div class="product-badge new-badge">
-                                <span>New</span>
-                            </div>
-
-                            <!-- Favourite -->
-                            <div class="product-favourite">
-                                <a href="#" class="favme fa fa-heart"></a>
-                            </div>
-                        </div>
-                        <!-- Product Description -->
-                        <div class="product-description">
-                            <span>ÁO SƠ MI</span>
-                            <a href="single-product-details.jsp">
-                                <h6>ÁO SƠ MI DÀI TAY - AR91008D2</h6>
-                            </a>
-                            <p class="product-price">498.000 ₫</p>
-
-                            <!-- Hover Content -->
-                            <div class="hover-content">
-                                <!-- Add to Cart -->
-                                <div class="add-to-cart-btn">
-                                    <a href="#" class="btn essence-btn">Thêm vào giỏ hàng</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-product-wrapper">
-                        <!-- Product Image -->
-                        <div class="product-img">
-                            <img src="assets/img/index/product-5-1.jpg" alt="">
-                            <!-- Hover Thumb -->
-                            <img class="hover-img" src="assets/img/index/product-5-2.jpg" alt="">
-
-                            <!-- Product Badge -->
-                            <div class="product-badge new-badge">
-                                <span>New</span>
-                            </div>
-
-                            <!-- Favourite -->
-                            <div class="product-favourite">
-                                <a href="#" class="favme fa fa-heart"></a>
-                            </div>
-                        </div>
-                        <!-- Product Description -->
-                        <div class="product-description">
-                            <span>ÁO JACKET</span>
-                            <a href="single-product-details.jsp">
-                                <h6>ÁO JACKET - JK61030</h6>
-                            </a>
-                            <p class="product-price">900.000 ₫</p>
-
-                            <!-- Hover Content -->
-                            <div class="hover-content">
-                                <!-- Add to Cart -->
-                                <div class="add-to-cart-btn">
-                                    <a href="#" class="btn essence-btn">Thêm vào giỏ hàng</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                    </c:forEach>
                 </div>
             </div>
         </div>
@@ -519,92 +297,50 @@
 <!-- ##### Brands Area End ##### -->
 
 <!-- ##### Footer Area Start ##### -->
-<footer class="footer_area clearfix">
-    <div class="container">
-        <div class="row">
-            <!-- Single Widget Area -->
-            <div class="col-12 col-md-6">
-                <div class="single_widget_area d-flex mb-30">
-                    <!-- Logo -->
-                    <div class="footer-logo mr-50">
-                        <a href="index.jsp"><img
-                                src="https://owen.vn/static/version1638932364/frontend/Owen/owen2021/vi_VN/images/logo-footer.svg"
-                                alt=""></a>
-                    </div>
-                    <!-- Footer Menu -->
-                    <div class="footer_menu">
-                        <ul>
-                            <li><a href="shop.jsp">Shop</a></li>
-                            <li><a href="blog.jsp">Blog</a></li>
-                            <li><a href="contact.jsp">Liên Hệ - Cửa Hàng</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Widget Area -->
-            <div class="col-12 col-md-6">
-                <div class="single_widget_area mb-30">
-                    <ul class="footer_widget_menu">
-                        <li><a href="#">Tình trạng đặt hàng</a></li>
-                        <li><a href="#">Các lựa chọn thanh toán</a></li>
-                        <li><a href="#">Vận chuyển và giao hàng</a></li>
-                        <li><a href="#">Hướng dẫn</a></li>
-                        <li><a href="#">Chính sách bảo mật</a></li>
-                        <li><a href="#">Điều khoản sử dụng</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="row align-items-end">
-            <!-- Single Widget Area -->
-            <div class="col-12 col-md-6">
-                <div class="single_widget_area">
-                    <div class="footer_heading mb-30">
-                        <h6>ĐĂNG KÝ NHẬN BẢN TIN</h6>
-                    </div>
-                    <div class="subscribtion_form">
-                        <form action="#" method="post">
-                            <input type="email" name="mail" class="mail" placeholder="Nhập email của bạn">
-                            <button type="submit" class="submit"><i class="fa fa-long-arrow-right"
-                                                                    aria-hidden="true"></i></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Widget Area -->
-            <div class="col-12 col-md-6">
-                <div class="single_widget_area">
-                    <div class="footer_social_area">
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i
-                                class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><i
-                                class="fa fa-instagram" aria-hidden="true"></i></a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"
-                                                                                                  aria-hidden="true"></i></a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i
-                                class="fa fa-pinterest" aria-hidden="true"></i></a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="Youtube"><i
-                                class="fa fa-youtube-play" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row mt-5">
-            <div class="col-md-12 text-center">
-                <p>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    © 2020 by Kowil Fashion - Phú Thái Holdings
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                </p>
-            </div>
-        </div>
-
-    </div>
-</footer>
+<%@include file="footer.jsp" %>
 <!-- ##### Footer Area End ##### -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+<script>
+    $(document).ready(function () {
+        $("#heart a").on('click',function () {
+            if (this.classList.contains("active")){
+                alert("active")
+                var id=$(this).attr("pid");
+                alert(id)
+                $.ajax({
+                    url: '/project_LTW_war/addFavoriteProduct',
+                    type: 'POST',
+                    data:{
+                        id: id
+                    },
+                    success: function (data) {
 
+
+                    }
+                })
+            }
+            else {
+                alert("noactive")
+                    var id=$(this).attr("pid");
+                    alert(id)
+                    $.ajax({
+                        url: '/project_LTW_war/removeFavoriteProduct',
+                        type: 'POST',
+                        data:{
+                            id: id
+                        },
+                        success: function (data) {
+                            // document.getElementById(id).remove();
+                        }
+                    })
+
+            }
+        })
+
+
+    })
+
+</script>
 <!-- jQuery (Necessary for All JavaScript Plugins) -->
 <script src="assets/js/jquery/jquery-2.2.4.min.js"></script>
 <!-- Popper js -->
