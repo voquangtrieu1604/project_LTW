@@ -3,8 +3,8 @@ package edu.hcmuaf.edu.fit.project_ltw.dao;
 
 import edu.hcmuaf.edu.fit.project_ltw.beans.User;
 import edu.hcmuaf.edu.fit.project_ltw.db.DbConnector;
-import edu.hcmuaf.edu.fit.project_ltw.funcion.Account;
-import edu.hcmuaf.edu.fit.project_ltw.funcion.Login;
+import edu.hcmuaf.edu.fit.project_ltw.beans.Account;
+import edu.hcmuaf.edu.fit.project_ltw.beans.Login;
 
 import java.util.List;
 import java.util.stream.Collectors;

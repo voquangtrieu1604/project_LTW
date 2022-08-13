@@ -1,6 +1,6 @@
 package edu.hcmuaf.edu.fit.project_ltw;
 
-import edu.hcmuaf.edu.fit.project_ltw.funcion.Contact;
+import edu.hcmuaf.edu.fit.project_ltw.beans.Contact;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -12,7 +12,7 @@ import java.io.PrintWriter;
 public class LienHe extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        request.getRequestDispatcher("contact.jsp").forward(request,response);
     }
 
     @Override

@@ -1,5 +1,7 @@
-package edu.hcmuaf.edu.fit.project_ltw.funcion;
+package edu.hcmuaf.edu.fit.project_ltw.beans;
 
+import edu.hcmuaf.edu.fit.project_ltw.beans.Account;
+import edu.hcmuaf.edu.fit.project_ltw.beans.Blog;
 import edu.hcmuaf.edu.fit.project_ltw.beans.Product;
 import edu.hcmuaf.edu.fit.project_ltw.dao.Bill;
 import edu.hcmuaf.edu.fit.project_ltw.db.DbConnector;

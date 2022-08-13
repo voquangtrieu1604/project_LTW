@@ -1,4 +1,4 @@
-package edu.hcmuaf.edu.fit.project_ltw.funcion;
+package edu.hcmuaf.edu.fit.project_ltw.beans;
 
 import edu.hcmuaf.edu.fit.project_ltw.db.DbConnector;
 
@@ -51,7 +51,7 @@ public class Comment_vote {
         ps.setString(2,id_user);
         int scalar = ps.executeUpdate();
     }
-    public static HashMap<String,IComment> read_comment_hash_blog(String id_blog) throws SQLException, ClassNotFoundException {
+    public static HashMap<String, IComment> read_comment_hash_blog(String id_blog) throws SQLException, ClassNotFoundException {
         Connection con = DbConnector.getCon();
         String sql = "SELECT * FROM comment_blog WHERE id_blog = ?";
         PreparedStatement ps = con.prepareStatement(sql);

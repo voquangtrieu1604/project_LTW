@@ -1,4 +1,4 @@
-package edu.hcmuaf.edu.fit.project_ltw.funcion;
+package edu.hcmuaf.edu.fit.project_ltw.beans;
 
 public class Account {
     private String id_user;

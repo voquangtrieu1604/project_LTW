@@ -1,10 +1,6 @@
 package edu.hcmuaf.edu.fit.project_ltw.beans;
 
 
-import edu.hcmuaf.edu.fit.project_ltw.funcion.CommentProduct;
-import edu.hcmuaf.edu.fit.project_ltw.funcion.Comment_vote;
-import edu.hcmuaf.edu.fit.project_ltw.funcion.IComment;
-
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;

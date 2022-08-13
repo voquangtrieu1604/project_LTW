@@ -1,10 +1,10 @@
-package edu.hcmuaf.edu.fit.project_ltw.funcion;
+package edu.hcmuaf.edu.fit.project_ltw.beans;
 
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CommentBlog implements IComment{
+public class CommentBlog implements IComment {
     private String parent;
     private String id_comment_blog,id_blog,father_id_blog,id_user,comment_content;
     private Date date_post;

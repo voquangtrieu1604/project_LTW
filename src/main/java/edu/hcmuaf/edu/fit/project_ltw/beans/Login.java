@@ -1,5 +1,6 @@
-package edu.hcmuaf.edu.fit.project_ltw.funcion;
+package edu.hcmuaf.edu.fit.project_ltw.beans;
 
+import edu.hcmuaf.edu.fit.project_ltw.beans.Account;
 import edu.hcmuaf.edu.fit.project_ltw.db.DbConnector;
 
 import java.sql.Connection;

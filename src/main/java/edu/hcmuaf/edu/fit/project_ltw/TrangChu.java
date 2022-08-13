@@ -1,9 +1,9 @@
 package edu.hcmuaf.edu.fit.project_ltw;
 
 import edu.hcmuaf.edu.fit.project_ltw.beans.Product;
-import edu.hcmuaf.edu.fit.project_ltw.funcion.Blog;
-import edu.hcmuaf.edu.fit.project_ltw.funcion.ProductClassification;
-import edu.hcmuaf.edu.fit.project_ltw.funcion.Search;
+import edu.hcmuaf.edu.fit.project_ltw.beans.Blog;
+import edu.hcmuaf.edu.fit.project_ltw.beans.ProductClassification;
+import edu.hcmuaf.edu.fit.project_ltw.beans.Search;
 
 import javax.servlet.*;
 import javax.servlet.http.*;

@@ -1,7 +1,5 @@
 package edu.hcmuaf.edu.fit.project_ltw;
 
-import edu.hcmuaf.edu.fit.project_ltw.dao.UserDao;
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -12,7 +10,7 @@ import java.io.PrintWriter;
 public class Register extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        request.getRequestDispatcher("register.jsp").forward(request,response);
     }
 
     @Override
@@ -23,7 +21,7 @@ public class Register extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
-        edu.hcmuaf.edu.fit.project_ltw.funcion.Register.registerAutoID_user(name, email, password);
+        edu.hcmuaf.edu.fit.project_ltw.beans.Register.registerAutoID_user(name, email, password);
 
         String line = "<script>window.setTimeout(function(){window.location.href = \"TrangChu\";}, 1000);</script>";
         response.getWriter().println();
