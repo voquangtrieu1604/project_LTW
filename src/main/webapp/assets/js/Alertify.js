@@ -628,12 +628,12 @@
 }(this));
 
 
-$('button.success').click(function() {
-    alertify.set({ delay: 1700 });
-    alertify.success("Success notification");
-});
-
-$('button.alert').click(function() {
-    alertify.set({ delay: 1700 });
-    alertify.error("Error notification");
-});
+// $('button.success').click(function() {
+//     alertify.set({ delay: 1700 });
+//     alertify.success("Success hau2");
+// });
+//
+// $('button.alert').click(function() {
+//     alertify.set({ delay: 1700 });
+//     alertify.error("Error notification");
+// });

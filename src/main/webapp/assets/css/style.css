@@ -418,16 +418,17 @@ body .password-strength-meter {
 
  */
 
-.alert .card-content span {
-    font-weight: bold;
-    font-size: 1.1em;
-    margin-right: 4px;
+.updatebutton{
+    background: #070707;
+    border-radius: 1px;
+    display: block;
+    width: 100% !important;
+    height: 44px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 5px;
+    margin: 0;
 }
-.alert .card-content .material-icons {
-    font-size: 1.5em;
-    position: relative;
-    top: 5px;
-    margin-right: 0.5em;
-}
-
 

@@ -17,6 +17,7 @@
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="assets/css/core-style.css">
     <link rel="stylesheet" href="assets/css/custom-theme-min.css">
+    <link rel="stylesheet" href="assets/css/alertfy.css">
 
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
@@ -131,11 +132,6 @@
 <!-- ##### Breadcumb Area End ##### -->
 <div class="container">
     <div class="container">
-        <div class="alert card green white-text">
-            <div class="card-content">
-                <p><i class="material-icons">check_circle</i><span>This is an alert:</span> It has text within it.</p>
-            </div>
-        </div>
         <div class="row profile">
             <jsp:useBean id="account" scope="request"
                          type="edu.hcmuaf.edu.fit.project_ltw.beans.User"
@@ -293,19 +289,19 @@
                     </fieldset>
 <%--                    <div class="actions-toolbar">--%>
 <%--                        <div class="primary">--%>
-<%--                            <button type="submit" id="updatebutton" class="action save primary btn"--%>
+<%--                            <button type="submit"  class="action save primary btn"--%>
 <%--                                    title="Lưu lại"><span>Cập nhật</span></button>--%>
 <%--                        </div>--%>
 <%--                        <div class="secondary"><a class="action back"--%>
 <%--                                                  href=""><span>Quay lại</span></a></div>--%>
 <%--                    </div>--%>
                 </form>
-                <a > <button class=" button success"  type="submit" onclick="updateInfor()" id="updatebutton">ĐĂNG NHẬP</button></a>
+                <div class="form form-edit-account"> <button class="button success updatebutton"  type="submit" onclick="updateInfor()">Cập nhật</button></div>
             </div>
         </div>
     </div>
 </div>
-
+<div id="result" style="display: none"></div>
 </div>
 
 <!-- ##### Footer Area Start ##### -->
@@ -361,7 +357,8 @@
              else {
                  $("#errorpass").css('display','none');
              }
-            if (username != "" && email != "" && phone != "" && pass != "" && filterPhone.test(phone) && filterEmail.test(email)){
+
+        if (username != "" && email != "" && phone != "" && pass != "" && filterPhone.test(phone) && filterEmail.test(email)){
                 $.ajax({
                     url: '/project_LTW_war/updateAccountInfor',
                     type: 'post',
@@ -372,16 +369,15 @@
                         confirmPass: pass
                     },
                     success: function (data) {
-                        if (data == "failure "){
-
+                        if (data == 0){
+                            alertify.set({ delay: 1200 });
+                            alertify.error("Sai mật khẩu");
                         }
                         else {
-
+                            alertify.set({ delay: 1200 });
+                            alertify.success("Cập nhật thành công");
+                            $("#current-password").val("");
                         }
-                        // alert("susser")
-                        // var row = document.getElementById("context");
-                        // var text = $("#context").html();
-                        // $("#context").html(data);
 
                     },
                     error: function (xhr) {
@@ -419,7 +415,7 @@
 <!-- Bootstrap js -->
 <script src="assets/js/bootstrap.min.js"></script>
 <!-- Plugins js -->
-<script src="js/plugins.js"></script>
+<%--<script src="js/plugins.js"></script>--%>
 <!-- Classy Nav js -->
 <script src="assets/js/classy-nav.min.js"></script>
 <!-- Active js -->
