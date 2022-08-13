@@ -1,5 +1,16 @@
 package edu.hcmuaf.edu.fit.project_ltw.beans;
 
+
+import edu.hcmuaf.edu.fit.project_ltw.funcion.CommentProduct;
+import edu.hcmuaf.edu.fit.project_ltw.funcion.Comment_vote;
+import edu.hcmuaf.edu.fit.project_ltw.funcion.IComment;
+
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.List;
+
+
+
 public class Product {
     private String id_product;
     private String product_name;
@@ -134,6 +145,10 @@ public class Product {
         this.price_discount = price_discount;
     }
 
+
+    private List<CommentProduct> commentRootProducts;
+    private HashMap<String, IComment> rawCommentProducts;
+
     //    public List<CommentProduct> getCommentRootProducts() {
 //        return commentRootProducts;
 //    }
@@ -161,10 +176,19 @@ public class Product {
     public void setImg_url(String img_url) {
         this.img_url = img_url;
     }
+
+
+    public double getPriceDiscount() {
+        return this.price * ((100 - percent_discount) / 100.0);
+    }
+
+    //    public void loadComment(){
+
     public double getPriceDiscount(){
         return this.price*((100-percent_discount)/100.0);
     }
 //    public void loadComment(){
+
 //        try {
 //            rawCommentProducts = Comment_vote.read_comment_hash_product(this.id_product);
 //            commentRootProducts = Comment_vote.read_comment_product(this.id_product);
@@ -196,11 +220,18 @@ public class Product {
 //        return numberComment;
 //    }
 //
+
+    public boolean isIdProduct(String id) {
+        if (this.id_product.equals(id)) {
+            return true;
+        } else {
+
     public boolean isIdProduct(String id){
         if (this.id_product.equals(id)){
             return true;
         }
         else {
+
             return false;
         }
     }
@@ -220,4 +251,33 @@ public class Product {
                 ", img_url='" + img_url + '\'' +
                 '}';
     }
+
+
+    public void loadComment() {
+        try {
+            rawCommentProducts = Comment_vote.read_comment_hash_product(this.id_product);
+            commentRootProducts = Comment_vote.read_comment_product(this.id_product);
+            this.numberComment = rawCommentProducts.size();
+            this.numstar = numstar(rawCommentProducts);
+            System.out.printf("number product,size: %d,number star: %f \n", numberComment, numstar);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    public double numstar(HashMap<String, IComment> rawComments) {
+        int total = 0;
+        for (IComment type : rawComments.values()
+        ) {
+            CommentProduct p = (CommentProduct) type;
+            total += p.getNum_star();
+        }
+        int y = (rawComments.size() == 0) ? 1 : rawComments.size();
+        double x = total / y;
+        return x / 5;
+    }
+
 }
