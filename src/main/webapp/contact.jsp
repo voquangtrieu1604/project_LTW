@@ -17,7 +17,7 @@
 
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="assets/css/core-style.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
@@ -117,7 +117,6 @@
 
     <div class="contact-info">
         <h2>HỆ THỐNG CỬA HÀNG</h2>
-        <!--            <p>Mauris viverra cursus ante laoreet eleifend. Donec vel fringilla ante. Aenean finibus velit id urna vehicula, nec maximus est sollicitudin.</p>-->
 
         <div class="contact-address mt-50">
             <p><span>Công ty: </span> CÔNG TY CỔ PHẦN THỜI TRANG KOWIL VIỆT NAM</p>
@@ -131,12 +130,12 @@
         </div>
         <h2 class="title">VIẾT CHO CHÚNG TÔI</h2>
         <span class="note">Gửi một lưu ý cho chúng tôi và chúng tôi sẽ trả lời bạn nhanh nhất có thể.</span><br>
-        <form action="" method="post">
+        <form action="LienHe" method="post">
 
+            <input type="text" id="email" name="email" placeholder="Email">
             <input type="text" id="name" name="name" placeholder="Tên">
-            <input type="text" id="email" name="name" placeholder="Gmail">
-            <input type="text" id="phone" name="name" placeholder="Số điện thoại"><br>
-            <textarea placeholder="Nhập nội dung"></textarea>
+            <input type="text" id="phone" name="phone" placeholder="Số điện thoại"><br>
+            <textarea name="content" placeholder="Nhập nội dung"></textarea>
             <button type="submit"> Gửi phản hồi</button>
         </form>
     </div>
@@ -160,8 +159,8 @@
                     <div class="footer_menu">
                         <ul>
                             <li><a href="shop.jsp">Shop</a></li>
-                            <li><a href="blog.jsp">Blog</a></li>
-                            <li><a href="contact.jsp">Liên Hệ - Cửa Hàng</a></li>
+                            <li><a href="DanhSachBlog">Blog</a></li>
+                            <li><a href="LienHe">Liên Hệ - Cửa Hàng</a></li>
                         </ul>
                     </div>
                 </div>

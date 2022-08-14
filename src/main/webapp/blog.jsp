@@ -1,3 +1,5 @@
+<%@ page import="edu.hcmuaf.edu.fit.project_ltw.beans.Blog" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html; charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -127,70 +129,32 @@
     <div class="container">
         <div class="row">
 
-            <!-- Single Blog Area -->
-            <div class="col-12 col-lg-6">
-                <div class="single-blog-area mb-50">
-                    <img src="assets/img/blog/blog-1.jpg" alt="">
-                    <!-- Post Title -->
-                    <div class="post-title">
-                        <a style="color: black" href="#">SUMMER PUZZLE - NHỮNG MẢNH GHÉP MÙA HÈ</a>
-                    </div>
-                    <!-- Hover Content -->
-                    <div class="hover-content">
-                        <!-- Post Title -->
-                        <div class="hover-post-title">
-                            <a style="color: black" href="#">SUMMER PUZZLE - NHỮNG MẢNH GHÉP MÙA HÈ</a>
-                        </div>
-                        <p>Đây có lẽ là điều mà tất cả chúng ta cần lúc này:Một bầu trời trong xanh.Một bãi cỏ trải nắng
-                            vàng.Không gian đầy tiếng cười.Và ngập tràn...</p>
-                        <a href="single-blog.jsp">Đọc tiếp... <i class="fa fa-angle-right"></i></a>
-                    </div>
-                </div>
-            </div>
+            <%
+                for (Blog b:(List<Blog>)request.getAttribute("blogs")
+                ) {
+                    String link = "ChiTietBlog?id_blog="+b.getId_blog();
 
+            %>
             <!-- Single Blog Area -->
             <div class="col-12 col-lg-6">
                 <div class="single-blog-area mb-50">
-                    <img src="assets/img/blog/blog-2.jpg" alt="">
+                    <img src="<%=b.getImg_url()%>" alt="">
                     <!-- Post Title -->
                     <div class="post-title">
-                        <a style="color: black" href="#">HOODIE / JOGGER GRIMM DC - CÙNG NHAU TẠO RA NIỀM TỰ HÀO VIỆT
-                            NAM</a>
+                        <a style="color: black" href="<%=link%>"><%=b.getName()%></a>
                     </div>
                     <!-- Hover Content -->
                     <div class="hover-content">
                         <!-- Post Title -->
                         <div class="hover-post-title">
-                            <a style="color: black" href="#">HOODIE / JOGGER GRIMM DC - CÙNG NHAU TẠO RA NIỀM TỰ HÀO
-                                VIỆT NAM</a>
+                            <a style="color: black" href="<%=link%>"><%=b.getName()%></a>
                         </div>
-                        <p>Chúng tôi đã áp dụng những công nghệ để tạo ra chất lượng vải tốt nhất, an toàn nhất cho bộ
-                            sưu tập này.[Link mua sản phẩm ở cuối bài viế...</p>
-                        <a href="#">Đọc tiếp... <i class="fa fa-angle-right"></i></a>
+                        <p><%=b.getShort_discription()%></p>
+                        <a href="<%=link%>">Đọc tiếp... <i class="fa fa-angle-right"></i></a>
                     </div>
                 </div>
             </div>
-
-            <!-- Single Blog Area -->
-            <div class="col-12 col-lg-6">
-                <div class="single-blog-area mb-50">
-                    <img src="assets/img/blog/blog-3.jpg" alt="">
-                    <!-- Post Title -->
-                    <div class="post-title">
-                        <a style="color: black" href="#">URBAN JUNGLE PANTS A.K.A QUẦN RỪNG THÀNH THỊ</a>
-                    </div>
-                    <!-- Hover Content -->
-                    <div class="hover-content">
-                        <!-- Post Title -->
-                        <div class="hover-post-title">
-                            <a style="color: black" href="#">URBAN JUNGLE PANTS A.K.A QUẦN RỪNG THÀNH THỊ</a>
-                        </div>
-                        <p>Urban Jungle pants a.k.a quần Rừng thành thị.Một sản phẩm hợp tác hình ảnh cùng Biti's
-                            Hunter.Link mua sản phẩm ở cuối bài viết.Mẫu quần ...</p>
-                        <a href="#">Đọc tiếp... <i class="fa fa-angle-right"></i></a>
-                    </div>
-                </div>
-            </div>
+            <%}%>
         </div>
     </div>
 </div>

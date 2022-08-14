@@ -116,7 +116,7 @@
              alt="">
     </div>
     <div class="login-form">
-        <form method="post" action="login" name="frm-login">
+        <form method="post" action="DangNhap" name="frm-login">
             <h3 class="title">ĐĂNG NHẬP</h3>
             <span class="note">Nếu bạn đã có tài khoản, hãy đăng nhập để tích lũy điểm thành viên và nhận được những ưu đãi tốt hơn!</span><br>
             <label for="username">Email hoặc Số điện thoại</label>
@@ -147,7 +147,7 @@
                 <div class="single_widget_area d-flex mb-30">
                     <!-- Logo -->
                     <div class="footer-logo mr-50">
-                        <a href="index.jsp"><img
+                        <a href="TrangChu"><img
                                 src="https://owen.vn/static/version1638932364/frontend/Owen/owen2021/vi_VN/images/logo-footer.svg"
                                 alt=""></a>
                     </div>
@@ -155,8 +155,8 @@
                     <div class="footer_menu">
                         <ul>
                             <li><a href="shop.jsp">Shop</a></li>
-                            <li><a href="blog.jsp">Blog</a></li>
-                            <li><a href="contact.jsp">Liên Hệ - Cửa Hàng</a></li>
+                            <li><a href="DanhSachBlog">Blog</a></li>
+                            <li><a href="LienHe">Liên Hệ - Cửa Hàng</a></li>
                         </ul>
                     </div>
                 </div>

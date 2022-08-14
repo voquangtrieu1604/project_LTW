@@ -22,7 +22,7 @@
         <!-- Classy Menu -->
         <nav class="classy-navbar" id="essenceNav">
             <!-- Logo -->
-            <a class="nav-brand" href="index.jsp"><img
+            <a class="nav-brand" href="TrangChu"><img
                     src="https://owen.vn/static/version1638932364/frontend/Owen/owen2021/vi_VN/images/logo.svg" alt=""></a>
             <!-- Navbar Toggler -->
             <div class="classy-navbar-toggler">
@@ -37,8 +37,8 @@
                 <!-- Nav Start -->
                 <div class="classynav">
                     <ul>
-                        <li><a href="#">Thu Đông</a></li>
-                        <li><a href="shop.jsp">Shop</a>
+                        <li><a href="Shop">Thu Đông</a></li>
+                        <li><a href="Shop">Shop</a>
                             <div class="megamenu">
                                 <ul class="single-mega cn-col-4">
                                     <li class="title">Á0</li>
@@ -81,10 +81,10 @@
                         <!--                                <li><a href="contact.jsp">Liên Hệ - Cửa Hàng</a></li>-->
                         <!--                            </ul>-->
                         <!--                        </li>-->
-                        <li><a href="shop.jsp">Giá Tốt</a></li>
-                        <li><a href="blog.jsp">Blog</a></li>
+                        <li><a href="GiaTot">Giá Tốt</a></li>
+                        <li><a href="DanhSachBlog">Blog</a></li>
                         <!--                        <li><a href="regular-page.jsp">Giới Thiệu</a></li>-->
-                        <li><a href="contact.jsp">Liên Hệ</a></li>
+                        <li><a href="LienHe">Liên Hệ</a></li>
                     </ul>
                 </div>
                 <!-- Nav End -->
@@ -121,7 +121,7 @@
                     <li class="authorization-link" data-label="hoặc"><a
                             href="login">Đăng
                         nhập</a></li>
-                    <li><a href="register.jsp">Tạo tài khoản</a></li>
+                    <li><a href="Register">Tạo tài khoản</a></li>
                     <%} else {%>
                     <li><a href="/project_LTW_war/myaccount"><%=ua.getUser_name()%>
                     </a></li>

@@ -3,6 +3,8 @@ package edu.hcmuaf.edu.fit.project_ltw.dao;
 
 import edu.hcmuaf.edu.fit.project_ltw.beans.User;
 import edu.hcmuaf.edu.fit.project_ltw.db.DbConnector;
+import edu.hcmuaf.edu.fit.project_ltw.beans.Account;
+import edu.hcmuaf.edu.fit.project_ltw.beans.Login;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,7 +19,7 @@ public class UserDao {
         return instance;
     }
 
-    public List<User> getListUser(){
+    public List<User> getListUser() {
         try {
             List<User> re = DbConnector.get().withHandle(h -> h.createQuery("select * from account")
                     .mapToBean(User.class)
@@ -47,12 +49,15 @@ public class UserDao {
     }
 
 
-
-
+    public Account checkLogin(String username, String password) {
+        Account user = Login.login(username, password);
+        if (user == null || !user.getUsername().equals(username)) return null;
+        return user;
+    }
 
 
     public static void main(String[] args) {
-        getInstance().updateAccountInFor("UA0009","hauupdate","hauupdae@gmail.com","0824831867");
+        getInstance().updateAccountInFor("UA0009", "hauupdate", "hauupdae@gmail.com", "0824831867");
     }
 
 

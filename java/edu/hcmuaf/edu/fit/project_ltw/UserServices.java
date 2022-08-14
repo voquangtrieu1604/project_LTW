@@ -1,4 +1,4 @@
-package edu.hcmuaf.edu.fit.project_ltw.function;
+package edu.hcmuaf.edu.fit.project_ltw;
 
 import java.util.HashMap;
 import java.util.Map;

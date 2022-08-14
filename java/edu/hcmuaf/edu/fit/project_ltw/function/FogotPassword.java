@@ -1,6 +1,7 @@
 package edu.hcmuaf.edu.fit.project_ltw.function;
 
 import edu.hcmuaf.edu.fit.project_ltw.dao.GetConnection;
+import edu.hcmuaf.edu.fit.project_ltw.function.ChangePassword;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

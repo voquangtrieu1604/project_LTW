@@ -1,3 +1,6 @@
+<%@ page import="edu.hcmuaf.edu.fit.project_ltw.beans.Blog" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Iterator" %>
 <%@ page contentType="text/html; charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +13,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>SUMMER PUZZLE - NHỮNG MẢNH GHÉP MÙA HÈ</title>
+    <title>Chi Tiết Blog</title>
 
     <!-- Favicon  -->
     <!--    <link rel="icon" href="assets/img/core-img/favicon.ico">-->
@@ -42,6 +45,8 @@
         <!-- Cart List Area -->
         <div class="cart-list">
             <!-- Single Cart Item -->
+
+
             <div class="single-cart-item">
                 <a href="#" class="product-image">
                     <img src="assets/img/product/product-1-1.jpg" class="cart-thumb" alt="">
@@ -111,61 +116,50 @@
 <!-- ##### Blog Wrapper Area Start ##### -->
 <div class="single-blog-wrapper">
 
-    <!-- Single Blog Post Thumb -->
-    <!--        <div class="single-blog-post-thumb">-->
-    <!--            <img src="assets/img/blog/blog-1.jpg" alt="">-->
-    <!--        </div>-->
 
     <!-- Single Blog Content Wrap -->
     <div class="single-blog-content-wrapper d-flex">
+        <% Blog blog = (Blog) request.getAttribute("blog");
 
+        %>
         <!-- Blog Content -->
         <div class="single-blog--text">
-            <h2>SUMMER SHALL COME.</h2>
-            <p> LET'S HOPE. </p>
+            <h2><%=blog.getName()%>
+            </h2>
+
 
             <blockquote>
-                <h6><i class="fa fa-quote-left" aria-hidden="true"></i> Đây có lẽ là điều mà tất cả chúng ta cần lúc này:<br>
-                    Một bầu trời trong xanh.<br>
-                    Một bãi cỏ trải nắng vàng.<br>
-                    Không gian đầy tiếng cười.<br>
-                    Và ngập tràn tuổi trẻ.</h6><br>
-<!--                <span>Liam Neeson</span>-->
+                <h6><i class="fa fa-quote-left" aria-hidden="true">
+
+                </i> <%=blog.getContent()%>
+                </h6><br>
+                <!--                <span>Liam Neeson</span>-->
             </blockquote>
 
             <p>Mong rằng mọi thứ tốt đẹp sẽ đến, và quãng thời gian đen tối này sẽ sớm trôi qua.</p>
         </div>
 
+
         <!-- Related Blog Post -->
         <div class="related-blog-post">
+
+            <%
+                List<Integer> numbersComment = (List<Integer>) request.getAttribute("numberCommentsWithRelateBlogs");
+                Iterator<Integer> itor = numbersComment.iterator();
+                for (Blog b : (List<Blog>) request.getAttribute("relateBlogs")
+                ) {
+                    int numberComment = itor.next();
+                    String link = "ChiTietBlog?id_blog=" + b.getId_blog();
+            %>
             <!-- Single Related Blog Post -->
             <div class="single-related-blog-post">
-                <img src="assets/img/blog/blog-1.jpg" alt="">
-                <a href="#">
-                    <h5>SUMMER PUZZLE - NHỮNG MẢNH GHÉP MÙA HÈ</h5>
+                <img src="<%=blog.getImg_url()%>" alt="">
+                <a href="<%=link%>">
+                    <h5><%=blog.getName()%>
+                    </h5>
                 </a>
             </div>
-            <!-- Single Related Blog Post -->
-            <div class="single-related-blog-post">
-                <img src="assets/img/blog/blog-1.jpg" alt="">
-                <a href="#">
-                    <h5>SUMMER PUZZLE - NHỮNG MẢNH GHÉP MÙA HÈ</h5>
-                </a>
-            </div>
-            <!-- Single Related Blog Post -->
-            <div class="single-related-blog-post">
-                <img src="assets/img/blog/blog-1.jpg" alt="">
-                <a href="#">
-                    <h5>SUMMER PUZZLE - NHỮNG MẢNH GHÉP MÙA HÈ</h5>
-                </a>
-            </div>
-            <!-- Single Related Blog Post -->
-            <div class="single-related-blog-post">
-                <img src="assets/img/blog/blog-1.jpg" alt="">
-                <a href="#">
-                    <h5>SUMMER PUZZLE - NHỮNG MẢNH GHÉP MÙA HÈ</h5>
-                </a>
-            </div>
+            <%}%>
         </div>
 
     </div>
