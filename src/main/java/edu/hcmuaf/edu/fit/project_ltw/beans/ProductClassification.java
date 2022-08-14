@@ -1,6 +1,7 @@
 package edu.hcmuaf.edu.fit.project_ltw.beans;
 
 import edu.hcmuaf.edu.fit.project_ltw.beans.Product;
+import edu.hcmuaf.edu.fit.project_ltw.dao.ProductDao;
 import edu.hcmuaf.edu.fit.project_ltw.db.DbConnector;
 
 import java.sql.Connection;
@@ -11,201 +12,26 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class ProductClassification { public static List<Product> productForSale(int limit){
-    try {
-
-        Connection con = DbConnector.getCon();
-        List<Product> products = new ArrayList<Product>();
-        String sql  = "select * from Product where percent_discount>0 limit ?";
-        PreparedStatement ps = con.prepareStatement(sql);
-        ps.setInt(1,limit);
-        ResultSet rs = ps.executeQuery();
-        while(rs.next()){
-            Product p = new Product();
-            p.setId_product(rs.getString(1));
-            p.setProduct_name(rs.getString(2));
-            p.setProduct_type(rs.getString(3));
-            p.setAmount_bought(rs.getInt(4));
-            p.setAmount_imported(rs.getInt(5));
-            p.setPercent_discount(rs.getInt(6));
-            p.setPrice(rs.getDouble(7));
-            p.setshort_discription(rs.getString(8));
-            p.setdiscription(rs.getString(9));
-            p.setImg_url(rs.getString(10));
-//                System.out.println(p.getId_product());
-            products.add(p);
-        }
-        rs.close();
-        return products;
-    } catch (SQLException e) {
-        e.printStackTrace();
-    } catch (ClassNotFoundException e) {
-        e.printStackTrace();
+public class ProductClassification {
+    public static List<Product> productForSale(int limit){
+    return ProductDao.getInstance().productForSale(limit);
     }
-    return null;
-}
     public static List<Product> productHot(int limit){
-        try {
-            Connection con = DbConnector.getCon();
-            List<Product> products = new ArrayList<Product>();
-            String sql  = "select * from Product where amount_bought > amount_imported/2 limit ?";
-            PreparedStatement ps = con.prepareStatement(sql);
-            ps.setInt(1,limit);
-            ResultSet rs = ps.executeQuery();
-            while(rs.next()){
-                Product p = new Product();
-                p.setId_product(rs.getString(1));
-                p.setProduct_name(rs.getString(2));
-                p.setProduct_type(rs.getString(3));
-                p.setAmount_bought(rs.getInt(4));
-                p.setAmount_imported(rs.getInt(5));
-                p.setPercent_discount(rs.getInt(6));
-                p.setPrice(rs.getDouble(7));
-                p.setshort_discription(rs.getString(8));
-                p.setdiscription(rs.getString(9));
-                p.setImg_url(rs.getString(10));
-//                System.out.println(p.getId_product());
-                products.add(p);
-            }
-            rs.close();
-            return products;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return null;
+
+        return ProductDao.getInstance().productHot(limit);
     }
     public static List<Product> productTypeTraiCayKhuyenMai(int limit){
-        try {
-            Connection con = DbConnector.getCon();
-            List<Product> products = new ArrayList<Product>();
-            String sql  = "select * from Product where product_type=? and percent_discount>0 limit ?";
-            PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1,"Trái cây");
-            ps.setInt(2,limit);
-            ResultSet rs = ps.executeQuery();
-            while(rs.next()){
-                Product p = new Product();
-                p.setId_product(rs.getString(1));
-                p.setProduct_name(rs.getString(2));
-                p.setProduct_type(rs.getString(3));
-                p.setAmount_bought(rs.getInt(4));
-                p.setAmount_imported(rs.getInt(5));
-                p.setPercent_discount(rs.getInt(6));
-                p.setPrice(rs.getDouble(7));
-                p.setshort_discription(rs.getString(8));
-                p.setdiscription(rs.getString(9));
-                p.setImg_url(rs.getString(10));
-//                System.out.println(p.getId_product());
-                products.add(p);
-            }
-            rs.close();;
-            return products;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return null;
+        return ProductDao.productTypeTraiCayKhuyenMai(limit);
     }
 
     public static List<Product> productTypeTraiCayHot(int limit){
-        try {
-            Connection con = DbConnector.getCon();
-            List<Product> products = new ArrayList<Product>();
-            String sql  = "select * from Product where product_type=? and amount_bought > amount_imported/2 limit ?";
-            PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1,"trái cây");
-            ps.setInt(2,limit);
-            ResultSet rs = ps.executeQuery();
-            while(rs.next()){
-                Product p = new Product();
-                p.setId_product(rs.getString(1));
-                p.setProduct_name(rs.getString(2));
-                p.setProduct_type(rs.getString(3));
-                p.setAmount_bought(rs.getInt(4));
-                p.setAmount_imported(rs.getInt(5));
-                p.setPercent_discount(rs.getInt(6));
-                p.setPrice(rs.getDouble(7));
-                p.setshort_discription(rs.getString(8));
-                p.setdiscription(rs.getString(9));
-                p.setImg_url(rs.getString(10));
-//                System.out.println(p.getId_product());
-                products.add(p);
-            }
-            rs.close();;
-            return products;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return null;
+       return ProductDao.productTypeTraiCayHot(limit);
     }
     public static List<Product> productTypeRauCuKhuyenMai(int limit){
-        try {
-            Connection con = DbConnector.getCon();
-            List<Product> products = new ArrayList<Product>();
-            String sql  = "select * from Product where product_type=? and percent_discount>0 limit ?";
-            PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1,"rau củ");
-            ps.setInt(2,limit);
-            ResultSet rs = ps.executeQuery();
-            while(rs.next()){
-                Product p = new Product();
-                p.setId_product(rs.getString(1));
-                p.setProduct_name(rs.getString(2));
-                p.setProduct_type(rs.getString(3));
-                p.setAmount_bought(rs.getInt(4));
-                p.setAmount_imported(rs.getInt(5));
-                p.setPercent_discount(rs.getInt(6));
-                p.setPrice(rs.getDouble(7));
-                p.setshort_discription(rs.getString(8));
-                p.setdiscription(rs.getString(9));
-                p.setImg_url(rs.getString(10));
-                products.add(p);
-            }
-            rs.close();;
-            return products;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return null;
+       return ProductDao.getInstance().productTypeRauCuKhuyenMai(limit);
     }
     public static List<Product> productTypeRauCuHot(int limit){
-        try {
-            Connection con = DbConnector.getCon();
-            List<Product> products = new ArrayList<Product>();
-            String sql  = "select * from Product where product_type=? and amount_bought > amount_imported/2 limit ?";
-            PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1,"rau củ");
-            ps.setInt(2,limit);
-            ResultSet rs = ps.executeQuery();
-            while(rs.next()){
-                Product p = new Product();
-                p.setId_product(rs.getString(1));
-                p.setProduct_name(rs.getString(2));
-                p.setProduct_type(rs.getString(3));
-                p.setAmount_bought(rs.getInt(4));
-                p.setAmount_imported(rs.getInt(5));
-                p.setPercent_discount(rs.getInt(6));
-                p.setPrice(rs.getDouble(7));
-                p.setshort_discription(rs.getString(8));
-                p.setdiscription(rs.getString(9));
-                p.setImg_url(rs.getString(10));
-                products.add(p);
-            }
-            rs.close();;
-            return products;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return null;
+        return  ProductDao.getInstance().productTypeRauCuHot(limit);
     }
 
     public static List<Product> orderByPriceIncrease(List<Product> products){

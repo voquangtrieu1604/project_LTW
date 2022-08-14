@@ -4,6 +4,7 @@ import edu.hcmuaf.edu.fit.project_ltw.beans.Account;
 import edu.hcmuaf.edu.fit.project_ltw.beans.Blog;
 import edu.hcmuaf.edu.fit.project_ltw.beans.Product;
 import edu.hcmuaf.edu.fit.project_ltw.dao.Bill;
+import edu.hcmuaf.edu.fit.project_ltw.dao.ProductDao;
 import edu.hcmuaf.edu.fit.project_ltw.db.DbConnector;
 
 import java.sql.Connection;
@@ -16,41 +17,7 @@ import java.util.List;
 public class Search {
 
     public static List<Product> searchByName(String name){
-        try {
-            Connection con = DbConnector.getCon();
-            List<Product> products = new ArrayList<Product>();
-            String sql = "SELECT id_product," +
-                    "product_name,product_type,amount_bought" +
-                    ",amount_imported,percent_discount,price,short_discription," +
-                    "discription,img_url FROM product WHERE product_name LIKE ?";
-            PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1,"%"+name+"%");
-            ResultSet rs = ps.executeQuery();
-            while(rs.next()){
-                Product p = new Product();
-                p.setId_product(rs.getString(1));
-                p.setProduct_name(rs.getString(2));
-                p.setProduct_type(rs.getString(3));
-                p.setAmount_bought(rs.getInt(4));
-                p.setAmount_imported(rs.getInt(5));
-                p.setPercent_discount(rs.getInt(6));
-                p.setPrice(rs.getDouble(7));
-                p.setshort_discription(rs.getString(8));
-                p.setdiscription(rs.getString(9));
-                p.setImg_url(rs.getString(10));
-                products.add(p);
-            }
-            rs.close();
-            ps.close();
-            return products;
-        } catch (SQLException e) {
-            //some error when execute query
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            //can't find the name to get COnnection down database
-            e.printStackTrace();
-        }
-        return null;
+        return ProductDao.getInstance().searchByName(name);
     }
     public static Account searchUserById(String id_user){
         try {
@@ -99,34 +66,7 @@ public class Search {
         }
     }
     public static Product searchProductById(String id){
-        try {
-            Connection con = DbConnector.getCon();
-            String sql = "select * from product where id_product = ?";
-            PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1,id);
-            ResultSet rs = ps.executeQuery();
-            Product p = new Product();
-            while(rs.next()){
-                p.setId_product(rs.getString(1));
-                p.setProduct_name(rs.getString(2));
-                p.setProduct_type(rs.getString(3));
-                p.setAmount_bought(rs.getInt(4));
-                p.setAmount_imported(rs.getInt(5));
-                p.setPercent_discount(rs.getInt(6));
-                p.setPrice(rs.getDouble(7));
-                p.setshort_discription(rs.getString(8));
-                p.setdiscription(rs.getString(9));
-                p.setImg_url(rs.getString(10));
-            }
-            ps.close();
-            rs.close();
-            return p;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-
+       return ProductDao.getInstance().getProductById(id);
     }
     public static List<Bill> bills(String id_user){
         try{

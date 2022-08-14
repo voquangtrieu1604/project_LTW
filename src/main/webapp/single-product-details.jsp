@@ -133,7 +133,7 @@
         <p class="product-price"><span
                 class="old-price"><%=product.getPrice()%></span> <%=product.getPrice() - (product.getPrice() * product.getPercent_discount() / 100)%>
         </p>
-        <p class="product-desc"><%=product.getdiscription()%>
+        <p class="product-desc"><%=product.getDescription()%>
         </p>
 
         <!-- Form -->
