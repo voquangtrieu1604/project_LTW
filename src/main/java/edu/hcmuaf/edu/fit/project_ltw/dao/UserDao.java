@@ -57,7 +57,7 @@ public class UserDao {
 
 
     public static void main(String[] args) {
-        getInstance().updateAccountInFor("UA0009", "hauupdate", "hauupdae@gmail.com", "0824831867");
+        System.out.println(getInstance().getListUser());
     }
 
 
