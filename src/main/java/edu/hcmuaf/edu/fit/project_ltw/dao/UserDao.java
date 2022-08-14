@@ -21,7 +21,7 @@ public class UserDao {
 
     public List<User> getListUser() {
         try {
-            List<User> re = DbConnector.get().withHandle(h -> h.createQuery("select * from user_account")
+            List<User> re = DbConnector.get().withHandle(h -> h.createQuery("select * from account")
                     .mapToBean(User.class)
                     .stream().collect(Collectors.toList()));
             System.out.println(re.size());
@@ -57,7 +57,7 @@ public class UserDao {
 
 
     public static void main(String[] args) {
-        getInstance().updateAccountInFor("UA0009", "hauupdate", "hauupdae@gmail.com", "0824831867");
+        System.out.println(getInstance().getListUser());
     }
 
 
