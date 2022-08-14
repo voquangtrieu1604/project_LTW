@@ -37,8 +37,8 @@
                 <!-- Nav Start -->
                 <div class="classynav">
                     <ul>
-                        <li><a href="#">Thu Đông</a></li>
-                        <li><a href="shop.jsp">Shop</a>
+                        <li><a href="Shop">Thu Đông</a></li>
+                        <li><a href="Shop">Shop</a>
                             <div class="megamenu">
                                 <ul class="single-mega cn-col-4">
                                     <li class="title">Á0</li>
@@ -81,7 +81,7 @@
                         <!--                                <li><a href="contact.jsp">Liên Hệ - Cửa Hàng</a></li>-->
                         <!--                            </ul>-->
                         <!--                        </li>-->
-                        <li><a href="shop.jsp">Giá Tốt</a></li>
+                        <li><a href="GiaTot">Giá Tốt</a></li>
                         <li><a href="DanhSachBlog">Blog</a></li>
                         <!--                        <li><a href="regular-page.jsp">Giới Thiệu</a></li>-->
                         <li><a href="LienHe">Liên Hệ</a></li>

@@ -10,7 +10,8 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class BlogFunction { public static Blog searchBlogById(String id){
+public class BlogFunction {
+    public static Blog searchBlogById(String id){
     try {
         Connection con = DbConnector.getCon();
         String sql = "select * from blog where id_blog = ?";

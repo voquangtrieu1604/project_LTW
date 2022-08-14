@@ -17,7 +17,7 @@ public class DbConnector {
 
     public static void makeConnect() {
         MysqlDataSource dataSource = new MysqlDataSource();
-        dataSource.setURL("jdbc:mysql://localhost:3306/raucuqua");
+        dataSource.setURL("jdbc:mysql://localhost:3306/owen");
         dataSource.setUser(getUsername());
         dataSource.setPassword(getPassword());
         try {
@@ -48,7 +48,7 @@ public class DbConnector {
     public static Connection connect() throws Exception {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            String url = "jdbc:mysql://localhost:3306/raucuqua";
+            String url = "jdbc:mysql://localhost:3306/owen";
             String username = "root";
             String password = "";
             Connection connect = DriverManager.getConnection(url, username, password);
