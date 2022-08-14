@@ -15,8 +15,7 @@ public class LogoutController extends HttpServlet {
             session.removeAttribute("auth");
         }
         response.sendRedirect(
-                "/home"
-        );
+                "/project_LTW_war/home");
     }
 
     @Override
