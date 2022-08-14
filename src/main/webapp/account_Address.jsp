@@ -41,82 +41,7 @@
     <div class="cart-bg-overlay"></div>
 
 
-    <div class="right-side-cart-area">
-
-        <!-- Cart Button -->
-        <div class="cart-button">
-            <a href="#" id="rightSideCart"><img src="assets/img/core-img/bag.svg" alt=""> <span>3</span></a>
-        </div>
-
-        <div class="cart-content d-flex">
-
-            <!-- Cart List Area -->
-            <div class="cart-list">
-                <!-- Single Cart Item -->
-                <div class="single-cart-item">
-                    <a href="#" class="product-image">
-                        <img src="assets/img/product/product-1-1.jpg" class="cart-thumb" alt="">
-                        <!-- Cart Item Desc -->
-                        <div class="cart-item-desc">
-                            <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
-                            <span class="badge">ÁO SƠ MI</span>
-                            <h6>ÁO SƠ MI DÀI TAY - AR91008D2</h6>
-                            <p class="size">Size: M</p>
-                            <p class="color">Màu: Trắng</p>
-                            <p class="price">299.000 ₫</p>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Single Cart Item -->
-                <div class="single-cart-item">
-                    <a href="#" class="product-image">
-                        <img src="assets/img/product/product-9-1.jpg" class="cart-thumb" alt="">
-                        <!-- Cart Item Desc -->
-                        <div class="cart-item-desc">
-                            <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
-                            <span class="badge">ÁO BLAZER</span>
-                            <h6>ÁO BLAZER - BL91654-BBU</h6>
-                            <p class="size">Size: L</p>
-                            <p class="color">Màu: Xanh</p>
-                            <p class="price">900.000 ₫</p>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Single Cart Item -->
-                <div class="single-cart-item">
-                    <a href="#" class="product-image">
-                        <img src="assets/img/product/product-7-1.jpg" class="cart-thumb" alt="">
-                        <!-- Cart Item Desc -->
-                        <div class="cart-item-desc">
-                            <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
-                            <span class="badge">ÁO HOODIE</span>
-                            <h6>ÁO HOODIES - TSD81518</h6>
-                            <p class="size">Size: M</p>
-                            <p class="color">Màu: Đen</p>
-                            <p class="price">370.000 ₫</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Cart Summary -->
-            <div class="cart-amount-summary">
-
-                <h2>Summary</h2>
-                <ul class="summary-table">
-                    <li><span>Tạm tính:</span> <span>1.5769.000 ₫</span></li>
-                    <li><span>Phí vận chuyển:</span> <span>Free</span></li>
-                    <li><span>Khuyến mãi:</span> <span>-0%</span></li>
-                    <li><span>Tổng:</span> <span>1.5769.000 ₫</span></li>
-                </ul>
-                <div class="checkout-btn mt-100">
-                    <a href="checkout.jsp" class="btn essence-btn">thanh toán</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <%@include file="cartArea.jsp" %>
     <!-- ##### Right Side Cart End ##### -->
 
     <!-- ##### Breadcumb Area Start ##### -->
@@ -146,31 +71,7 @@
                         <div class="profile-usertitle-hello"> TÀI KHOẢN </div>
                         <div class="profile-usertitle-name"> Xin chào, <span class="name">Hậu Nguyễn</span> </div>
                     </div>
-
-                    <div class="profile-usermenu">
-                        <ul class=" items">
-                            <!-- <div class="logo_menuchinh"
-                                    style="float:left; padding-top:5px; padding-left:10px; color:#fff; margin-left:auto; margin-right:auto; text-align: center; line-height:40px; font-size:16px;font-weight:bold;font-family:Arial">
-                                    HOCWEBGIARE.COM
-                                </div> -->
-                            <!-- <div class="menu-icon"><span>Menu</span></div> -->
-                            <li class=" item "> <a href="myacc.jsp"> <i class="glyphicon fas fa-question-circle"></i>
-                                    Thông
-                                    tin tài khoản </a>
-                            </li>
-                            <li class=" item active"> <a href="account_Address.jsp"> <i
-                                        class="glyphicon fas fa-map-marker-alt"></i>
-                                    Địa chỉ nhận hàng</a>
-                            </li>
-                            <li class=" item "> <a href="myorder.jsp" target=""> <i
-                                        class="glyphicon fas fa-shopping-cart"></i> Quản lý đơn hàng </a>
-                            </li>
-                            <li class=" item "> <a href="wishlist.jsp"> <i class="glyphicon far fa-heart"></i> Danh sách yêu
-                                    thích </a>
-                            </li>
-
-                        </ul>
-                    </div>
+                    <%@include file="userAccountMenu.jsp" %>
                 </div>
             </div>
             <div class="column main ">

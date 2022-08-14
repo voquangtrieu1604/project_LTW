@@ -151,8 +151,6 @@ public class ProductDao {
 
     }
 
-
-
 //    public int getTotalProductSale() {
 //        String query = "SELECT count(*) FROM `product` WHERE percent_discount NOT LIKE 0 ";
 //        try {
@@ -283,7 +281,8 @@ public class ProductDao {
 
     public static List<Product> productTypeRauCuKhuyenMai(int limit){
         try {
-            List<Product> re = DbConnector.get().withHandle(h -> h.createQuery("select * from Product where product_type= :product_type and percent_discount>0 limit :limit")
+            List<Product> re = DbConnector.get().withHandle(h -> h.createQuery(
+                    "select * from Product where product_type= :product_type and percent_discount>0 limit :limit")
                     .bind("product_type","rau củ")
                     .bind("limit",limit)
                     .mapToBean(Product.class)

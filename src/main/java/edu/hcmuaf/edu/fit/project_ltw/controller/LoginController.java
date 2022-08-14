@@ -48,7 +48,7 @@ public class LoginController extends HttpServlet {
         s.setAttribute("auth",ua);
         String x = (String) s.getAttribute("previousPage");
         if(x==null){
-            x = "index.jsp";
+            x = "home";
         }else{
             x = x.substring(1,x.length());
         }

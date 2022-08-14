@@ -28,54 +28,7 @@
 <!-- ##### Header Area End ##### -->
 
 <!-- ##### Right Side Cart Area ##### -->
-<div class="cart-bg-overlay"></div>
-
-
-<div class="right-side-cart-area">
-
-    <!-- Cart Button -->
-    <div class="cart-button">
-        <a href="#" id="rightSideCart"><img src="assets/img/core-img/bag.svg" alt=""> <span> </span></a>
-    </div>
-
-    <div class="cart-content d-flex">
-
-        <!-- Cart List Area -->
-        <div class="cart-list">
-            <!-- Single Cart Item -->
-            <div class="single-cart-item">
-                <a href="#" class="product-image">
-                    <img src="assets/img/product/product-1-1.jpg" class="cart-thumb" alt="">
-                    <!-- Cart Item Desc -->
-                    <div class="cart-item-desc">
-                        <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
-                        <span class="badge">ÁO SƠ MI</span>
-                        <h6>ÁO SƠ MI DÀI TAY - AR91008D2</h6>
-                        <p class="size">Size: M</p>
-                        <p class="color">Màu: Trắng</p>
-                        <p class="price">299.000 ₫</p>
-                    </div>
-                </a>
-            </div>
-
-        </div>
-
-        <!-- Cart Summary -->
-        <div class="cart-amount-summary">
-
-            <h2>Summary</h2>
-            <ul class="summary-table">
-                <li><span>Tạm tính:</span> <span>1.5769.000 ₫</span></li>
-                <li><span>Phí vận chuyển:</span> <span>Free</span></li>
-                <li><span>Khuyến mãi:</span> <span>-0%</span></li>
-                <li><span>Tổng:</span> <span>1.5769.000 ₫</span></li>
-            </ul>
-            <div class="checkout-btn mt-100">
-                <a href="checkout.jsp" class="btn essence-btn">thanh toán</a>
-            </div>
-        </div>
-    </div>
-</div>
+<%@include file="cartArea.jsp" %>
 <!-- ##### Right Side Cart End ##### -->
 
 <!-- ##### Form Register Area Start ##### -->
