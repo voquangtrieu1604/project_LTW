@@ -75,7 +75,7 @@ public class WishListDao {
     }
 
     public static void main(String[] args) {
-        System.out.println(getInstance().getNumberid("UA0010"));
+        System.out.println(getInstance().getNumberid("UA0008"));
     }
 
 }

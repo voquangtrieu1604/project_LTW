@@ -15,27 +15,29 @@ public class Product {
     private int amount_imported;
     private int percent_discount;
     private double price;
-    private String short_discription;
-    private String discription;
+    private String short_description;
+    private String description;
     private String img_url;
     private int numberComment;
     private double numstar;
     private double price_discount;
-//    private List<CommentProduct> commentRootProducts;
-//    private HashMap<String, IComment> rawCommentProducts;
-    public Product(String id_product, String product_name, String product_type, int amount_bought, int amount_imported, int percent_discount, double money, String short_discription, String discription, String img_url) {
-        this.id_product = id_product;
-        this.product_name = product_name;
-        this.product_type = product_type;
-        this.amount_bought = amount_bought;
-        this.amount_imported = amount_imported;
-        this.percent_discount = percent_discount;
-        this.price = money;
-        this.short_discription = short_discription;
-        this.discription = discription;
-        this.img_url = img_url;
-//        price_discount = getPriceDiscount();
-    }
+    private List<CommentProduct> commentRootProducts;
+    private HashMap<String, IComment> rawCommentProducts;
+
+    //cái này không cần trong jdbi
+//    public Product(String id_product, String product_name, String product_type, int amount_bought, int amount_imported, int percent_discount, double money, String short_discription, String discription, String img_url) {
+//        this.id_product = id_product;
+//        this.product_name = product_name;
+//        this.product_type = product_type;
+//        this.amount_bought = amount_bought;
+//        this.amount_imported = amount_imported;
+//        this.percent_discount = percent_discount;
+//        this.price = money;
+//        this.short_description = short_discription;
+//        this.description = discription;
+//        this.img_url = img_url;
+////        price_discount = getPriceDiscount();
+//    }
 
     public Product() {
     }
@@ -96,20 +98,32 @@ public class Product {
         this.price = price;
     }
 
-    public String getshort_discription() {
-        return short_discription;
+    public String getShort_description() {
+        return short_description;
     }
 
-    public void setshort_discription(String short_discription) {
-        this.short_discription = short_discription;
+    public void setShort_description(String short_description) {
+        this.short_description = short_description;
     }
 
-    public String getdiscription() {
-        return discription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setdiscription(String discription) {
-        this.discription = discription;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public List<CommentProduct> getCommentRootProducts() {
+        return commentRootProducts;
+    }
+
+    public void setCommentRootProducts(List<CommentProduct> commentRootProducts) {
+        this.commentRootProducts = commentRootProducts;
+    }
+
+    public void setRawCommentProducts(HashMap<String, IComment> rawCommentProducts) {
+        this.rawCommentProducts = rawCommentProducts;
     }
 
     public String getImg_url() {
@@ -140,9 +154,6 @@ public class Product {
         this.price_discount = price_discount;
     }
 
-
-    private List<CommentProduct> commentRootProducts;
-    private HashMap<String, IComment> rawCommentProducts;
 
 
     public HashMap<String, IComment> getRawCommentProducts() {
@@ -182,8 +193,8 @@ public class Product {
                 ", left_amount=" + amount_imported +
                 ", percent_discount=" + percent_discount +
                 ", money=" + price +
-                ", short_discription='" + short_discription + '\'' +
-                ", discription='" + discription + '\'' +
+                ", short_description='" + short_description + '\'' +
+                ", description='" + description + '\'' +
                 ", img_url='" + img_url + '\'' +
                 '}';
     }

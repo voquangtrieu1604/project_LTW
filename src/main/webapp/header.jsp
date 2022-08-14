@@ -123,7 +123,7 @@
                         nhập</a></li>
                     <li><a href="Register">Tạo tài khoản</a></li>
                     <%} else {%>
-                    <li><a href="/project_LTW_war/myaccount"><%=ua.getUser_name()%>
+                    <li><a href="myaccount"><%=ua.getUser_name()%>
                     </a></li>
                     <li class="link wishlist" data-bind="scope: 'wishlist'" data-role="wishlist-products-link"><a
                             href="wishlist">Danh sách yêu thích </a></li>

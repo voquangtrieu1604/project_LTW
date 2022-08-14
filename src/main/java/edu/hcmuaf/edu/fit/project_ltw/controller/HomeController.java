@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "Home", value = "/project_LTW_war")
+@WebServlet(name = "Home", value = "/home")
 public class HomeController extends HttpServlet {
 
     @Override
