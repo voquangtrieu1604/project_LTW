@@ -15,7 +15,15 @@
         ua = (User) session.getAttribute("auth");
     }
     System.out.println(ua);
-%>
+    %>
+    <%
+    Cart cart1 =null;
+    Collection<Product> list1 = null;
+    if(session.getAttribute("cart")!=null) {
+    cart1 = (Cart) session.getAttribute("cart");
+    list1 = cart1.getProductList();
+    }
+    %>
 <header class="header_area">
 
     <div class="classy-nav-container breakpoint-off d-flex align-items-center justify-content-between">
@@ -135,7 +143,8 @@
             </div>
 
             <div class="cart-area">
-                <a href="#" id="essenceCartBtn"><img src="assets/img/core-img/bag.svg" alt=""><span>3</span></a>
+                <a href="#" id="essenceCartBtn"><img src="assets/img/core-img/bag.svg" alt=""><span><%
+                    if (list1 == null) {%>0<%} else {%><%=list1.size()%><%}%></span></a>
             </div>
         </div>
 

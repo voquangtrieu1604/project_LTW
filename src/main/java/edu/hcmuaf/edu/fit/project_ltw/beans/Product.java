@@ -21,6 +21,11 @@ public class Product {
     private int numberComment;
     private double numstar;
     private double price_discount;
+
+    private int quantity;
+
+    private int quantitySold;
+
     private List<CommentProduct> commentRootProducts;
     private HashMap<String, IComment> rawCommentProducts;
 
@@ -172,7 +177,21 @@ public class Product {
     }
 
 
+    public int getQuantity() {
+        return quantity;
+    }
 
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public int getQuantitySold() {
+        return quantitySold;
+    }
+
+    public void setQuantitySold(int quantitySold) {
+        this.quantitySold = quantitySold;
+    }
 
     public boolean isIdProduct(String id){
         if (this.id_product.equals(id)){
@@ -215,6 +234,8 @@ public class Product {
 
     }
 
+
+
     public double numstar(HashMap<String, IComment> rawComments) {
         int total = 0;
         for (IComment type : rawComments.values()
@@ -225,6 +246,10 @@ public class Product {
         int y = (rawComments.size() == 0) ? 1 : rawComments.size();
         double x = total / y;
         return x / 5;
+    }
+
+    public double totalPriceSold(){
+        return quantitySold * price;
     }
 
 }
