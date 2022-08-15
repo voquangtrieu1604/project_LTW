@@ -40,31 +40,31 @@
                         <li><a href="Shop">Thu Đông</a></li>
                         <li><a href="Shop">Shop</a>
                             <div class="megamenu">
-                                <ul class="single-mega cn-col-4">
+                                <ul href="Shop-Ao" class="single-mega cn-col-4">
                                     <li class="title">Á0</li>
-                                    <li><a href="shop.jsp">Áo Jacket</a></li>
-                                    <li><a href="shop.jsp">Áo Sơ Mi</a></li>
-                                    <li><a href="shop.jsp">Áo Hoodie</a></li>
-                                    <li><a href="shop.jsp">Áo Veston</a></li>
-                                    <li><a href="shop.jsp">Áo Blazer</a></li>
-                                    <li><a href="shop.jsp">Áo Thun</a></li>
-                                    <li><a href="shop.jsp">Áo Polo</a></li>
+                                    <li><a href="Shop-Shirt">Áo Jacket</a></li>
+                                    <li><a href="Shop-Shirt">Áo Sơ Mi</a></li>
+                                    <li><a href="Shop-Shirt">Áo Hoodie</a></li>
+                                    <li><a href="Shop-Shirt">Áo Veston</a></li>
+                                    <li><a href="Shop-Shirt">Áo Blazer</a></li>
+                                    <li><a href="Shop-Shirt">Áo Thun</a></li>
+                                    <li><a href="Shop-Shirt">Áo Polo</a></li>
                                 </ul>
-                                <ul class="single-mega cn-col-4">
+                                <ul href="Shop-Pants" class="single-mega cn-col-4">
                                     <li class="title">Quần</li>
-                                    <li><a href="shop.jsp">Quần Tây</a></li>
-                                    <li><a href="shop.jsp">Quần Joger</a></li>
-                                    <li><a href="shop.jsp">Quần Khaki</a></li>
-                                    <li><a href="shop.jsp">Quần Jeans</a></li>
-                                    <li><a href="shop.jsp">Quần Short</a></li>
+                                    <li><a href="Shop-Pants">Quần Tây</a></li>
+                                    <li><a href="Shop-Pants">Quần Joger</a></li>
+                                    <li><a href="Shop-Pants">Quần Khaki</a></li>
+                                    <li><a href="Shop-Pants">Quần Jeans</a></li>
+                                    <li><a href="Shop-Pants">Quần Short</a></li>
                                 </ul>
                                 <ul class="single-mega cn-col-4">
                                     <li class="title">Phụ Kiện</li>
-                                    <li><a href="shop.jsp">Đồ Lót</a></li>
-                                    <li><a href="shop.jsp">Tất</a></li>
-                                    <li><a href="shop.jsp">Dây Lưng</a></li>
-                                    <li><a href="shop.jsp">Ví Da</a></li>
-                                    <li><a href="shop.jsp">Cà Vạt</a></li>
+                                    <li><a href="Shop-Accessory">Đồ Lót</a></li>
+                                    <li><a href="Shop-Accessory">Tất</a></li>
+                                    <li><a href="Shop-Accessory">Dây Lưng</a></li>
+                                    <li><a href="Shop-Accessory">Ví Da</a></li>
+                                    <li><a href="Shop-Accessory">Cà Vạt</a></li>
                                 </ul>
                                 <div class="single-mega cn-col-4">
                                     <img src="assets/img/bg-img/bg-6.jpg" alt="">
@@ -81,7 +81,7 @@
                         <!--                                <li><a href="contact.jsp">Liên Hệ - Cửa Hàng</a></li>-->
                         <!--                            </ul>-->
                         <!--                        </li>-->
-                        <li><a href="GiaTot">Giá Tốt</a></li>
+                        <li><a href="SanPhamKhuyenMai">Giá Tốt</a></li>
                         <li><a href="DanhSachBlog">Blog</a></li>
                         <!--                        <li><a href="regular-page.jsp">Giới Thiệu</a></li>-->
                         <li><a href="LienHe">Liên Hệ</a></li>

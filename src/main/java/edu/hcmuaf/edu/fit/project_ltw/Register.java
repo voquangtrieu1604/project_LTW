@@ -23,7 +23,7 @@ public class Register extends HttpServlet {
 
         edu.hcmuaf.edu.fit.project_ltw.beans.Register.registerAutoID_user(name, email, password);
 
-        String line = "<script>window.setTimeout(function(){window.location.href = \"TrangChu\";}, 1000);</script>";
+        String line = "<script>window.setTimeout(function(){window.location.href = \"login\";}, 1000);</script>";
         response.getWriter().println();
         PrintWriter out = response.getWriter();
         out.println("<!DOCTYPE html>");
