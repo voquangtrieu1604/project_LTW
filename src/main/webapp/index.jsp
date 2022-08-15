@@ -131,18 +131,17 @@
             </div>
         </div>
     </div>
-
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="popular-products-slides owl-carousel">
-                    <jsp:useBean id="products" scope="request"
-                                 type="java.util.List"
-                    />
-                    <jsp:useBean id="wishlistid" scope="request"
-                                 type="java.util.List"
-                    />
-                    <%System.out.println(products.size() + "___________"); %>
+<%--                    <jsp:useBean id="products" scope="request"--%>
+<%--                                 type="java.util.List"--%>
+<%--                    />--%>
+<%--                    <jsp:useBean id="wishlistid" scope="request"--%>
+<%--                                 type="java.util.List"--%>
+<%--                    />--%>
+<%--                    <%System.out.println(products.size() + "___________"); %>--%>
                     <c:forEach var="p" items="${products}">
                     <!-- Single Product -->
                     <div class="single-product-wrapper">
@@ -262,6 +261,27 @@
 
     })
 
+</script>
+<script>
+    window.onload = function()
+    {
+        $.ajax({
+            url: '/project_LTW_war/showCartArea',
+            type: 'get',
+            data:{
+
+            },
+            success: function (data) {
+                // var row = document.getElementById("context");
+                // var text = $("#context").html();
+                // $("#context").html(data);
+
+            },
+            error: function (xhr) {
+
+            }
+        })
+    };
 </script>
 <!-- jQuery (Necessary for All JavaScript Plugins) -->
 <script src="assets/js/jquery/jquery-2.2.4.min.js"></script>
