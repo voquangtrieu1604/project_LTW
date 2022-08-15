@@ -17,18 +17,18 @@ public class LoginController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
 
-        if(session.getAttribute("auth")!=null) {
+        if (session.getAttribute("auth") != null) {
             String username = request.getParameter("username");
             String pass = request.getParameter("password");
-            System.out.println("username "+username+", pass: "+pass);
-            User ua = new UserService().checkLogin(username,pass);
-            request.setAttribute("userInfor",ua);
+            System.out.println("username " + username + ", pass: " + pass);
+            User ua = new UserService().checkLogin(username, pass);
+            request.setAttribute("userInfor", ua);
             HttpSession s = request.getSession();
-            System.out.println("user account :"+ua.getUser_name());
-            s.setAttribute("auth",ua);
+            System.out.println("user account :" + ua.getUser_name());
+            s.setAttribute("auth", ua);
         }
 
-        request.getRequestDispatcher("login.jsp").forward(request,response);
+        request.getRequestDispatcher("login.jsp").forward(request, response);
 
     }
 
@@ -36,21 +36,23 @@ public class LoginController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String pass = request.getParameter("password");
-        User ua = new UserService().checkLogin(username,pass);
-        if(ua==null){
-            String error = "sai thông tin đăng nhập."
 
-                    ;request.setAttribute("error",error);request.getRequestDispatcher("login.jsp").forward(request,response);
+        String password = edu.hcmuaf.edu.fit.project_ltw.beans.Register.getMD5(pass);
+        User ua = new UserService().checkLogin(username, password);
+        if (ua == null) {
+            String error = "sai thông tin đăng nhập.";
+            request.setAttribute("error", error);
+            request.getRequestDispatcher("login.jsp").forward(request, response);
             return;
         }
-        request.setAttribute("userInfor",ua);
+        request.setAttribute("userInfor", ua);
         HttpSession s = request.getSession();
-        s.setAttribute("auth",ua);
+        s.setAttribute("auth", ua);
         String x = (String) s.getAttribute("previousPage");
-        if(x==null){
+        if (x == null) {
             x = "home";
-        }else{
-            x = x.substring(1,x.length());
+        } else {
+            x = x.substring(1, x.length());
         }
         response.sendRedirect(x);
     }

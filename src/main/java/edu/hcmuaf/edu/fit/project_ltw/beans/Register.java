@@ -2,6 +2,9 @@ package edu.hcmuaf.edu.fit.project_ltw.beans;
 
 import edu.hcmuaf.edu.fit.project_ltw.db.DbConnector;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -66,8 +69,30 @@ public class Register {
         }
     }
 
+    public static String convertByteToHex(byte[] data) {
+        BigInteger number = new BigInteger(1, data);
+        String hashtext = number.toString(16);
+        // Now we need to zero pad it if you actually want the full 32 chars.
+        while (hashtext.length() < 32) {
+            hashtext = "0" + hashtext;
+        }
+        return hashtext;
+    }
+
+    public static String getMD5(String input) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            byte[] messageDigest = md.digest(input.getBytes());
+            return convertByteToHex(messageDigest);
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
     public static void main(String[] args) {
-        registerAutoID_user("trieu", "trieu@gmail.com", "Quangtrieu");
+//        registerAutoID_user("trieu", "trieu@gmail.com", "Quangtrieu");
+
+        System.out.println(getMD5("Quangtrieu"));
     }
 }

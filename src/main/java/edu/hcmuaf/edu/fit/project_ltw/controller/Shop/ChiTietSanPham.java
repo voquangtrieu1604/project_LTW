@@ -1,4 +1,4 @@
-package edu.hcmuaf.edu.fit.project_ltw;
+package edu.hcmuaf.edu.fit.project_ltw.controller.Shop;
 
 import edu.hcmuaf.edu.fit.project_ltw.beans.Product;
 import edu.hcmuaf.edu.fit.project_ltw.beans.ProductFunction;

@@ -177,24 +177,20 @@
 
                                 <div class="total-products">
 
-                                    <% ProductDao dao = new ProductDao();
-                                        int soLuongSanPham = dao.getTotalProduct();%>
-                                    <p><span>  <%=soLuongSanPham%>  </span> sản phẩm được tìm thấy</p>
+                                    <p><span> ${count}</span> sản phẩm được tìm thấy</p>
 
                                 </div>
 
                                 <!-- Sorting -->
                                 <div class="product-sorting d-flex">
                                     <p>Sắp xếp theo:</p>
-                                    <form action="#" method="get">
-                                        <select name="select" id="sortByselect">
-                                            <option value="value">Bán chạy nhất</option>
-                                            <option value="value">Theo bảng chữ cái từ A-Z</option>
-                                            <option value="value">Theo bảng chữ cái từ Z-A</option>
-                                            <option value="value">Giá từ thấp tới cao</option>
-                                            <option value="value">Giá từ cao tới thấp</option>
-                                            <option value="value">Mới nhất</option>
-                                            <option value="value">Cũ nhất</option>
+                                    <form action="Shop" method="post">
+                                        <select name="select" id="sortByselect" onchange="location = this.value;">
+                                            <option value="Shop">Bán chạy nhất</option>
+                                            <option value="${sort}_sort_title_ascending">Theo bảng chữ cái từ A-Z</option>
+                                            <option value="${sort}_sort_title_descending">Theo bảng chữ cái từ Z-A</option>
+                                            <option value="${sort}_sort_price_ascending">Giá từ thấp tới cao</option>
+                                            <option value="${sort}_sort_price_descending">Giá từ cao tới thấp</option>
                                         </select>
                                         <input type="submit" class="d-none" value="">
                                     </form>
@@ -204,61 +200,62 @@
                     </div>
 
                     <div class="row">
-
                         <c:forEach items="${listProduct}" var="p">
 
                             <!-- Single Product -->
-                            <div class="col-12 col-sm-6 col-lg-4" style="max-height: 500px">
-                                <div class="single-product-wrapper">
-                                    <!-- Product Image -->
-                                    <div class="product-img" style="height: 350px; max-height: 350px">
-                                        <img src="${p.img_url}" alt="">
-                                        <!-- Hover Thumb -->
-                                        <img class="hover-img" src="${p.img_url}" alt="">
+                            <a href="ChiTietSanPham?id_product=${p.id_product}">
+                                <div class="col-12 col-sm-6 col-lg-4" style="max-height: 500px">
+                                    <div class="single-product-wrapper">
+                                        <!-- Product Image -->
+                                        <div class="product-img" style="height: 350px; max-height: 350px">
+                                            <img src="${p.img_url}" alt="">
+                                            <!-- Hover Thumb -->
+                                            <img class="hover-img" src="${p.img_url}" alt="">
 
-                                        <!-- Product Badge -->
-                                        <div class="product-badge offer-badge">
-                                            <span>${p.percent_discount}%</span>
+                                            <!-- Product Badge -->
+                                            <div class="product-badge offer-badge">
+                                                <span>${p.percent_discount}%</span>
+                                            </div>
+                                            <!-- Favourite -->
+                                            <div class="product-favourite">
+                                                <a href="#" class="favme fa fa-heart"></a>
+                                            </div>
                                         </div>
-                                        <!-- Favourite -->
-                                        <div class="product-favourite">
-                                            <a href="#" class="favme fa fa-heart"></a>
-                                        </div>
-                                    </div>
 
-                                    <!-- Product discription -->
-                                    <div class="product-discription">
-                                        <span>${p.product_type}</span>
-                                        <a href="ChiTietSanPham?id_product=${p.id_product}">
+                                        <!-- Product discription -->
+                                        <div class="product-discription">
+                                            <span>${p.product_type}</span>
+
                                             <h6>${p.product_name}
                                             </h6>
-                                        </a>
-                                        <p class="product-price"><span
-                                                class="old-price">${p.price}</span>${p.price * (100 - p.percent_discount) / 100.0}
-                                        </p>
 
-                                        <!-- Hover Content -->
-                                        <div class="hover-content">
-                                            <!-- Add to Cart -->
-                                            <div class="add-to-cart-btn">
-                                                <a href="#" class="btn essence-btn">Thêm vào giỏ hàng</a>
+                                            <p class="product-price"><span
+                                                    class="old-price">${p.price}</span>${p.price * (100 - p.percent_discount) / 100.0}
+                                            </p>
+                                            <!-- Hover Content -->
+                                            <div class="hover-content">
+                                                <!-- Add to Cart -->
+                                                <div class="add-to-cart-btn">
+                                                    <a href="#" class="btn essence-btn">Thêm vào giỏ hàng</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </c:forEach>
-
                     </div>
                 </div>
                 <!-- Pagination -->
                 <nav aria-label="navigation">
                     <ul class="pagination mt-50 mb-70">
-                        <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a></li>
+                        <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a>
+                        </li>
                         <c:forEach begin="1" end="${endPage}" var="i">
-                            <li class="page-item"><a class="page-link" href="Shop?index=${i}">${i}</a></li>
+                            <li class="page-item"><a class="page-link" href="?index=${i}">${i}</a></li>
                         </c:forEach>
-                        <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>
+                        <li class="page-item"><a class="page-link" href="#"><i
+                                class="fa fa-angle-right"></i></a></li>
                     </ul>
                 </nav>
             </div>

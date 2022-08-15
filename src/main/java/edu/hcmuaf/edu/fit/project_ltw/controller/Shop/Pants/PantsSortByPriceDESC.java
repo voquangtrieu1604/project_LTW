@@ -1,21 +1,19 @@
-package edu.hcmuaf.edu.fit.project_ltw;
+package edu.hcmuaf.edu.fit.project_ltw.controller.Shop.Pants;
 
 import edu.hcmuaf.edu.fit.project_ltw.beans.Product;
 import edu.hcmuaf.edu.fit.project_ltw.dao.ProductDao;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "Shop", value = "/Shop")
-public class Shop extends HttpServlet {
+@WebServlet(name = "PantsSortByPriceDESC", value = "/Pants_sort_price_descending")
+public class PantsSortByPriceDESC extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        String sort = "Pants";
         String indexPage = request.getParameter("index");
         if (indexPage == null) {
             indexPage = "1";
@@ -30,10 +28,12 @@ public class Shop extends HttpServlet {
             endPage++;
         }
 
-        List<Product> list = productDao.pagingProduct(index);
+        List<Product> list = productDao.pagingProductPantsPriceDESC(index);
 
         request.setAttribute("listProduct", list);
         request.setAttribute("endPage", endPage);
+        request.setAttribute("count", count);
+        request.setAttribute("sort", sort);
         request.getRequestDispatcher("shop.jsp").forward(request, response);
     }
 
