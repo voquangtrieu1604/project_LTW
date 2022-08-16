@@ -143,8 +143,8 @@
             </div>
 
             <div class="cart-area">
-                <a href="#" id="essenceCartBtn"><img src="assets/img/core-img/bag.svg" alt=""><span><%
-                    if (list1 == null) {%>0<%} else {%><%=list1.size()%><%}%></span></a>
+                <a href="#" id="essenceCartBtn"><img src="assets/img/core-img/bag.svg" alt=""><span id="numberProductCartHeader"><%
+                    if (cart1 == null) {%>0<%} else {%><%=cart1.getNumberProductInCart()%><%}%></span></a>
             </div>
         </div>
 

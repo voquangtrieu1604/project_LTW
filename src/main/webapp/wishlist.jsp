@@ -288,7 +288,6 @@
 <script>
     // $(document).ready(function () {
         function clickheart(idProduct) {
-            alert(idProduct.id)
             var id=idProduct.id;
             $.ajax({
                 url: '/project_LTW_war/removeFavoriteProduct',

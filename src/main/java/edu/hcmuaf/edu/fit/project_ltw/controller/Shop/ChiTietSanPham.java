@@ -17,12 +17,12 @@ public class ChiTietSanPham extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        System.out.println("run to chi tiet san pham,id: "+request.getParameter("id_product"));
         Product p = Search.searchProductById(request.getParameter("id_product"));
-        p.loadComment();
-        request.setAttribute("product",p);
-        //set set number attributes
-        request.setAttribute("numberstarsArray", ProductFunction.returnNumberStar(p.getRawCommentProducts()));
-        //relate products:
-        request.setAttribute("relateProducts", ProductFunction.searchProductByTypeAndQuantity(p.getProduct_type(),5));
+//        p.loadComment();
+            request.setAttribute("product",p);
+//        //set set number attributes
+//        request.setAttribute("numberstarsArray", ProductFunction.returnNumberStar(p.getRawCommentProducts()));
+//        //relate products:
+//        request.setAttribute("relateProducts", ProductFunction.searchProductByTypeAndQuantity(p.getProduct_type(),5));
         request.getRequestDispatcher("single-product-details.jsp").forward(request,response);
     }
 
