@@ -26,6 +26,10 @@ public class Product {
 
     private int quantitySold;
 
+    private String color;
+
+    private String size;
+
     private List<CommentProduct> commentRootProducts;
     private HashMap<String, IComment> rawCommentProducts;
 
@@ -193,6 +197,22 @@ public class Product {
         this.quantitySold = quantitySold;
     }
 
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
+
     public boolean isIdProduct(String id){
         if (this.id_product.equals(id)){
             return true;
@@ -250,6 +270,10 @@ public class Product {
 
     public double totalPriceSold(){
         return quantitySold * price;
+    }
+
+    public void upOneQuantitySold(){
+        this.quantitySold++;
     }
 
 }

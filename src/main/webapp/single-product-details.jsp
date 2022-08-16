@@ -18,11 +18,12 @@
 
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="assets/css/core-style.css">
-    <link rel="stylesheet" href="style.css">
+
 
 </head>
 
 <body>
+<% Product product = (Product) request.getAttribute("product");%>
 <!-- ##### Header Area Start ##### -->
 <%@include file="header.jsp" %>
 <!-- ##### Header Area End ##### -->
@@ -33,9 +34,7 @@
 
 <!-- ##### Single Product Details Area Start ##### -->
 <section class="single_product_details_area d-flex align-items-center">
-    <% Product product = (Product) request.getAttribute("product");
 
-    %>
     <!-- Single Product Thumb -->
     <div class="single_product_thumb clearfix">
         <div class="product_thumbnail_slides owl-carousel">
@@ -63,118 +62,93 @@
             <!-- Select Box -->
             <div class="select-box d-flex mt-50 mb-30">
                 <select name="select" id="productSize" class="mr-5">
-                    <option value="value">Size: XL</option>
-                    <option value="value">Size: X</option>
-                    <option value="value">Size: M</option>
-                    <option value="value">Size: S</option>
+                    <option value="XL">Size: XL</option>
+                    <option value="X">Size: X</option>
+                    <option value="M">Size: M</option>
+                    <option value="S">Size: S</option>
                 </select>
                 <select name="select" id="productColor">
-                    <option value="value">Màu: Đen</option>
-                    <option value="value">Màu: Trắng</option>
-                    <option value="value">Màu: Đỏ</option>
-                    <option value="value">Màu: Xanh</option>
+                    <option value="đen">Màu: Đen</option>
+                    <option value="trắng">Màu: Trắng</option>
+                    <option value="đỏ">Màu: Đỏ</option>
+                    <option value="xanh">Màu: Xanh</option>
                 </select>
             </div>
             <!-- Cart & Favourite Box -->
-            <div class="cart-fav-box d-flex align-items-center">
-                <!-- Cart -->
-                <button type="submit" name="addtocart" value="5" class="btn essence-btn">Thêm vào giỏ hàng</button>
-                <!-- Favourite -->
-                <div class="product-favourite ml-4">
-                    <a href="#" class="favme fa fa-heart"></a>
-                </div>
-            </div>
         </form>
+        <div class="cart-fav-box d-flex align-items-center">
+            <!-- Cart -->
+            <button id="addCart" type="submit" name="addtocart" value="5" class="btn essence-btn">Thêm vào giỏ hàng</button>
+            <!-- Favourite -->
+            <div class="product-favourite ml-4">
+                <a href="#" class="favme fa fa-heart"></a>
+            </div>
+        </div>
     </div>
 </section>
 <!-- ##### Single Product Details Area End ##### -->
 
 <!-- ##### Footer Area Start ##### -->
-<footer class="footer_area clearfix">
-    <div class="container">
-        <div class="row">
-            <!-- Single Widget Area -->
-            <div class="col-12 col-md-6">
-                <div class="single_widget_area d-flex mb-30">
-                    <!-- Logo -->
-                    <div class="footer-logo mr-50">
-                        <a href="TrangChu"><img
-                                src="https://owen.vn/static/version1638932364/frontend/Owen/owen2021/vi_VN/images/logo-footer.svg"
-                                alt=""></a>
-                    </div>
-                    <!-- Footer Menu -->
-                    <div class="footer_menu">
-                        <ul>
-                            <li><a href="Shop">Shop</a></li>
-                            <li><a href="DanhSachBlog">Blog</a></li>
-                            <li><a href="LienHe">Liên Hệ - Cửa Hàng</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Widget Area -->
-            <div class="col-12 col-md-6">
-                <div class="single_widget_area mb-30">
-                    <ul class="footer_widget_menu">
-                        <li><a href="#">Tình trạng đặt hàng</a></li>
-                        <li><a href="#">Các lựa chọn thanh toán</a></li>
-                        <li><a href="#">Vận chuyển và giao hàng</a></li>
-                        <li><a href="#">Hướng dẫn</a></li>
-                        <li><a href="#">Chính sách bảo mật</a></li>
-                        <li><a href="#">Điều khoản sử dụng</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="row align-items-end">
-            <!-- Single Widget Area -->
-            <div class="col-12 col-md-6">
-                <div class="single_widget_area">
-                    <div class="footer_heading mb-30">
-                        <h6>ĐĂNG KÝ NHẬN BẢN TIN</h6>
-                    </div>
-                    <div class="subscribtion_form">
-                        <form action="#" method="post">
-                            <input type="email" name="mail" class="mail" placeholder="Nhập email của bạn">
-                            <button type="submit" class="submit"><i class="fa fa-long-arrow-right"
-                                                                    aria-hidden="true"></i></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Widget Area -->
-            <div class="col-12 col-md-6">
-                <div class="single_widget_area">
-                    <div class="footer_social_area">
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i
-                                class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><i
-                                class="fa fa-instagram" aria-hidden="true"></i></a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"
-                                                                                                  aria-hidden="true"></i></a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i
-                                class="fa fa-pinterest" aria-hidden="true"></i></a>
-                        <a href="#" data-toggle="tooltip" data-placement="top" title="Youtube"><i
-                                class="fa fa-youtube-play" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row mt-5">
-            <div class="col-md-12 text-center">
-                <p>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    © 2020 by Kowil Fashion - Phú Thái Holdings
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                </p>
-            </div>
-        </div>
-
-    </div>
-</footer>
+<%@include file="footer.jsp" %>
 <!-- ##### Footer Area End ##### -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+<script>
+    var num = "<%=cart.getNumberProductInCart()%>";
+    $(document).ready(function () {
+        $("#addCart").click(function () {
+            var color = $("#productColor").val();
+            alert(color)
+            var size = $("#productSize").val();
+            alert(size)
+            var id="<%=product.getId_product()%>";
+            $.ajax({
+                url: '/project_LTW_war/addProductToCart',
+                type: 'post',
+                data:{
+                    colorProduct: color,
+                    sizeProduct: size,
+                    id: id
+                },
+                success: function (data) {
+                    alert("hau")
+
+                    $("#listCart").html(data);
+                    num++
+                    $("#numberProductCartHeader").html(num);
+                    $("#numberProductCart").html(num);
+                },
+                error: function (xhr) {
+
+                }
+            })
+
+        })
+    })
+</script>
+
+<script>
+    var num = "<%=cart.getNumberProductInCart()%>";
+    function removeThisProduct(idProduct) {
+        var id=idProduct.id;
+        alert(id);
+        $.ajax({
+            url: '/project_LTW_war/removeProductFromCart',
+            type: 'post',
+            data:{
+                id: id
+            },
+            success: function (data) {
+                $("#listCart").html(data);
+                num--
+                $("#numberProductCartHeader").html(num);
+                $("#numberProductCart").html(num);
+            },
+            error: function (xhr) {
+
+            }
+        })
+    }
+</script>
 
 <!-- jQuery (Necessary for All JavaScript Plugins) -->
 <script src="assets/js/jquery/jquery-2.2.4.min.js"></script>
