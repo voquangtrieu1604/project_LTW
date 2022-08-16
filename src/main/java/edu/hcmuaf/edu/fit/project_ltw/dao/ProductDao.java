@@ -733,14 +733,44 @@ public class ProductDao {
         }
     }
 
+    public List<Product> pagingProductPriceMinMax(int min, int max) {
+        try {
+            List<Product> re = DbConnector.get().withHandle(h -> h.createQuery("select * from product WHERE price between " + min + " and " + max + " order by price ASC")
+                    .mapToBean(Product.class)
+                    .stream().collect(Collectors.toList()));
+            System.out.println(re.size());
+            return re;
+        } catch (Exception exception) {
+            System.out.println(exception);
+            return null;
+
+        }
+    }
+
+
+
+
+    public int getTotalProductMinMax(int min, int max) {
+        try {
+            Integer re = DbConnector.get().withHandle(h -> h.createQuery("select count(*) from product where price between " + min + " and " + max)
+                    .mapTo(Integer.class)
+                    .one());
+            return re;
+        } catch (Exception exception) {
+            System.out.println(exception);
+            return 0;
+
+        }
+
+    }
 
     public static void main(String[] args) {
-        System.out.println(getInstance().pagingProductShirt(1));
-
-//        ProductDao dao = new ProductDao();
 //        System.out.println(getInstance().pagingProductShirt(1));
-//        List<Product> listShirt = dao.pagingProductShirt(1);
-//
-//        System.out.println(listShirt.size());
+
+        ProductDao dao = new ProductDao();
+////       System.out.println(getInstance().pagingProductShirt(1));
+        int listShirt = dao.getTotalProductMinMax(1, 500000);
+        System.out.println(listShirt);
+
     }
 }

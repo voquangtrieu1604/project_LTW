@@ -117,16 +117,14 @@
                         <p class="widget-title2 mb-30">Giá</p>
 
                         <div class="widget-desc">
-                            <div class="slider-range">
-                                <div data-min="0" data-max="9999000" data-unit=""
-                                     class="slider-range-price ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
-                                     data-value-min="0" data-value-max="9999000" data-label-result="Phạm vi:">
-                                    <div class="ui-slider-range ui-widget-header ui-corner-all"></div>
-                                    <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"></span>
-                                    <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"></span>
-                                </div>
-                                <div class="range-price">Range: 0 - 9.999.000</div>
-                            </div>
+                            <form method="post" action="ShopLocGia" style="margin-bottom: 50px">
+                                <input type="number" name="min_price" id="min_price" style="margin-bottom: 10px"
+                                       required placeholder="0">
+                                <input type="number" name="max_price" id="max_price" style="margin-bottom: 10px"
+                                       required placeholder="9.999.999">
+                                <input  type="submit" name="filter_price" value="Lọc Giá" class="btn btn-default">
+
+                            </form>
                         </div>
                     </div>
 
@@ -187,8 +185,10 @@
                                     <form action="Shop" method="post">
                                         <select name="select" id="sortByselect" onchange="location = this.value;">
                                             <option value="Shop">Bán chạy nhất</option>
-                                            <option value="${sort}_sort_title_ascending">Theo bảng chữ cái từ A-Z</option>
-                                            <option value="${sort}_sort_title_descending">Theo bảng chữ cái từ Z-A</option>
+                                            <option value="${sort}_sort_title_ascending">Theo bảng chữ cái từ A-Z
+                                            </option>
+                                            <option value="${sort}_sort_title_descending">Theo bảng chữ cái từ Z-A
+                                            </option>
                                             <option value="${sort}_sort_price_ascending">Giá từ thấp tới cao</option>
                                             <option value="${sort}_sort_price_descending">Giá từ cao tới thấp</option>
                                         </select>
@@ -249,13 +249,12 @@
                 <!-- Pagination -->
                 <nav aria-label="navigation">
                     <ul class="pagination mt-50 mb-70">
-                        <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a>
+<%--                        <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a>--%>
                         </li>
                         <c:forEach begin="1" end="${endPage}" var="i">
                             <li class="page-item"><a class="page-link" href="?index=${i}">${i}</a></li>
                         </c:forEach>
-                        <li class="page-item"><a class="page-link" href="#"><i
-                                class="fa fa-angle-right"></i></a></li>
+<%--                        <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>--%>
                     </ul>
                 </nav>
             </div>
