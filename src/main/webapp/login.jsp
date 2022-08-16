@@ -13,13 +13,13 @@
     <title>Khách hàng đăng nhập</title>
 
     <!-- Favicon  -->
-<!--    <link rel="icon" href="assets/img/core-img/favicon.ico">-->
+    <!--    <link rel="icon" href="assets/img/core-img/favicon.ico">-->
 
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="assets/css/core-style.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/login-register-forgot.css">
-
+    <link rel="stylesheet" href="assets/css/LoginGoogle.css">
 </head>
 
 <body>
@@ -48,11 +48,26 @@
             <span style="color: red">*</span><br>
             <input type="password" id="password" name="password"><br>
             <a class="forgot-password" href="forgot.jsp">Bạn quên mật khẩu ?</a><br>
-            <a href="myacc.jsp"> <button type="submit">ĐĂNG NHẬP</button></a>
+            <a href="myacc.jsp">
+                <button type="submit">ĐĂNG NHẬP</button>
+            </a>
             <br>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
+                    <a href="#" class="btn btn-primary facebook"> <span>Login with Facebook</span> <i
+                            class="fa fa-facebook"></i> </a>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
+                    <a href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8080/project_LTW_war/login-google&response_type=code
+    &client_id=245989591092-705c87btcvp8kr3cfuhfrdd01i4tjj0m.apps.googleusercontent.com&approval_prompt=force"
+                       class="btn btn-primary google-plus"> Login with Google <i class="fa fa-google-plus"></i>
+                    </a>
+                </div>
+            </div>
             <p>Không có tài khoản ? <a href="register.jsp"> Tạo một tài khoản</a></p>
-            <%if(request.getAttribute("error")!=null){%>
-            <p style="color:red"><%=request.getAttribute("error")%></p>
+            <%if (request.getAttribute("error") != null) {%>
+            <p style="color:red"><%=request.getAttribute("error")%>
+            </p>
             <%}%>
         </form>
     </div>

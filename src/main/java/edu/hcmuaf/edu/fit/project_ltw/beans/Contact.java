@@ -10,7 +10,7 @@ public class Contact {
     public static void addContact(String email, String name, String phone, String content) {
         try {
             Connection con = DbConnector.getCon();
-            String nextID = Register.nextID(con, "contact", "id_contact", "CT");
+            String nextID = DangKy.nextID(con, "contact", "id_contact", "CT");
             String sql = "insert into contact values (?,?,?,?,?)";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, nextID);

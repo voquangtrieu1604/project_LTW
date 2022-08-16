@@ -1,14 +1,13 @@
 package edu.hcmuaf.edu.fit.project_ltw;
 
 
+import edu.hcmuaf.edu.fit.project_ltw.beans.DangKy;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.math.BigInteger;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 @WebServlet(name = "Register", value = "/Register")
 public class Register extends HttpServlet {
@@ -27,8 +26,8 @@ public class Register extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
-        String pass = edu.hcmuaf.edu.fit.project_ltw.beans.Register.getMD5(password);
-        edu.hcmuaf.edu.fit.project_ltw.beans.Register.registerAutoID_user(name, email, pass);
+        String pass = DangKy.getMD5(password);
+        DangKy.registerAutoID_user(name, email, pass);
 
         String line = "<script>window.setTimeout(function(){window.location.href = \"login\";}, 1000);</script>";
         response.getWriter().println();

@@ -1,5 +1,6 @@
 package edu.hcmuaf.edu.fit.project_ltw.controller;
 
+import edu.hcmuaf.edu.fit.project_ltw.beans.DangKy;
 import edu.hcmuaf.edu.fit.project_ltw.beans.User;
 import edu.hcmuaf.edu.fit.project_ltw.services.UserService;
 
@@ -37,7 +38,7 @@ public class LoginController extends HttpServlet {
         String username = request.getParameter("username");
         String pass = request.getParameter("password");
 
-        String password = edu.hcmuaf.edu.fit.project_ltw.beans.Register.getMD5(pass);
+        String password = DangKy.getMD5(pass);
         User ua = new UserService().checkLogin(username, password);
         if (ua == null) {
             String error = "sai thông tin đăng nhập.";

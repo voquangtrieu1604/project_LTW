@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Register {
+public class DangKy {
 
     public static int getMax(List<Integer> list) {
         if (list == null || list.size() == 0) {
@@ -53,14 +53,30 @@ public class Register {
     public static void registerAutoID_user(String username, String email, String password) {
         try {
             Connection con = DbConnector.getCon();
-            String newID = nextID(con, "account", "id_user", "UA");
+//            String newID = nextID(con, "account", "id_user", "UA");
             String sqladd = "insert into account(id_user,user_name,email,password) values(?,?,?,?)";
             PreparedStatement psAd = con.prepareStatement(sqladd);
-            psAd.setString(1, newID);
+            psAd.setString(1, username);
             psAd.setString(2, username);
             psAd.setString(3, email);
             psAd.setString(4, password);
 
+            int result = psAd.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void registerAccountGoogle(String id, String username, String email) {
+        try {
+            Connection con = DbConnector.getCon();
+            String sql = "insert into account(id_user,user_name,email,password) values(?,?,?,'')";
+            PreparedStatement psAd = con.prepareStatement(sql);
+            psAd.setString(1, id);
+            psAd.setString(2, username);
+            psAd.setString(3, email);
             int result = psAd.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);

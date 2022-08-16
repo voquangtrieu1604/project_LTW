@@ -15,7 +15,7 @@ public class Comment_vote {
     public static void insert_comment_blog(String id_blog, String father_id_blog, String id_user, String comment_content) {
         try {
             Connection con = DbConnector.getCon();
-            String id_comment_blog = Register.nextID(con, "comment_blog", "id_comment_blog", "BL");
+            String id_comment_blog = DangKy.nextID(con, "comment_blog", "id_comment_blog", "BL");
             System.out.println(id_comment_blog);
             String sql = "insert into comment_blog values (?,?,?,?,?,?,?)";
             PreparedStatement ps = con.prepareStatement(sql);
@@ -155,7 +155,7 @@ public class Comment_vote {
     public static void insert_comment_product(String id_product,String father_id_product,String id_user,int num_star,String comment_content)  {
         try {
             Connection con = DbConnector.getCon();
-            String id_comment_product = Register.nextID(con, "comment_product", "id_comment_product", "CP");
+            String id_comment_product = DangKy.nextID(con, "comment_product", "id_comment_product", "CP");
             String sql = "insert into comment_product values (?,?,?,?,?,?,?)";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, id_comment_product);
