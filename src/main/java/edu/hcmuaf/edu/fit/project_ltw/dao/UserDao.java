@@ -6,6 +6,10 @@ import edu.hcmuaf.edu.fit.project_ltw.db.DbConnector;
 import edu.hcmuaf.edu.fit.project_ltw.beans.Account;
 import edu.hcmuaf.edu.fit.project_ltw.beans.Login;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -59,6 +63,4 @@ public class UserDao {
     public static void main(String[] args) {
         System.out.println(getInstance().getListUser());
     }
-
-
 }

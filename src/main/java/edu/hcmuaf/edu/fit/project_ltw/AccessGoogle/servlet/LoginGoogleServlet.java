@@ -44,7 +44,7 @@ public class LoginGoogleServlet extends HttpServlet {
             UserService us = new UserService();
 
 
-            if (us.checkLoginGoogle(googlePojo.getId(), googlePojo.getEmail()) == null) {
+            if (us.checkGmailGoogle(googlePojo.getEmail()) == null) {
 
                 DangKy.registerAccountGoogle(googlePojo.getId(), googlePojo.getEmail(), googlePojo.getEmail());
 
@@ -55,7 +55,7 @@ public class LoginGoogleServlet extends HttpServlet {
                 s.setAttribute("auth", ua);
             } else {
 
-                User ua = new UserService().checkLoginGoogle(googlePojo.getId(), googlePojo.getEmail());
+                User ua = new UserService().checkGmailGoogle(googlePojo.getEmail());
                 request.setAttribute("userInfor", ua);
                 HttpSession s = request.getSession();
                 System.out.println("user account :" + ua.getId_user());

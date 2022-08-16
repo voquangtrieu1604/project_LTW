@@ -36,14 +36,11 @@ public class UserService {
         return null;
     }
 
-    public User checkIDGoogle(String id) {
+    public User checkGmailGoogle(String email) {
         List<User> list = UserDao.getInstance().getListUser();
         for (User user : list) {
-            if (user.getId_user().equals(id)) {
+            if (user.getEmail().equals(email)) {
                 return user;
-            }
-            else {
-                return null;
             }
         }
         return null;
@@ -52,5 +49,9 @@ public class UserService {
     public void updateUserInfor(String idUser, String userName, String email, String phone) {
         UserDao.getInstance().updateAccountInFor(idUser, userName, email, phone);
 
+    }
+
+    public static void main(String[] args) {
+        System.out.println(UserService.getInstance().checkGmailGoogle("byztrieu@gmail.com"));
     }
 }
