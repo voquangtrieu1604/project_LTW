@@ -24,7 +24,7 @@
 
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="assets/css/core-style.css">
-<%--    <link rel="stylesheet" href="style.css">--%>
+    <%--    <link rel="stylesheet" href="style.css">--%>
 
 </head>
 <style>
@@ -135,51 +135,55 @@
         <div class="row">
             <div class="col-12">
                 <div class="popular-products-slides owl-carousel">
-<%--                    <jsp:useBean id="products" scope="request"--%>
-<%--                                 type="java.util.List"--%>
-<%--                    />--%>
-<%--                    <jsp:useBean id="wishlistid" scope="request"--%>
-<%--                                 type="java.util.List"--%>
-<%--                    />--%>
-<%--                    <%System.out.println(products.size() + "___________"); %>--%>
+                    <%--                    <jsp:useBean id="products" scope="request"--%>
+                    <%--                                 type="java.util.List"--%>
+                    <%--                    />--%>
+                    <%--                    <jsp:useBean id="wishlistid" scope="request"--%>
+                    <%--                                 type="java.util.List"--%>
+                    <%--                    />--%>
+                    <%--                    <%System.out.println(products.size() + "___________"); %>--%>
                     <c:forEach var="p" items="${products}">
-                    <!-- Single Product -->
-                    <div class="single-product-wrapper">
-                        <!-- Product Image -->
-                        <div class="product-img">
-                            <img src="${p.img_url}" alt="">
-                            <!-- Hover Thumb -->
-                            <img class="hover-img" src="${p.img_url2}" alt="">
-                            <!-- Favourite -->
-                            <div class="product-favourite" id="heart">
-                                <c:choose>
-                                    <c:when test="${wishlistid.contains(p.id_product)}">
-                                        <a class="favme fa fa-heart active" pid=${p.id_product}></a>
-                                    </c:when>
-                                    <c:otherwise>
-                                        <a class="favme fa fa-heart " pid=${p.id_product}></a>
-                                    </c:otherwise>
-                                </c:choose>
-<%--                                <a class="favme fa fa-heart " pid=${p.id_product}></a>--%>
-                            </div>
-                        </div>
-                        <!-- Product discription -->
-                        <div class="product-discription">
-                            <span>áo jacket</span>
-                            <a href="single-product-details.jsp">
-                                <h6>${p.product_name}</h6>
-                            </a>
-                            <p class="product-price">${p.price}</p>
+                        <!-- Single Product -->
 
-                            <!-- Hover Content -->
-                            <div class="hover-content">
-                                <!-- Add to Cart -->
-                                <div class="add-to-cart-btn">
-                                    <a href="#" class="btn essence-btn">Thêm vào giỏ hàng</a>
+                            <div class="single-product-wrapper">
+                                <!-- Product Image -->
+                                <a href="ChiTietSanPham?id_product=${p.id_product}">
+                                <div class="product-img">
+                                    <img src="${p.img_url}" alt="">
+                                    <!-- Hover Thumb -->
+                                    <img class="hover-img" src="${p.img_url2}" alt="">
+                                    <!-- Favourite -->
+                                    <div class="product-favourite" id="heart">
+                                        <c:choose>
+                                            <c:when test="${wishlistid.contains(p.id_product)}">
+                                                <a class="favme fa fa-heart active" pid=${p.id_product}></a>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <a class="favme fa fa-heart " pid=${p.id_product}></a>
+                                            </c:otherwise>
+                                        </c:choose>
+                                            <%--                                <a class="favme fa fa-heart " pid=${p.id_product}></a>--%>
+                                    </div>
+                                </div>
+                                </a>
+                                <!-- Product discription -->
+                                <div class="product-discription">
+                                    <span>áo jacket</span>
+                                    <a href="single-product-details.jsp">
+                                        <h6>${p.product_name}</h6>
+                                    </a>
+                                    <p class="product-price">${p.price}</p>
+
+                                    <!-- Hover Content -->
+                                    <div class="hover-content">
+                                        <!-- Add to Cart -->
+                                        <div class="add-to-cart-btn">
+                                            <a href="ChiTietSanPham?id_product=${p.id_product}" class="btn essence-btn">Mua
+                                                ngay</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
                     </c:forEach>
                 </div>
             </div>
@@ -223,15 +227,15 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
 <script>
     $(document).ready(function () {
-        $("#heart a").on('click',function () {
-            if (this.classList.contains("active")){
+        $("#heart a").on('click', function () {
+            if (this.classList.contains("active")) {
                 alert("active")
-                var id=$(this).attr("pid");
+                var id = $(this).attr("pid");
                 alert(id)
                 $.ajax({
                     url: '/project_LTW_war/addFavoriteProduct',
                     type: 'POST',
-                    data:{
+                    data: {
                         id: id
                     },
                     success: function (data) {
@@ -239,21 +243,20 @@
 
                     }
                 })
-            }
-            else {
+            } else {
                 alert("noactive")
-                    var id=$(this).attr("pid");
-                    alert(id)
-                    $.ajax({
-                        url: '/project_LTW_war/removeFavoriteProduct',
-                        type: 'POST',
-                        data:{
-                            id: id
-                        },
-                        success: function (data) {
-                            // document.getElementById(id).remove();
-                        }
-                    })
+                var id = $(this).attr("pid");
+                alert(id)
+                $.ajax({
+                    url: '/project_LTW_war/removeFavoriteProduct',
+                    type: 'POST',
+                    data: {
+                        id: id
+                    },
+                    success: function (data) {
+                        // document.getElementById(id).remove();
+                    }
+                })
 
             }
         })
@@ -263,14 +266,11 @@
 
 </script>
 <script>
-    window.onload = function()
-    {
+    window.onload = function () {
         $.ajax({
             url: '/project_LTW_war/showCartArea',
             type: 'get',
-            data:{
-
-            },
+            data: {},
             success: function (data) {
                 // var row = document.getElementById("context");
                 // var text = $("#context").html();

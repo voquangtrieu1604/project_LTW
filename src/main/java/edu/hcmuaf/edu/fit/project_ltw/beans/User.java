@@ -11,28 +11,28 @@ public class User {
 
 
 
-    public User(String id_user, String user_name, String email, String password) {
-        this.id_user = id_user;
-        this.user_name = user_name;
-        this.email = email;
-        this.password = password;
-    }
-    public User(String id_user, String user_name, String email, String phoneNumber, String password) {
-        this.id_user = id_user;
-        this.user_name = user_name;
-        this.email = email;
-        this.phone = phoneNumber;
-        this.password = password;
-    }
-    public User(String id_user, String user_name, String email) {
-        this.id_user = id_user;
-        this.user_name = user_name;
-        this.email = email;
-    }
-
-    public User(String email) {
-        this.email = email;
-    }
+//    public User(String id_user, String user_name, String email, String password) {
+//        this.id_user = id_user;
+//        this.user_name = user_name;
+//        this.email = email;
+//        this.password = password;
+//    }
+//    public User(String id_user, String user_name, String email, String phoneNumber, String password) {
+//        this.id_user = id_user;
+//        this.user_name = user_name;
+//        this.email = email;
+//        this.phone = phoneNumber;
+//        this.password = password;
+//    }
+//    public User(String id_user, String user_name, String email) {
+//        this.id_user = id_user;
+//        this.user_name = user_name;
+//        this.email = email;
+//    }
+//
+//    public User(String email) {
+//        this.email = email;
+//    }
 
     public User() {
 

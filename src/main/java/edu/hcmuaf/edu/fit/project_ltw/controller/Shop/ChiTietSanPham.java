@@ -3,6 +3,7 @@ package edu.hcmuaf.edu.fit.project_ltw.controller.Shop;
 import edu.hcmuaf.edu.fit.project_ltw.beans.Product;
 import edu.hcmuaf.edu.fit.project_ltw.beans.ProductFunction;
 import edu.hcmuaf.edu.fit.project_ltw.beans.Search;
+import edu.hcmuaf.edu.fit.project_ltw.beans.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,6 +20,8 @@ public class ChiTietSanPham extends HttpServlet {
         Product p = Search.searchProductById(request.getParameter("id_product"));
 //        p.loadComment();
             request.setAttribute("product",p);
+        User ua = (User) request.getSession().getAttribute("auth");
+        request.setAttribute("ua",ua);
 //        //set set number attributes
 //        request.setAttribute("numberstarsArray", ProductFunction.returnNumberStar(p.getRawCommentProducts()));
 //        //relate products:

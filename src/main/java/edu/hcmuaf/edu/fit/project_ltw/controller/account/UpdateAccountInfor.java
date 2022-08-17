@@ -1,5 +1,6 @@
 package edu.hcmuaf.edu.fit.project_ltw.controller.account;
 
+import edu.hcmuaf.edu.fit.project_ltw.beans.DangKy;
 import edu.hcmuaf.edu.fit.project_ltw.beans.User;
 import edu.hcmuaf.edu.fit.project_ltw.services.UserService;
 
@@ -24,13 +25,14 @@ public class UpdateAccountInfor extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User ua = (User) request.getSession().getAttribute("auth");
+        System.out.println(ua.getId_user());
         String username = request.getParameter("updateUserName");
         System.out.println(username);
         String email = request.getParameter("updateEmail");
         System.out.println(email);
         String phone = request.getParameter("updatePhone");
         System.out.println(phone);
-        String pass = request.getParameter("confirmPass");
+        String pass = DangKy.getMD5(request.getParameter("confirmPass"));
         System.out.println(pass);
         PrintWriter out = response.getWriter();
 

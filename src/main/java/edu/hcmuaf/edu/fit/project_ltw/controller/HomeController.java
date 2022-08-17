@@ -27,9 +27,6 @@ public class HomeController extends HttpServlet {
         List<String> listWishlistid = new ArrayList<>();
         if (ua != null){
             listWishlistid = WishListDao.getInstance().getListWishListIdById(ua.getId_user());
-            Cart cart = new Cart();
-            HttpSession s = request.getSession();
-            s.setAttribute("cart",cart);
         }
 
         request.setAttribute("wishlistid", listWishlistid);

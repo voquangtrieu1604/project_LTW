@@ -217,8 +217,15 @@
                                                 <span>${p.percent_discount}%</span>
                                             </div>
                                             <!-- Favourite -->
-                                            <div class="product-favourite">
-                                                <a href="#" class="favme fa fa-heart"></a>
+                                            <div class="product-favourite" id="heart">
+                                                <c:choose>
+                                                    <c:when test="${wishlistid.contains(p.id_product)}">
+                                                        <a class="favme fa fa-heart active" pid=${p.id_product}></a>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        <a class="favme fa fa-heart " pid=${p.id_product}></a>
+                                                    </c:otherwise>
+                                                </c:choose>
                                             </div>
                                         </div>
 
@@ -236,7 +243,7 @@
                                             <div class="hover-content">
                                                 <!-- Add to Cart -->
                                                 <div class="add-to-cart-btn">
-                                                    <a href="#" class="btn essence-btn">Thêm vào giỏ hàng</a>
+                                                    <a href="ChiTietSanPham?id_product=${p.id_product}" class="btn essence-btn">Mua ngay</a>
                                                 </div>
                                             </div>
                                         </div>
