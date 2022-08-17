@@ -7,6 +7,7 @@
 <html lang="en">
 <% List<Product> products = (List<Product>) request.getAttribute("productsForSale");
 %>
+<% User user = (User) session.getAttribute("auth");%>
 <head>
     <meta charset="UTF-8">
     <meta name="discription" content="">
@@ -356,7 +357,74 @@
     </div>
 </footer>
 <!-- ##### Footer Area End ##### -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+<script>
+    <%if (user==null) {%>
+    <%} else {%>
+    $(document).ready(function () {
+        $("#heart a").on('click', function () {
+            if (this.classList.contains("active")) {
+                alert("active")
+                var id = $(this).attr("pid");
+                alert(id)
+                $.ajax({
+                    url: '/project_LTW_war/addFavoriteProduct',
+                    type: 'POST',
+                    data: {
+                        id: id
+                    },
+                    success: function (data) {
 
+
+                    }
+                })
+            } else {
+                alert("noactive")
+                var id = $(this).attr("pid");
+                alert(id)
+                $.ajax({
+                    url: '/project_LTW_war/removeFavoriteProduct',
+                    type: 'POST',
+                    data: {
+                        id: id
+                    },
+                    success: function (data) {
+                        // document.getElementById(id).remove();
+                    }
+                })
+
+            }
+        })
+
+
+    })
+    <%}%>
+
+</script>
+<script>
+    window.onload = function () {
+        $.ajax({
+            url: '/project_LTW_war/showCartArea',
+            type: 'get',
+            data: {},
+            success: function (data) {
+                // var row = document.getElementById("context");
+                // var text = $("#context").html();
+                // $("#context").html(data);
+
+            },
+            error: function (xhr) {
+
+            }
+        })
+    };
+
+    var num = <%if (cart == null) {%>
+        0
+    <%} else {%>
+    <%=cart.getNumberProductInCart()%>
+    <%}%>
+</script>
 <!-- jQuery (Necessary for All JavaScript Plugins) -->
 <script src="assets/js/jquery/jquery-2.2.4.min.js"></script>
 <!-- Popper js -->
@@ -370,6 +438,7 @@
 <!-- Active js -->
 <script src="assets/js/active.js"></script>
 
+<script src="assets/js/removecartarea.js"></script>
 </body>
 
 </html>

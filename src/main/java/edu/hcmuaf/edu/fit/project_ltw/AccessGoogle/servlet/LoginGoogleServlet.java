@@ -2,6 +2,7 @@ package edu.hcmuaf.edu.fit.project_ltw.AccessGoogle.servlet;
 
 import edu.hcmuaf.edu.fit.project_ltw.AccessGoogle.common.GooglePojo;
 import edu.hcmuaf.edu.fit.project_ltw.AccessGoogle.common.GoogleUtils;
+import edu.hcmuaf.edu.fit.project_ltw.beans.Cart;
 import edu.hcmuaf.edu.fit.project_ltw.beans.DangKy;
 import edu.hcmuaf.edu.fit.project_ltw.beans.User;
 import edu.hcmuaf.edu.fit.project_ltw.services.UserService;
@@ -58,6 +59,9 @@ public class LoginGoogleServlet extends HttpServlet {
                 User ua = new UserService().checkGmailGoogle(googlePojo.getEmail());
                 request.setAttribute("userInfor", ua);
                 HttpSession s = request.getSession();
+                Cart cart = new Cart(ua.getId_user());
+                s.setAttribute("cart",cart);
+                request.setAttribute("cart", cart);
                 System.out.println("user account :" + ua.getId_user());
                 s.setAttribute("auth", ua);
             }

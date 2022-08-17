@@ -48,10 +48,12 @@ public class LoginController extends HttpServlet {
             return;
         }
         else {
-            Cart cart = new Cart();
+            Cart cart = new Cart(ua.getId_user());
             HttpSession s = request.getSession();
             s.setAttribute("cart",cart);
+            request.setAttribute("cart", cart);
         }
+
         request.setAttribute("userInfor", ua);
         HttpSession s = request.getSession();
         s.setAttribute("auth", ua);

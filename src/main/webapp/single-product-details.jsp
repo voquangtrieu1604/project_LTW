@@ -19,6 +19,7 @@
 
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="assets/css/core-style.css">
+    <link rel="stylesheet" href="assets/css/alertfy.css">
 
 
 </head>
@@ -95,54 +96,58 @@
 <%@include file="footer.jsp" %>
 <!-- ##### Footer Area End ##### -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+<script src="assets/js/Alertify.js"></script>
 <script>
+    <%if (user==null) {%>
+    <%} else {%>
+
     var num = "<%=cart.getNumberProductInCart()%>";
-    <%--var iduser =<%=user%>;--%>
     $(document).ready(function () {
-        alert("hau")
-            $("#addCart").click(function () {
-                alert("click")
-                // if (iduser != null) {
-                    var color = $("#productColor").val();
-                    alert(color)
-                    var size = $("#productSize").val();
-                    alert(size)
-                    var id = "<%=product.getId_product()%>";
-                    $.ajax({
-                        url: '/project_LTW_war/addProductToCart',
-                        type: 'post',
-                        data: {
-                            colorProduct: color,
-                            sizeProduct: size,
-                            id: id
-                        },
-                        success: function (data) {
-                            alert("hau")
+        $("#addCart").click(function () {
+            alert("click")
+            // if (iduser != null) {
+            var color = $("#productColor").val();
 
-                            $("#listCart").html(data);
-                            num++
-                            $("#numberProductCartHeader").html(num);
-                            $("#numberProductCart").html(num);
-                        },
-                        error: function (xhr) {
+            var size = $("#productSize").val();
 
-                        }
-                    })
+            var id = "<%=product.getId_product()%>";
+            $.ajax({
+                url: '/project_LTW_war/addProductToCart',
+                type: 'post',
+                data: {
+                    colorProduct: color,
+                    sizeProduct: size,
+                    id: id
+                },
+                success: function (data) {
+                    $("#listCart").html(data);
+                    updateNum();
+                },
+                error: function (xhr) {
 
-                // }
-
+                }
             })
+
+            // }
+
+        })
+
+
+
 
 
 
     })
+
+
+    <%}%>
+
 </script>
 
 <script>
     var num = "<%=cart.getNumberProductInCart()%>";
     function removeThisProduct(idProduct) {
         var id=idProduct.id;
-        alert(id);
         $.ajax({
             url: '/project_LTW_war/removeProductFromCart',
             type: 'post',
@@ -151,15 +156,33 @@
             },
             success: function (data) {
                 $("#listCart").html(data);
-                num--
-                $("#numberProductCartHeader").html(num);
-                $("#numberProductCart").html(num);
+                // $("#numberProductCartHeader").html(num);
+                // $("#numberProductCart").html(num);
+                updateNum()
             },
             error: function (xhr) {
 
             }
         })
     }
+
+    function updateNum() {
+        $.ajax({
+            url: '/project_LTW_war/updateNumberCart',
+            type: 'get',
+            data:{
+                // id: idProduct
+            },
+            success: function (data) {
+                $("#numberProductCartHeader").html(data);
+                $("#numberProductCart").html(data);
+            },
+            error: function (xhr) {
+
+            }
+        })
+    }
+
 </script>
 
 <!-- jQuery (Necessary for All JavaScript Plugins) -->

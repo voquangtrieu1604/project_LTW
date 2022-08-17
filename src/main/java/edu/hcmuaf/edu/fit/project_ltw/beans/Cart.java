@@ -1,11 +1,10 @@
 package edu.hcmuaf.edu.fit.project_ltw.beans;
 
+import edu.hcmuaf.edu.fit.project_ltw.dao.CartDao;
 import edu.hcmuaf.edu.fit.project_ltw.dao.ProductDao;
 
-import java.awt.*;
 import java.io.Serializable;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,21 +16,27 @@ public class Cart implements Serializable {
 
     private double feePromotion;
 
+    private String iduser;
 
     public Cart() {
         this.productList = new HashMap<>();
-        Product p = ProductDao.getInstance().getProductById("PD0001");
-        Product p1 = ProductDao.getInstance().getProductById("PD0002");
-        p.setSize("L");
-        p.setColor("Đỏ");
-        put(p);
-        put(p1);
+    }
 
+    public Cart(String iduser){
+        this.productList = CartDao.getInstance().getCart(iduser);
+        this.iduser = iduser;
+
+    }
+
+    public Cart(Cart cart){
+        this.productList = cart.getCart();
     }
 
     public static  Cart getInstance(){
         return new Cart();
     }
+
+
 
     public void  put(Product product){
         String key = product.getId_product()+product.getSize()+product.getColor();
@@ -39,12 +44,18 @@ public class Cart implements Serializable {
             productList.get(key).upOneQuantitySold();
         }
         else {
-            product.upOneQuantitySold();
             productList.put(key,product);
+            productList.get(key).upOneQuantitySold();
         }
 
 
     }
+
+    public Map<String,Product> getCart(){
+        return this.productList;
+    }
+
+
 
     public Product getProduct(String id){
         return productList.get(id);
@@ -63,7 +74,7 @@ public class Cart implements Serializable {
     }
 
     public double getFinalMoneyCart(){
-        return getTotalMoneyCart() + getFeeShip() - ((getTotalMoneyCart()+getFeeShip()*getFeePromotion())/100);
+        return getTotalMoneyCart() + getFeeShip() - (((getTotalMoneyCart()+getFeeShip())*getFeePromotion())/100);
     }
 
     public int getNumberProductInCart(){
@@ -83,14 +94,14 @@ public class Cart implements Serializable {
             return 0;
         }
         else {
-            return 22000*productList.size();
+            return 22000*getNumberProductInCart();
         }
 
     }
 
     public int getFeePromotion(){
-        if (productList.size()>=3){
-           return productList.size()/3;
+        if (getNumberProductInCart()>=3){
+           return getNumberProductInCart()/3;
         }
         else {
             return 0;
@@ -99,9 +110,12 @@ public class Cart implements Serializable {
 
     }
 
-    public static void main(String[] args) {
-        System.out.println(getInstance().getFeePromotion());
-    }
+
+
+//    public static void main(String[] args) {
+//        System.out.println(getInstance().getFinalMoneyCart());
+//    }
+
 
 
 

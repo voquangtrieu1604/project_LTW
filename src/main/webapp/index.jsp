@@ -8,7 +8,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
-
+<% User user = (User) session.getAttribute("auth");%>
 <head>
     <meta charset="UTF-8">
     <meta name="discription" content="">
@@ -156,10 +156,10 @@
                                     <div class="product-favourite" id="heart">
                                         <c:choose>
                                             <c:when test="${wishlistid.contains(p.id_product)}">
-                                                <a class="favme fa fa-heart active" pid=${p.id_product}></a>
+                                                <a  class="favme fa fa-heart active" pid=${p.id_product}></a>
                                             </c:when>
                                             <c:otherwise>
-                                                <a class="favme fa fa-heart " pid=${p.id_product}></a>
+                                                <a <%if (session.getAttribute("auth") ==null) {%>href="/project_LTW_war/login"<%} else {%><%}%> class="favme fa fa-heart " pid=${p.id_product}></a>
                                             </c:otherwise>
                                         </c:choose>
                                             <%--                                <a class="favme fa fa-heart " pid=${p.id_product}></a>--%>
@@ -226,6 +226,8 @@
 <!-- ##### Footer Area End ##### -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
 <script>
+    <%if (user==null) {%>
+    <%} else {%>
     $(document).ready(function () {
         $("#heart a").on('click', function () {
             if (this.classList.contains("active")) {
@@ -263,6 +265,7 @@
 
 
     })
+    <%}%>
 
 </script>
 <script>
@@ -282,6 +285,12 @@
             }
         })
     };
+
+    var num = <%if (cart == null) {%>
+    0
+    <%} else {%>
+    <%=cart.getNumberProductInCart()%>
+    <%}%>
 </script>
 <!-- jQuery (Necessary for All JavaScript Plugins) -->
 <script src="assets/js/jquery/jquery-2.2.4.min.js"></script>
@@ -295,6 +304,8 @@
 <script src="assets/js/classy-nav.min.js"></script>
 <!-- Active js -->
 <script src="assets/js/active.js"></script>
+
+<script src="assets/js/removecartarea.js"></script>
 
 </body>
 
