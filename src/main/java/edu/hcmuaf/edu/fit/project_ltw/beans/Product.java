@@ -18,6 +18,8 @@ public class Product {
     private String short_description;
     private String description;
     private String img_url;
+
+    private String img_url2;
     private int numberComment;
     private double numstar;
     private double price_discount;
@@ -211,6 +213,14 @@ public class Product {
 
     public void setSize(String size) {
         this.size = size;
+    }
+
+    public String getImg_url2() {
+        return img_url2;
+    }
+
+    public void setImg_url2(String img_url2) {
+        this.img_url2 = img_url2;
     }
 
     public boolean isIdProduct(String id){

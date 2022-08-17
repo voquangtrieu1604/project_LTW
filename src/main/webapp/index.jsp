@@ -149,7 +149,7 @@
                         <div class="product-img">
                             <img src="${p.img_url}" alt="">
                             <!-- Hover Thumb -->
-                            <img class="hover-img" src="assets/img/index/product-1-2.jpg" alt="">
+                            <img class="hover-img" src="${p.img_url2}" alt="">
                             <!-- Favourite -->
                             <div class="product-favourite" id="heart">
                                 <c:choose>
