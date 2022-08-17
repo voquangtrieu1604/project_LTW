@@ -52,23 +52,43 @@ public class AddProductToCart extends HttpServlet {
                 "    <!-- Cart List Area -->\n" +
                 "    <div class=\"cart-list\">\n");
 
-        for (Product product:list) {
-        out.println("<div class=\"single-cart-item\">\n" +
-                "        <a href=\"#\" class=\"product-image\">\n" +
-                "          <img src=\""+product.getImg_url()+"\" class=\"cart-thumb\" alt=\"\">\n" +
-                "          <!-- Cart Item Desc -->\n" +
-                "          <div class=\"cart-item-desc\">\n" +
-                "            <span class=\"product-remove\"><i class=\"fa fa-close\" aria-hidden=\"true\"></i></span>\n" +
-                "            <span class=\"badge\">"+product.getProduct_type()+"</span>\n" +
-                "            <h6>"+product.getProduct_name()+"</h6>\n" +
-                "            <p class=\"size\">Size: "+product.getSize()+"</p>\n" +
-                "            <p class=\"color\">Màu: "+product.getColor()+"</p>\n" +
-                "            <p class=\"color\">Số lượng: "+product.getQuantitySold()+"</p>\n" +
-                "            <p class=\"price\">"+product.getPrice()+" đ</p>\n" +
-                "          </div>\n" +
-                "        </a>\n" +
-                "      </div>\n");
+
+        for (Product product : list) {
+            out.println("<div class=\"single-cart-item\" id=\"" + product.getId_product() + product.getSize() + product.getColor() + "\">\n" +
+                    "<div class=\"product-remove\"><i class=\"fa fa-close\" aria-hidden=\"true\" id=\"" + product.getId_product() + product.getSize() + product.getColor() + "\" onclick=\"removeThisProduct(this)\"></i></div>"
+                    +
+                    "        <a href=\"ChiTietSanPham?id_product=" + product.getId_product() + "\" class=\"product-image\">\n" +
+                    "          <img src=\"" + product.getImg_url() + "\" class=\"cart-thumb\" alt=\"\">\n" +
+                    "          <!-- Cart Item Desc -->\n" +
+                    "          <div class=\"cart-item-desc\">\n" +
+                    "            <span class=\"badge\">" + product.getProduct_type() + "</span>\n" +
+                    "            <h6>" + product.getProduct_name() + "</h6>\n" +
+                    "            <p class=\"size\">Size: " + product.getSize() + "</p>\n" +
+                    "            <p class=\"color\">Màu: " + product.getColor() + "</p>\n" +
+                    "            <p class=\"color\">Số lượng: " + product.getQuantitySold() + "</p>\n" +
+                    "            <p class=\"price\">" + product.getPrice() + " đ</p>\n" +
+                    "          </div>\n" +
+                    "        </a>\n" +
+                    "      </div>\n");
         }
+
+//        for (Product product:list) {
+//        out.println("<div class=\"single-cart-item\">\n" +
+//                "        <a href=\"#\" class=\"product-image\">\n" +
+//                "          <img src=\""+product.getImg_url()+"\" class=\"cart-thumb\" alt=\"\">\n" +
+//                "          <!-- Cart Item Desc -->\n" +
+//                "          <div class=\"cart-item-desc\">\n" +
+//                "            <span class=\"product-remove\"><i class=\"fa fa-close\" aria-hidden=\"true\"></i></span>\n" +
+//                "            <span class=\"badge\">"+product.getProduct_type()+"</span>\n" +
+//                "            <h6>"+product.getProduct_name()+"</h6>\n" +
+//                "            <p class=\"size\">Size: "+product.getSize()+"</p>\n" +
+//                "            <p class=\"color\">Màu: "+product.getColor()+"</p>\n" +
+//                "            <p class=\"color\">Số lượng: "+product.getQuantitySold()+"</p>\n" +
+//                "            <p class=\"price\">"+product.getPrice()+" đ</p>\n" +
+//                "          </div>\n" +
+//                "        </a>\n" +
+//                "      </div>\n");
+//        }
 
 
         out.println(
@@ -82,9 +102,14 @@ public class AddProductToCart extends HttpServlet {
                 "        <li><span>Khuyến mãi:</span> <span id=\"khuyenmai\">-"+cart.getFeePromotion()+"% đ</span></li>\n" +
                 "        <li><span>Tổng:</span> <span id=\"tong\">"+cart.getFinalMoneyCart()+" ₫</span></li>\n" +
                 "      </ul>\n" +
-                "      <div class=\"checkout-btn mt-100\">\n" +
-                "        <a href=\"checkout.jsp\" class=\"btn essence-btn\">thanh toán</a>\n" +
-                "      </div>\n" +
+                        "<div class=\"row\">\n" +
+                        "                    <div class=\"checkout-btn mt-100\" style=\"width: 50%\">\n" +
+                        "                        <a href=\"/project_LTW_war/order\" class=\"btn essence-btn\">thanh toán</a>\n" +
+                        "                    </div>\n" +
+                        "                    <div class=\"checkout-btn mt-100\" style=\"width: 50%\">\n" +
+                        "                        <a href=\"/project_LTW_war/cart\" class=\"btn essence-btn\">Xem giỏ hàng</a>\n" +
+                        "                    </div>\n" +
+                        "                </div>"+
                 "    </div>\n" +
                 "  </div>");
 

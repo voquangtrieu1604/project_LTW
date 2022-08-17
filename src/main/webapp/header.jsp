@@ -18,7 +18,7 @@
     %>
     <%
     Cart cart1 =null;
-    Collection<Product> list1 = null;
+    Collection<Product> list1 = new ArrayList<Product>();
     if(session.getAttribute("cart")!=null) {
     cart1 = (Cart) session.getAttribute("cart");
     list1 = cart1.getProductList();
@@ -30,7 +30,7 @@
         <!-- Classy Menu -->
         <nav class="classy-navbar" id="essenceNav">
             <!-- Logo -->
-            <a class="nav-brand" href="TrangChu"><img
+            <a class="nav-brand" href="/project_LTW_war/home"><img
                     src="https://owen.vn/static/version1638932364/frontend/Owen/owen2021/vi_VN/images/logo.svg" alt=""></a>
             <!-- Navbar Toggler -->
             <div class="classy-navbar-toggler">
@@ -143,7 +143,7 @@
 
             <div class="cart-area">
                 <a href="#" id="essenceCartBtn"><img src="assets/img/core-img/bag.svg" alt=""><span id="numberProductCartHeader"><%
-                    if (cart1 == null) {%>0<%} else {%><%=cart1.getNumberProductInCart()%><%}%></span></a>
+                    if (list1.size()==0) {%>0<%} else {%><%=cart1.getNumberProductInCart()%><%}%></span></a>
             </div>
         </div>
 

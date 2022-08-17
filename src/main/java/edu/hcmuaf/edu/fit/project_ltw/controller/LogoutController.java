@@ -13,6 +13,7 @@ public class LogoutController extends HttpServlet {
         Object s = session.getAttribute("auth");
         if(s != null){
             session.removeAttribute("auth");
+            session.removeAttribute("cart");
         }
         response.sendRedirect(
                 "/project_LTW_war/home");

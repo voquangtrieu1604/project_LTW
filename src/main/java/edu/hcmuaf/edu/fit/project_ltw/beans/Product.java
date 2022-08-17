@@ -35,6 +35,8 @@ public class Product {
     private List<CommentProduct> commentRootProducts;
     private HashMap<String, IComment> rawCommentProducts;
 
+    private double totalPrice;
+
     //cái này không cần trong jdbi
 //    public Product(String id_product, String product_name, String product_type, int amount_bought, int amount_imported, int percent_discount, double money, String short_discription, String discription, String img_url) {
 //        this.id_product = id_product;
@@ -51,6 +53,7 @@ public class Product {
 //    }
 
     public Product() {
+        totalPrice = totalPriceSold();
     }
 
     public String getId_product() {
