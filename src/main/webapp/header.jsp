@@ -110,8 +110,7 @@
             </div>
             <!-- Favourite Area -->
             <div class="favourite-area">
-                <%
-                    if (ua == null) {%>
+                <%if (ua == null) {%>
                 <a href="/project_LTW_war/login"><img src="assets/img/core-img/heart.svg" alt=""></a>
                 <%} else {%>
                 <a href="/project_LTW_war/wishlist"><img src="assets/img/core-img/heart.svg" alt=""></a>

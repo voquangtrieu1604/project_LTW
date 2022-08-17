@@ -2,7 +2,8 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
-
+<% Product product = (Product) request.getAttribute("product");%>
+<% User user = (User) request.getAttribute("ua");%>
 <head>
     <meta charset="UTF-8">
     <meta name="discription" content="">
@@ -11,7 +12,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>ÁO SƠ MI DÀI TAY - AR91008D2</title>
+    <title><%=product.getProduct_name()%></title>
 
     <!-- Favicon  -->
     <!--    <link rel="icon" href="assets/img/core-img/favicon.ico">-->
@@ -23,7 +24,7 @@
 </head>
 
 <body>
-<% Product product = (Product) request.getAttribute("product");%>
+
 <!-- ##### Header Area Start ##### -->
 <%@include file="header.jsp" %>
 <!-- ##### Header Area End ##### -->
@@ -39,8 +40,7 @@
     <div class="single_product_thumb clearfix">
         <div class="product_thumbnail_slides owl-carousel">
             <img src="<%=product.getImg_url()%>" alt="">
-            <img src="<%=product.getImg_url()%>" alt="">
-            <img src="<%=product.getImg_url()%>" alt="">
+            <img src="<%=product.getImg_url2()%>" alt="">
         </div>
     </div>
 
@@ -78,7 +78,10 @@
         </form>
         <div class="cart-fav-box d-flex align-items-center">
             <!-- Cart -->
-            <button id="addCart" type="submit" name="addtocart" value="5" class="btn essence-btn">Thêm vào giỏ hàng</button>
+            <a id="addCart" <%if (user==null) {%>href="/project_LTW_war/login"<%} else {%><%}%>>
+                <button  type="submit" name="addtocart" value="5" class="btn essence-btn">Thêm vào giỏ hàng</button>
+            </a>
+
             <!-- Favourite -->
             <div class="product-favourite ml-4">
                 <a href="#" class="favme fa fa-heart"></a>
@@ -94,35 +97,44 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
 <script>
     var num = "<%=cart.getNumberProductInCart()%>";
+    <%--var iduser =<%=user%>;--%>
     $(document).ready(function () {
-        $("#addCart").click(function () {
-            var color = $("#productColor").val();
-            alert(color)
-            var size = $("#productSize").val();
-            alert(size)
-            var id="<%=product.getId_product()%>";
-            $.ajax({
-                url: '/project_LTW_war/addProductToCart',
-                type: 'post',
-                data:{
-                    colorProduct: color,
-                    sizeProduct: size,
-                    id: id
-                },
-                success: function (data) {
-                    alert("hau")
+        alert("hau")
+            $("#addCart").click(function () {
+                alert("click")
+                // if (iduser != null) {
+                    var color = $("#productColor").val();
+                    alert(color)
+                    var size = $("#productSize").val();
+                    alert(size)
+                    var id = "<%=product.getId_product()%>";
+                    $.ajax({
+                        url: '/project_LTW_war/addProductToCart',
+                        type: 'post',
+                        data: {
+                            colorProduct: color,
+                            sizeProduct: size,
+                            id: id
+                        },
+                        success: function (data) {
+                            alert("hau")
 
-                    $("#listCart").html(data);
-                    num++
-                    $("#numberProductCartHeader").html(num);
-                    $("#numberProductCart").html(num);
-                },
-                error: function (xhr) {
+                            $("#listCart").html(data);
+                            num++
+                            $("#numberProductCartHeader").html(num);
+                            $("#numberProductCart").html(num);
+                        },
+                        error: function (xhr) {
 
-                }
+                        }
+                    })
+
+                // }
+
             })
 
-        })
+
+
     })
 </script>
 

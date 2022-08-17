@@ -1,5 +1,6 @@
 package edu.hcmuaf.edu.fit.project_ltw.controller;
 
+import edu.hcmuaf.edu.fit.project_ltw.beans.Cart;
 import edu.hcmuaf.edu.fit.project_ltw.beans.DangKy;
 import edu.hcmuaf.edu.fit.project_ltw.beans.User;
 import edu.hcmuaf.edu.fit.project_ltw.services.UserService;
@@ -45,6 +46,11 @@ public class LoginController extends HttpServlet {
             request.setAttribute("error", error);
             request.getRequestDispatcher("login.jsp").forward(request, response);
             return;
+        }
+        else {
+            Cart cart = new Cart();
+            HttpSession s = request.getSession();
+            s.setAttribute("cart",cart);
         }
         request.setAttribute("userInfor", ua);
         HttpSession s = request.getSession();
