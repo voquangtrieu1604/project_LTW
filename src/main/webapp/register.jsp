@@ -70,6 +70,10 @@
             <p id="message"></p>
             <button type="submit">TẠO TÀI KHOẢN</button>
             </p>
+            <%if (request.getAttribute("error") != null) {%>
+            <p style="color:red; margin: auto"><%=request.getAttribute("error")%>
+            </p>
+            <%}%>
             <br>
             <p>Bằng việc chọn tiếp tục, bạn đã đồng ý với <a href="#">Điều khoản & Điều kiện</a> cùng <a href="#">Chính
                 sách bảo mật và chia sẻ thông tin</a> của OWEN</p>
@@ -89,6 +93,7 @@
                     return true;
                 }
             </script>
+
         </form>
 
     </div>
@@ -147,7 +152,9 @@
                             <input type="email" name="mail" class="mail" placeholder="Nhập email của bạn">
                             <button type="submit" class="submit"><i class="fa fa-long-arrow-right"
                                                                     aria-hidden="true"></i></button>
+
                         </form>
+
                     </div>
                 </div>
             </div>

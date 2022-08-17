@@ -2,6 +2,8 @@ package edu.hcmuaf.edu.fit.project_ltw;
 
 
 import edu.hcmuaf.edu.fit.project_ltw.beans.DangKy;
+import edu.hcmuaf.edu.fit.project_ltw.beans.User;
+import edu.hcmuaf.edu.fit.project_ltw.services.UserService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -26,20 +28,30 @@ public class Register extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
-        String pass = DangKy.getMD5(password);
-        DangKy.registerAutoID_user(name, email, pass);
 
-        String line = "<script>window.setTimeout(function(){window.location.href = \"login\";}, 1000);</script>";
-        response.getWriter().println();
-        PrintWriter out = response.getWriter();
-        out.println("<!DOCTYPE html>");
-        out.println("<html><head>");
-        out.println("<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>");
-        out.println("<title>notice</title></head>");
-        out.println("<body>");
-        out.println(line);
-        out.println("</body>");
-        out.println("</html>");
+        User user = UserService.getInstance().checkAccountRegister(name, email);
+        if (user == null) {
 
+            String pass = DangKy.getMD5(password);
+            DangKy.registerAutoID_user(name, email, pass);
+
+            String line = "<script>window.setTimeout(function(){window.location.href = \"login\";}, 1000);</script>";
+            response.getWriter().println();
+            PrintWriter out = response.getWriter();
+            out.println("<!DOCTYPE html>");
+            out.println("<html><head>");
+            out.println("<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>");
+            out.println("<title>notice</title></head>");
+            out.println("<body>");
+            out.println(line);
+            out.println("</body>");
+            out.println("</html>");
+
+        } else {
+            String error = "Thông tin đăng nhập đã tồn tại trên hệ thống.";
+            request.setAttribute("error", error);
+            request.getRequestDispatcher("register.jsp").forward(request, response);
+            return;
+        }
     }
 }

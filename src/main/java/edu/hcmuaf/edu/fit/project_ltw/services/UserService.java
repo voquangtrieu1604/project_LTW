@@ -51,6 +51,16 @@ public class UserService {
 
     }
 
+    public User checkAccountRegister(String username, String email) {
+        List<User> list = UserDao.getInstance().getListUser();
+        for (User user : list) {
+            if (user.getEmail().equals(email) || user.getUser_name().equals(username)) {
+                return user;
+            }
+        }
+        return null;
+    }
+
     public static void main(String[] args) {
         System.out.println(UserService.getInstance().checkGmailGoogle("byztrieu@gmail.com"));
     }
