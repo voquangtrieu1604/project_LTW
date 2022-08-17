@@ -41,7 +41,7 @@
         <form method="post" action="login" name="frm-login">
             <h3 class="title">ĐĂNG NHẬP</h3>
             <span class="note">Nếu bạn đã có tài khoản, hãy đăng nhập để tích lũy điểm thành viên và nhận được những ưu đãi tốt hơn!</span><br>
-            <label for="username">Email hoặc Số điện thoại</label>
+            <label for="username">Username</label>
             <span style="color: red">*</span><br>
             <input type="text" id="username" name="username"><br>
             <label for="password">Mật khẩu</label>

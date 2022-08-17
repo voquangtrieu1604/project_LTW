@@ -107,7 +107,7 @@ public class ProductDao {
 
     public List<Product> pagingProductSale(int index) {
         try {
-            List<Product> re = DbConnector.get().withHandle(h -> h.createQuery("select * from product WHERE percent_discount not like 0 order by id_product limit :amount,9 ")
+            List<Product> re = DbConnector.get().withHandle(h -> h.createQuery("select * from product WHERE percent_discount not like 0 order by percent_discount DESC limit :amount,9 ")
                     .bind("amount", (index - 1) * 9)
                     .mapToBean(Product.class)
                     .stream().collect(Collectors.toList()));
