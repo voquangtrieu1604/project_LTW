@@ -210,7 +210,7 @@
                                         <div class="product-img" style="height: 350px; max-height: 350px">
                                             <img src="${p.img_url}" alt="">
                                             <!-- Hover Thumb -->
-                                            <img class="hover-img" src="${p.img_url}" alt="">
+                                            <img class="hover-img" src="${p.img_url2}" alt="">
 
                                             <!-- Product Badge -->
                                             <div class="product-badge offer-badge">
