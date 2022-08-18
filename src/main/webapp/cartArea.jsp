@@ -77,7 +77,7 @@
                 </ul>
                 <div class="row">
                     <div class="checkout-btn mt-100" style="width: 50%">
-                        <a href="/project_LTW_war/order" class="btn essence-btn">thanh toán</a>
+                        <a href="/project_LTW_war/showOrder" class="btn essence-btn">thanh toán</a>
                     </div>
                     <div class="checkout-btn mt-100" style="width: 50%">
                         <a href="/project_LTW_war/cart" class="btn essence-btn">Xem giỏ hàng</a>

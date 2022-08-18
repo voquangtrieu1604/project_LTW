@@ -120,8 +120,8 @@
                             </tbody>
                         </table>
                         <div class="cart-buttons">
-                            <a href="/Shop" class="boxed-btn">Tiếp tục mua</a>
-                            <a href="/checkout" class="boxed-btn black">Đặt hàng</a>
+                            <a href="/project_LTW_war/Shop" class="boxed-btn">Tiếp tục mua</a>
+                            <a href="/project_LTW_war/showOrder" class="boxed-btn black">Đặt hàng</a>
                         </div>
                     </div>
                 </div>

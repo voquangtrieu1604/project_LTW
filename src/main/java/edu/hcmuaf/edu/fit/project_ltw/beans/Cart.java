@@ -1,6 +1,7 @@
 package edu.hcmuaf.edu.fit.project_ltw.beans;
 
 import edu.hcmuaf.edu.fit.project_ltw.dao.CartDao;
+import edu.hcmuaf.edu.fit.project_ltw.dao.OrderDao;
 import edu.hcmuaf.edu.fit.project_ltw.dao.ProductDao;
 
 import java.io.Serializable;
@@ -42,10 +43,12 @@ public class Cart implements Serializable {
         String key = product.getId_product()+product.getSize()+product.getColor();
         if (productList.containsKey(key)){
             productList.get(key).upOneQuantitySold();
+            CartDao.getInstance().updatecart(this.iduser,product.getId_product(),product.getColor(),product.getSize(),productList.get(key).getQuantitySold());
         }
         else {
             productList.put(key,product);
             productList.get(key).upOneQuantitySold();
+            CartDao.getInstance().insertCart(this.iduser,product.getId_product(),product.getColor(),product.getSize(),1);
         }
 
 
@@ -62,7 +65,9 @@ public class Cart implements Serializable {
     }
 
     public Product remove(String id){
+        CartDao.getInstance().romvecart(this.iduser,productList.get(id).getId_product(),productList.get(id).getColor(),productList.get(id).getSize());
         return  productList.remove(id);
+
     }
 
     public double getTotalMoneyCart(){
@@ -108,6 +113,9 @@ public class Cart implements Serializable {
 
         }
 
+    }
+    public void checkOut(){
+        CartDao.getInstance().romveAllcart(this.iduser);
     }
 
 

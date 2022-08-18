@@ -1,3 +1,6 @@
+<%@ page import="edu.hcmuaf.edu.fit.project_ltw.beans.Order" %>
+<%@ page import="edu.hcmuaf.edu.fit.project_ltw.dao.OrderDao" %>
+<%@ page import="edu.hcmuaf.edu.fit.project_ltw.dao.ProductDao" %>
 <%@ page contentType="text/html; charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -292,7 +295,8 @@
         font-size: 13px;
     }
 </style>
-
+<% List<Order> danhsachorder = (List<Order>) request.getAttribute("listOrder");%>
+<% User user = (User) session.getAttribute("auth");%>
 <body class="account customer-address-form page-layout-2columns-left">
     <!-- ##### Header Area Start ##### -->
     <%@include file="header.jsp" %>
@@ -327,7 +331,7 @@
                         </div> -->
                     <div class="profile-usertitle">
                         <div class="profile-usertitle-hello"> TÀI KHOẢN </div>
-                        <div class="profile-usertitle-name"> Xin chào, <span class="name">Hậu Nguyễn</span> </div>
+                        <div class="profile-usertitle-name"> Xin chào, <span class="name"><%=user.getUser_name()%></span> </div>
                     </div>
                     <%@include file="userAccountMenu.jsp" %>
                 </div>
@@ -351,64 +355,26 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    
+                                <%for (Order o : danhsachorder) {%>
                                     <tr>
                                        
-                                        <td><a href="orderdetail.jsp">555584965</a></td>
-                                       
-                                        <td>28/12/2021</td>
-                                        <td>Quần dài thể thao nam bo ống Hàn Quốc (Đen) - XXL</td>
-                                        <td>500.000đ</td>
-                                        <td><span class="status text-info">&bull;</span> Shipped</td>
+                                        <td><a href="ChiTietDonHang?id_order=<%=o.getId_order()%>"><%=o.getId_order()%></a></td>
+
+                                        <td><%=o.getDate_time()%></td>
+                                        <td>
+                                            <%for (String s : OrderDao.getInstance().getProductidInOrder(o.getId_order())) {%>
+                                            <%=ProductDao.getInstance().getProductById(s).getProduct_name()%> <br>
+                                            <%}%>
+                                        </td>
+                                        <td><%=o.getTotal_money()%>đ</td>
+                                        <td><span class="status text-info">&bull;</span><%=o.getState()%></td>
                                         
                                     </tr>
-                                    <tr>
-                                       
-                                        <td><a href="orderdetail.jsp">656559535</a></td>
-                                       
-                                        <td>01/12/2021</td>
-                                        <td>Quần Lửng Cotton Tập Gym Nam Unique Apparel QLCD4 (Size XL) - Đen ...và 02 sản phẩm khác</td>
-                                        <td>441.100đ</td>
-                                        <td><span class="status text-danger">&bull;</span> Cancelled</td>
-                                        
-                                    </tr>
-                                    <tr>
-                                       
-                                        <td><a href="">965556598</a></td>
-                                       
-                                        <td>16/12/2021</td>
-                                        <td>Áo Polo Thể Thao, Training, Tập Gym Nam Unique Đen (Size XL)</td>
-                                        <td>205.050đ</td>
-                                        <td><span class="status text-warning">&bull;</span> Pending</td>
-                                        
-                                    </tr>
-                                    <tr>
-                                       
-                                        <td><a href="">619138818</a></td>
-                                       
-                                        <td>11/11/2021</td>
-                                        <td>Áo đoàn thanh niên việt nam cộc tay chất đẹp - XL ...và 01 sản phẩm khác</td>
-                                        <td>1.200.000đ</td>
-                                        <td><span class="status text-success">&bull;</span> Delivered</td>
-                                        
-                                    </tr>
-                            
+                                <%}%>
+
                                 </tbody>
                             </table>
-                            <div class="clearfix">
-                                <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
-                                <ul class="pagination">
-                                    <li class="page-item disabled"><a href="#">Previous</a></li>
-                                    <li class="page-item"><a href="#" class="page-link">1</a></li>
-                                    <li class="page-item"><a href="#" class="page-link">2</a></li>
-                                    <li class="page-item"><a href="#" class="page-link">3</a></li>
-                                    <li class="page-item active"><a href="#" class="page-link">4</a></li>
-                                    <li class="page-item"><a href="#" class="page-link">5</a></li>
-                                    <li class="page-item"><a href="#" class="page-link">6</a></li>
-                                    <li class="page-item"><a href="#" class="page-link">7</a></li>
-                                    <li class="page-item"><a href="#" class="page-link">Next</a></li>
-                                </ul>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -426,90 +392,7 @@
     </div>
 
     <!-- ##### Footer Area Start ##### -->
-    <footer class="footer_area clearfix">
-        <div class="container">
-            <div class="row">
-                <!-- Single Widget Area -->
-                <div class="col-12 col-md-6">
-                    <div class="single_widget_area d-flex mb-30">
-                        <!-- Logo -->
-                        <div class="footer-logo mr-50">
-                            <a href="index.jsp"><img
-                                    src="https://owen.vn/static/version1638932364/frontend/Owen/owen2021/vi_VN/images/logo-footer.svg"
-                                    alt=""></a>
-                        </div>
-                        <!-- Footer Menu -->
-                        <div class="footer_menu">
-                            <ul>
-                                <li><a href="shop.jsp">Shop</a></li>
-                                <li><a href="blog.jsp">Blog</a></li>
-                                <li><a href="contact.jsp">Liên Hệ - Cửa Hàng</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Widget Area -->
-                <div class="col-12 col-md-6">
-                    <div class="single_widget_area mb-30">
-                        <ul class="footer_widget_menu">
-                            <li><a href="#">Tình trạng đặt hàng</a></li>
-                            <li><a href="#">Các lựa chọn thanh toán</a></li>
-                            <li><a href="#">Vận chuyển và giao hàng</a></li>
-                            <li><a href="#">Hướng dẫn</a></li>
-                            <li><a href="#">Chính sách bảo mật</a></li>
-                            <li><a href="#">Điều khoản sử dụng</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="row align-items-end">
-                <!-- Single Widget Area -->
-                <div class="col-12 col-md-6">
-                    <div class="single_widget_area">
-                        <div class="footer_heading mb-30">
-                            <h6>ĐĂNG KÝ NHẬN BẢN TIN</h6>
-                        </div>
-                        <div class="subscribtion_form">
-                            <form action="#" method="post">
-                                <input type="email" name="mail" class="mail" placeholder="Nhập email của bạn">
-                                <button type="submit" class="submit"><i class="fa fa-long-arrow-right"
-                                                                        aria-hidden="true"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Widget Area -->
-                <div class="col-12 col-md-6">
-                    <div class="single_widget_area">
-                        <div class="footer_social_area">
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i
-                                    class="fa fa-facebook" aria-hidden="true"></i></a>
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><i
-                                    class="fa fa-instagram" aria-hidden="true"></i></a>
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"
-                                                                                                      aria-hidden="true"></i></a>
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i
-                                    class="fa fa-pinterest" aria-hidden="true"></i></a>
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Youtube"><i
-                                    class="fa fa-youtube-play" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-md-12 text-center">
-                    <p>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        © 2020 by Kowil Fashion - Phú Thái Holdings
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    </p>
-                </div>
-            </div>
-
-        </div>
-    </footer>
+    <%@include file="footer.jsp" %>
 
 
     <!-- ##### Footer Area End ##### -->
