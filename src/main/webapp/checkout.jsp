@@ -140,7 +140,6 @@
         var sdt = $("#phone_number").val().trim();
         var email = $("#email_address").val().trim();
         $("#order").on('click', function () {
-                alert("active")
                 $.ajax({
                     url: '/project_LTW_war/doOrder',
                     type: 'POST',

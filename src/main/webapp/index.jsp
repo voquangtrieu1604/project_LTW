@@ -231,9 +231,7 @@
     $(document).ready(function () {
         $("#heart a").on('click', function () {
             if (this.classList.contains("active")) {
-                alert("active")
                 var id = $(this).attr("pid");
-                alert(id)
                 $.ajax({
                     url: '/project_LTW_war/addFavoriteProduct',
                     type: 'POST',
@@ -246,9 +244,8 @@
                     }
                 })
             } else {
-                alert("noactive")
+
                 var id = $(this).attr("pid");
-                alert(id)
                 $.ajax({
                     url: '/project_LTW_war/removeFavoriteProduct',
                     type: 'POST',

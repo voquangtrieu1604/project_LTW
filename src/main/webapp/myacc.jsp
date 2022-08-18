@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,9 +56,9 @@
 <div class="container">
     <div class="container">
         <div class="row profile">
-            <jsp:useBean id="account" scope="request"
-                         type="edu.hcmuaf.edu.fit.project_ltw.beans.User"
-            />
+<%--            <jsp:useBean id="account" scope="request"--%>
+<%--                         type="edu.hcmuaf.edu.fit.project_ltw.beans.User"--%>
+<%--            />--%>
             <c:set var="acc" value="${account}"/>
             <div class="col-md-3">
                 <div class="profile-sidebar">

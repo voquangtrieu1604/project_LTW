@@ -104,7 +104,6 @@
     var num = "<%=cart.getNumberProductInCart()%>";
     $(document).ready(function () {
         $("#addCart").click(function () {
-            alert("click")
             // if (iduser != null) {
             var color = $("#productColor").val();
 
