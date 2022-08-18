@@ -21,7 +21,7 @@
                 class="glyphicon fas fa-map-marker-alt"></i>
             Địa chỉ nhận hàng</a>
         </li>
-        <li class=" item "><a href="/project_LTW_war/myorder" > <i
+        <li class=" item "><a href="/project_LTW_war/showMyOrder" > <i
                 class="glyphicon fas fa-shopping-cart"></i> Quản lý đơn hàng </a>
         </li>
         <li class=" item "><a href="/project_LTW_war/wishlist"> <i class="glyphicon far fa-heart"></i> Danh

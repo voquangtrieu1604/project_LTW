@@ -87,7 +87,7 @@ public class RemoveProductFromCart extends HttpServlet {
                             "      </ul>\n" +
                             "<div class=\"row\">\n" +
                             "                    <div class=\"checkout-btn mt-100\" style=\"width: 50%\">\n" +
-                            "                        <a href=\"/project_LTW_war/order\" class=\"btn essence-btn\">thanh toán</a>\n" +
+                            "                        <a href=\"/project_LTW_war/showOrder\" class=\"btn essence-btn\">thanh toán</a>\n" +
                             "                    </div>\n" +
                             "                    <div class=\"checkout-btn mt-100\" style=\"width: 50%\">\n" +
                             "                        <a href=\"/project_LTW_war/cart\" class=\"btn essence-btn\">Xem giỏ hàng</a>\n" +

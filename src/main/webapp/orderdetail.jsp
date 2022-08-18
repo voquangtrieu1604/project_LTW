@@ -1,3 +1,4 @@
+<%@ page import="edu.hcmuaf.edu.fit.project_ltw.beans.Order" %>
 <%@ page contentType="text/html; charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -325,7 +326,10 @@
         font-size: 18px;
     }
 </style>
-
+<% List<Product> danhsach = (List<Product>) request.getAttribute("listProduct");%>
+<% User user = (User) session.getAttribute("auth");%>
+<% String idorder = (String) request.getAttribute("orderid");%>
+<% Order order = (Order) request.getAttribute("order");%>
 <body class="account customer-address-form page-layout-2columns-left">
     <!-- ##### Header Area Start ##### -->
     <%@include file="header.jsp" %>
@@ -360,50 +364,24 @@
                         </div> -->
                     <div class="profile-usertitle">
                         <div class="profile-usertitle-hello"> TÀI KHOẢN </div>
-                        <div class="profile-usertitle-name"> Xin chào, <span class="name">Hậu Nguyễn</span> </div>
+                        <div class="profile-usertitle-name"> Xin chào, <span class="name"><%=idorder%></span> </div>
                     </div>
 
-                    <div class="profile-usermenu">
-                        <ul class=" items">
-                            <!-- <div class="logo_menuchinh"
-                                    style="float:left; padding-top:5px; padding-left:10px; color:#fff; margin-left:auto; margin-right:auto; text-align: center; line-height:40px; font-size:16px;font-weight:bold;font-family:Arial">
-                                    HOCWEBGIARE.COM
-                                </div> -->
-                            <!-- <div class="menu-icon"><span>Menu</span></div> -->
-                            <li class=" item "> <a href="myacc.jsp"> <i
-                                        class="glyphicon fas fa-question-circle"></i>
-                                    Thông
-                                    tin tài khoản </a>
-                            </li>
-                            <li class=" item "> <a href="account_Address.jsp"> <i
-                                        class="glyphicon fas fa-map-marker-alt"></i>
-                                    Địa chỉ nhận hàng</a>
-                            </li>
-                            <li class=" item "> <a href="myorder.jsp" > <i
-                                        class="glyphicon fas fa-shopping-cart"></i> Quản lý đơn hàng </a>
-                            </li>
-                            <li class=" item "> <a href="wishlist.jsp"> <i class="glyphicon far fa-heart"></i> Danh
-                                    sách yêu
-                                    thích </a>
-                            </li>
-
-                        </ul>
-                    </div>
+                    <%@include file="userAccountMenu.jsp" %>
                 </div>
             </div>
             <div class="column main ">
-                <div class="heading"><span>Chi tiết đơn hàng #682724248</span><span class="split">-</span><span
+                <div class="heading"><span>Chi tiết đơn hàng #<%=order.getId_order()%></span><span class="split">-</span><span
                         class="status">Giao hàng thành công</span>
                 </div>
-                <div class="created-date">Ngày đặt hàng: 19:29 05/10/2021</div>
+                <div class="created-date">Ngày đặt hàng: <%=order.getDate_time()%></div>
                 <div class="infor-diliver">
                     <div class=" item">
                         <div class="title">Địa chỉ người nhận</div>
                         <div class="content">
-                            <p class="name">Nguyễn Văn A</p>
-                            <p class="address"><span>Địa chỉ: </span>Trường Đại Học Nông Lâm, Phường Linh Trung, Quận
-                                Thủ Đức, Hồ Chí Minh, Việt Nam</p>
-                            <p class="phone"><span>Điện thoại: </span>0988565865</p>
+                            <p class="name"><%=order.getHoten()%></p>
+                            <p class="address"><span>Địa chỉ: </span><%=order.getAddress()%> <%=order.getHuyen()%> <%=order.getThanhpho()%></p>
+                            <p class="phone"><span>Điện thoại: </span><%=order.getPhone()%></p>
                         </div>
                     </div>
                     <div class=" item">
@@ -441,49 +419,34 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-
-                                        <td><a href="single-product-details.jsp"><img
-                                                    src="assets/img/product-img/product-1.jpg" class="avatar" alt="Avatar"><span style="float: right;width: 70%;margin: 36px 0">Áo
-                                                Polo Thể Thao, Training, Tập Gym Nam Unique Đen
-                                            (Size XL)</span></a></td>
-                                        <td>11.000.000đ</td>
-                                        <td>1</td>
-                                        <td>1.000.000đ</td>
-
-                                        <td>10.000.000đ</td>
-
-                                    </tr>
-                                    <tr>
-
-                                        <td><a href="single-product-details.jsp"><img
-                                                    src="assets/img/product-img/product-3.jpg" class="avatar" alt="Avatar"><span style="float: right;width: 70%;margin: 36px 0">Áo
-                                                Polo Thể Thao, Training, Tập Gym Nam Unique Đen
-                                            (Size XL)</span></a></td>
-                                        <td>1.000.000đ</td>
-                                        <td>1</td>
-                                        <td>100.000đ</td>
-
-                                        <td>900.000đ</td>
-
+                                        <%for (Product pr : danhsach) {%>
+                                        <td><a href="ChiTietSanPham?id_product=<%=pr.getId_product()%>"><img
+                                                    src="<%=pr.getImg_url()%>" class="avatar" alt="Avatar"><span style="float: right;width: 70%;margin: 36px 0">
+                                            <%=pr.getProduct_name()%>
+                                        </span></a></td>
+                                        <td><%=pr.getPrice()%></td>
+                                        <td><%=pr.getQuantitySold()%></td>
+                                        <td>0</td>
+                                        <td><%=pr.totalPriceSold()%></td>
+                                        <%}%>
                                     </tr>
 
-                                </tbody>
                                 <tfoot>
+<%--                                    <tr>--%>
+<%--                                        <td colspan="4"><span>Tạm tính</span></td>--%>
+<%--                                        <td><%=pr.getPrice()%></td>--%>
+<%--                                    </tr>--%>
+<%--                                    <tr>--%>
+<%--                                        <td colspan="4"><span>Giảm giá</span></td>--%>
+<%--                                        <td>-1.100.000 ₫</td>--%>
+<%--                                    </tr>--%>
+<%--                                    <tr>--%>
+<%--                                        <td colspan="4"><span>Phí vận chuyển</span></td>--%>
+<%--                                        <td>0.000 ₫</td>--%>
+<%--                                    </tr>--%>
                                     <tr>
-                                        <td colspan="4"><span>Tạm tính</span></td>
-                                        <td>12.000.000 ₫</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4"><span>Giảm giá</span></td>
-                                        <td>-1.100.000 ₫</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4"><span>Phí vận chuyển</span></td>
-                                        <td>0.000 ₫</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4"><span>Tổng cộng</span></td>
-                                        <td><span class="sum">10.900.000 ₫</span></td>
+                                        <td colspan="4"><span>Tổng cộng(đăng tính luôn ship và giảm giá)</span></td>
+                                        <td><span class="sum"><%=order.getTotal_money()%> ₫</span></td>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -492,7 +455,7 @@
                         </div>
                     </div>
                 </div>
-                <a class="view-list-order" href="myorder.jsp">&lt;&lt; Quay lại đơn hàng của
+                <a class="view-list-order" href="/project_LTW_war/showMyOrder">&lt;&lt; Quay lại đơn hàng của
                     tôi
                 </a>
 
